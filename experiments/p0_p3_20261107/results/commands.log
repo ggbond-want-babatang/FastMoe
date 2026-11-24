@@ -1,0 +1,20 @@
+/home/ggbond/miniconda3/envs/nanovllm/bin/python environment.py > results/environment.log 2>&1
+exit_code=0
+/home/ggbond/miniconda3/envs/nanovllm/bin/python profile_moe.py --mode torch --iterations 5 > results/p0/profile.log 2>&1
+exit_code=0
+nsys profile --trace=cuda\,nvtx --sample=none --cpuctxsw=none --capture-range=cudaProfilerApi --capture-range-end=stop --force-overwrite=true --output=results/p0/nsys /home/ggbond/miniconda3/envs/nanovllm/bin/python profile_moe.py --mode nvtx --iterations 5 > results/p0/nsys.log 2>&1
+exit_code=0
+nsys stats --report cuda_api_sum\,cuda_gpu_kern_sum\,nvtx_sum --format csv results/p0/nsys.nsys-rep > results/p0/nsys-stats.log 2>&1
+exit_code=0
+/home/ggbond/miniconda3/envs/nanovllm/bin/python analyze_traces.py > results/p0/analysis.log 2>&1
+exit_code=0
+/home/ggbond/miniconda3/envs/nanovllm/bin/python integrate_olmoe.py --dtype bf16 > results/p3/integration-bf16.log 2>&1
+exit_code=0
+/home/ggbond/miniconda3/envs/nanovllm/bin/python integrate_olmoe.py --dtype fp16 --no-trace > results/p3/integration-fp16.log 2>&1
+exit_code=0
+Initial: python download_layer.py : exit 0; python -m tests.test_moe : exit 0; python -m tests.test_hf_adapter : exit 0
+P0 refinement: results/p0-first-pass preserved; profile_moe.py --mode torch --iterations 5 repeated after reducing observer overhead : exit 0
+P0 refinement: native nsys capture and stats repeated with same CLI, force-export=true : exit 0
+Final: python analyze_traces.py (Runtime and Driver API mapping) : exit 0
+Final: python summarize_p0p3.py : exit 0
+Final: bash -n run_all.sh; python -m compileall -q moe tests *.py : exit 0

@@ -1,0 +1,6 @@
+P0 baseline T=1: bare median 773.11 us
+P0 triton T=1: bare median 378.90 us
+P0 baseline T=128: bare median 1570.12 us
+P0 triton T=128: bare median 330.74 us
+P0 baseline T=2048: bare median 1554.99 us
+P0 triton T=2048: bare median 378.33 us

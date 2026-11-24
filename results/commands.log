@@ -1,0 +1,11 @@
+Initial environment probe: nvidia-smi; conda env list; python imports in base and nanovllm.
+python environment.py > results/environment.log 2>&1 : exit 0
+python -m tests.test_moe > results/tests.log 2>&1 : exit 0 (after int64 loop fix; original failure preserved)
+python benchmark.py --profile full --tune > results/benchmark.log 2>&1
+benchmark exit_code=0
+plot exit_code=0
+/home/ggbond/miniconda3/envs/nanovllm/bin/python kernel_benchmark.py > results/kernel-benchmark.log 2>&1
+kernel_benchmark exit_code=0
+summarize exit_code=0
+Final validation: bash -n run.sh : exit 0
+Final validation: python -m compileall -q moe tests benchmark.py environment.py plot_results.py summarize.py kernel_benchmark.py : exit 0

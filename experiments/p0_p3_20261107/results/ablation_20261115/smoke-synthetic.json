@@ -1,0 +1,1045 @@
+{
+  "arguments": {
+    "output": "results/ablation_20261115/smoke-synthetic.json",
+    "scope": "synthetic",
+    "dtypes": [
+      "fp16"
+    ],
+    "tokens": [
+      8
+    ],
+    "warmup": 2,
+    "rounds": 1,
+    "samples": 3,
+    "repeats": 2
+  },
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "torch": "2.5.1+cu121",
+  "triton": "3.1.0",
+  "transformers": "4.57.6",
+  "platform": "Linux-6.8.0-149-generic-x86_64-with-glibc2.35",
+  "nvidia_smi_before": "Sun Nov 15 22:21:00 2026       \n+---------------------------------------------------------------------------------------+\n| NVIDIA-SMI 535.288.01             Driver Version: 535.288.01   CUDA Version: 12.2     |\n|-----------------------------------------+----------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |\n|                                         |                      |               MIG M. |\n|=========================================+======================+======================|\n|   0  NVIDIA GeForce RTX 4060 ...    Off | 00000000:01:00.0 Off |                  N/A |\n| N/A   38C    P8               2W /  80W |    179MiB /  8188MiB |      0%      Default |\n|                                         |                      |                  N/A |\n+-----------------------------------------+----------------------+----------------------+\n                                                                                         \n+---------------------------------------------------------------------------------------+\n| Processes:                                                                            |\n|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |\n|        ID   ID                                                             Usage      |\n|=======================================================================================|\n|    0   N/A  N/A      2030      G   /usr/lib/xorg/Xorg                            4MiB |\n|    0   N/A  N/A      2294    C+G   ...libexec/gnome-remote-desktop-daemon      164MiB |\n+---------------------------------------------------------------------------------------+\n",
+  "seed": 20261115,
+  "semantics": "fixed route paths exclude router; cached host expert counts favor torch loop; native router-included timings separate",
+  "cases": [
+    {
+      "source": "synthetic",
+      "dtype": "torch.float16",
+      "tokens": 8,
+      "hidden": 256,
+      "ffn": 512,
+      "experts": 8,
+      "top_k": 2,
+      "distribution": "router",
+      "counts": [
+        1,
+        2,
+        3,
+        1,
+        4,
+        1,
+        4,
+        0
+      ],
+      "active_experts": 7,
+      "input_sha256": "48d519d29597b41b8b16bc1f99b2aec228df15e4279fd34ddbcc00bc1083fc0a",
+      "micro": {
+        "dispatch": {
+          "methods": {
+            "expert_where_pack": {
+              "cuda_samples_us": [
+                271.263986825943,
+                285.69599986076355,
+                299.51998591423035
+              ],
+              "wall_samples_us": [
+                285.89850990101695,
+                292.30549989733845,
+                312.1575136901811
+              ],
+              "round_medians_us": [
+                285.69599986076355
+              ],
+              "cuda_median_us": 285.69599986076355,
+              "cuda_p10_us": 274.1503894329071,
+              "cuda_p90_us": 296.755188703537,
+              "wall_median_us": 292.30549989733845,
+              "correctness": {
+                "max_abs": 0.0,
+                "relative_l2": 0.0,
+                "passed": true
+              }
+            },
+            "sort_pack": {
+              "cuda_samples_us": [
+                138.33600282669067,
+                105.98400235176086,
+                110.07999628782272
+              ],
+              "wall_samples_us": [
+                148.7780100433156,
+                117.10349644999951,
+                115.31051131896675
+              ],
+              "round_medians_us": [
+                110.07999628782272
+              ],
+              "cuda_median_us": 110.07999628782272,
+              "cuda_p10_us": 106.80320113897324,
+              "cuda_p90_us": 132.68480151891708,
+              "wall_median_us": 117.10349644999951,
+              "correctness": {
+                "max_abs": 0.0,
+                "relative_l2": 0.0,
+                "passed": true
+              }
+            }
+          },
+          "measurement_orders": [
+            [
+              "expert_where_pack",
+              "sort_pack"
+            ],
+            [
+              "sort_pack",
+              "expert_where_pack"
+            ],
+            [
+              "expert_where_pack",
+              "sort_pack"
+            ]
+          ]
+        },
+        "gate_up_gemm": {
+          "methods": {
+            "torch_loop": {
+              "cuda_samples_us": [
+                100.96000134944916,
+                92.16000139713287,
+                91.63200110197067
+              ],
+              "wall_samples_us": [
+                116.03150051087141,
+                97.28649456519634,
+                96.5450017247349
+              ],
+              "round_medians_us": [
+                92.16000139713287
+              ],
+              "cuda_median_us": 92.16000139713287,
+              "cuda_p10_us": 91.73760116100311,
+              "cuda_p90_us": 99.2000013589859,
+              "wall_median_us": 97.28649456519634,
+              "correctness": {
+                "max_abs": 0.0,
+                "relative_l2": 0.0,
+                "passed": true
+              }
+            },
+            "grouped": {
+              "cuda_samples_us": [
+                78.84799689054489,
+                38.91199827194214,
+                40.44799879193306
+              ],
+              "wall_samples_us": [
+                99.02000601869076,
+                43.95749419927597,
+                45.43000250123441
+              ],
+              "round_medians_us": [
+                40.44799879193306
+              ],
+              "cuda_median_us": 40.44799879193306,
+              "cuda_p10_us": 39.21919837594032,
+              "cuda_p90_us": 71.16799727082253,
+              "wall_median_us": 45.43000250123441,
+              "correctness": {
+                "max_abs": 0.001953125,
+                "relative_l2": 1.5041847291286103e-05,
+                "passed": true
+              }
+            }
+          },
+          "measurement_orders": [
+            [
+              "grouped",
+              "torch_loop"
+            ],
+            [
+              "grouped",
+              "torch_loop"
+            ],
+            [
+              "torch_loop",
+              "grouped"
+            ]
+          ]
+        },
+        "activation": {
+          "methods": {
+            "torch": {
+              "cuda_samples_us": [
+                31.695999205112457,
+                29.184000566601753,
+                30.287999659776688
+              ],
+              "wall_samples_us": [
+                36.38800990302116,
+                33.20699033793062,
+                34.955504816025496
+              ],
+              "round_medians_us": [
+                30.287999659776688
+              ],
+              "cuda_median_us": 30.287999659776688,
+              "cuda_p10_us": 29.40480038523674,
+              "cuda_p90_us": 31.414399296045303,
+              "wall_median_us": 34.955504816025496,
+              "correctness": {
+                "max_abs": 0.0,
+                "relative_l2": 0.0,
+                "passed": true
+              }
+            },
+            "triton": {
+              "cuda_samples_us": [
+                18.880000337958336,
+                17.32799969613552,
+                23.11999909579754
+              ],
+              "wall_samples_us": [
+                28.22298847604543,
+                21.75549161620438,
+                27.736998163163662
+              ],
+              "round_medians_us": [
+                18.880000337958336
+              ],
+              "cuda_median_us": 18.880000337958336,
+              "cuda_p10_us": 17.638399824500084,
+              "cuda_p90_us": 22.271999344229698,
+              "wall_median_us": 27.736998163163662,
+              "correctness": {
+                "max_abs": 0.0,
+                "relative_l2": 0.0,
+                "passed": true
+              }
+            }
+          },
+          "measurement_orders": [
+            [
+              "triton",
+              "torch"
+            ],
+            [
+              "triton",
+              "torch"
+            ],
+            [
+              "triton",
+              "torch"
+            ]
+          ]
+        },
+        "projection_activation": {
+          "methods": {
+            "loop_torchact": {
+              "cuda_samples_us": [
+                131.071999669075,
+                130.0799995660782,
+                115.75999855995178
+              ],
+              "wall_samples_us": [
+                136.55998918693513,
+                134.42600902635604,
+                122.01750359963626
+              ],
+              "round_medians_us": [
+                130.0799995660782
+              ],
+              "cuda_median_us": 130.0799995660782,
+              "cuda_p10_us": 118.62399876117706,
+              "cuda_p90_us": 130.87359964847565,
+              "wall_median_us": 134.42600902635604,
+              "correctness": {
+                "max_abs": 0.0,
+                "relative_l2": 0.0,
+                "passed": true
+              }
+            },
+            "loop_tritonact": {
+              "cuda_samples_us": [
+                128.92800569534302,
+                108.03200304508209,
+                131.58400356769562
+              ],
+              "wall_samples_us": [
+                134.2155010206625,
+                119.03249833267182,
+                136.4700001431629
+              ],
+              "round_medians_us": [
+                128.92800569534302
+              ],
+              "cuda_median_us": 128.92800569534302,
+              "cuda_p10_us": 112.21120357513428,
+              "cuda_p90_us": 131.0528039932251,
+              "wall_median_us": 134.2155010206625,
+              "correctness": {
+                "max_abs": 0.0,
+                "relative_l2": 0.0,
+                "passed": true
+              }
+            },
+            "grouped_unfused": {
+              "cuda_samples_us": [
+                52.73599922657013,
+                51.711998879909515,
+                52.83199995756149
+              ],
+              "wall_samples_us": [
+                65.2919989079237,
+                64.71050437539816,
+                57.703000493347645
+              ],
+              "round_medians_us": [
+                52.73599922657013
+              ],
+              "cuda_median_us": 52.73599922657013,
+              "cuda_p10_us": 51.91679894924164,
+              "cuda_p90_us": 52.81279981136322,
+              "wall_median_us": 64.71050437539816,
+              "correctness": {
+                "max_abs": 0.0001220703125,
+                "relative_l2": 2.2324086330627324e-06,
+                "passed": true
+              }
+            },
+            "grouped_fused": {
+              "cuda_samples_us": [
+                38.83200138807297,
+                30.688000842928886,
+                34.7680002450943
+              ],
+              "wall_samples_us": [
+                51.04050796944648,
+                34.93549593258649,
+                39.007500163279474
+              ],
+              "round_medians_us": [
+                34.7680002450943
+              ],
+              "cuda_median_us": 34.7680002450943,
+              "cuda_p10_us": 31.50400072336197,
+              "cuda_p90_us": 38.019201159477234,
+              "wall_median_us": 39.007500163279474,
+              "correctness": {
+                "max_abs": 0.0001220703125,
+                "relative_l2": 2.2324086330627324e-06,
+                "passed": true
+              }
+            }
+          },
+          "measurement_orders": [
+            [
+              "grouped_unfused",
+              "loop_torchact",
+              "grouped_fused",
+              "loop_tritonact"
+            ],
+            [
+              "loop_tritonact",
+              "grouped_unfused",
+              "grouped_fused",
+              "loop_torchact"
+            ],
+            [
+              "loop_torchact",
+              "grouped_unfused",
+              "loop_tritonact",
+              "grouped_fused"
+            ]
+          ]
+        },
+        "down_gemm": {
+          "methods": {
+            "torch_loop": {
+              "cuda_samples_us": [
+                135.15199720859528,
+                96.28800302743912,
+                84.99199897050858
+              ],
+              "wall_samples_us": [
+                150.8665009168908,
+                101.42949759028852,
+                91.05500066652894
+              ],
+              "round_medians_us": [
+                96.28800302743912
+              ],
+              "cuda_median_us": 96.28800302743912,
+              "cuda_p10_us": 87.25119978189468,
+              "cuda_p90_us": 127.37919837236404,
+              "wall_median_us": 101.42949759028852,
+              "correctness": {
+                "max_abs": 0.0,
+                "relative_l2": 0.0,
+                "passed": true
+              }
+            },
+            "grouped": {
+              "cuda_samples_us": [
+                47.08800092339516,
+                33.28000009059906,
+                34.304000437259674
+              ],
+              "wall_samples_us": [
+                53.97599306888878,
+                38.176513044163585,
+                48.10500831808895
+              ],
+              "round_medians_us": [
+                34.304000437259674
+              ],
+              "cuda_median_us": 34.304000437259674,
+              "cuda_p10_us": 33.48480015993118,
+              "cuda_p90_us": 44.53120082616806,
+              "wall_median_us": 48.10500831808895,
+              "correctness": {
+                "max_abs": 1.52587890625e-05,
+                "relative_l2": 3.961571621857729e-07,
+                "passed": true
+              }
+            }
+          },
+          "measurement_orders": [
+            [
+              "torch_loop",
+              "grouped"
+            ],
+            [
+              "grouped",
+              "torch_loop"
+            ],
+            [
+              "grouped",
+              "torch_loop"
+            ]
+          ]
+        },
+        "combine": {
+          "methods": {
+            "torch": {
+              "cuda_samples_us": [
+                82.47999846935272,
+                80.38400113582611,
+                71.59999758005142
+              ],
+              "wall_samples_us": [
+                97.90300100576133,
+                85.74500679969788,
+                77.1589984651655
+              ],
+              "round_medians_us": [
+                80.38400113582611
+              ],
+              "cuda_median_us": 80.38400113582611,
+              "cuda_p10_us": 73.35679829120636,
+              "cuda_p90_us": 82.0607990026474,
+              "wall_median_us": 85.74500679969788,
+              "correctness": {
+                "max_abs": 0.0,
+                "relative_l2": 0.0,
+                "passed": true
+              }
+            },
+            "triton": {
+              "cuda_samples_us": [
+                32.255999743938446,
+                37.91999816894531,
+                37.98399865627289
+              ],
+              "wall_samples_us": [
+                38.031008443795145,
+                51.8469896633178,
+                43.485997593961656
+              ],
+              "round_medians_us": [
+                37.91999816894531
+              ],
+              "cuda_median_us": 37.91999816894531,
+              "cuda_p10_us": 33.38879942893982,
+              "cuda_p90_us": 37.97119855880737,
+              "wall_median_us": 43.485997593961656,
+              "correctness": {
+                "max_abs": 0.0,
+                "relative_l2": 0.0,
+                "passed": true
+              }
+            }
+          },
+          "measurement_orders": [
+            [
+              "torch",
+              "triton"
+            ],
+            [
+              "torch",
+              "triton"
+            ],
+            [
+              "torch",
+              "triton"
+            ]
+          ]
+        }
+      },
+      "fixed_route_paths": {
+        "methods": {
+          "native_routed_loop": {
+            "cuda_samples_us": [
+              951.2959718704224,
+              1039.3120050430298,
+              946.6080069541931
+            ],
+            "wall_samples_us": [
+              956.1000042594969,
+              1045.106488163583,
+              951.6769932815805
+            ],
+            "round_medians_us": [
+              951.2959718704224
+            ],
+            "cuda_median_us": 951.2959718704224,
+            "cuda_p10_us": 947.545599937439,
+            "cuda_p90_us": 1021.7087984085083,
+            "wall_median_us": 956.1000042594969,
+            "correctness": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0,
+              "passed": true
+            }
+          },
+          "where/loop_torchact/torch": {
+            "cuda_samples_us": [
+              589.8240208625793,
+              575.9999752044678,
+              561.1519813537598
+            ],
+            "wall_samples_us": [
+              596.8495097476989,
+              581.5254990011454,
+              566.7935038218275
+            ],
+            "round_medians_us": [
+              575.9999752044678
+            ],
+            "cuda_median_us": 575.9999752044678,
+            "cuda_p10_us": 564.1215801239014,
+            "cuda_p90_us": 587.059211730957,
+            "wall_median_us": 581.5254990011454,
+            "correctness": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0,
+              "passed": true
+            }
+          },
+          "where/loop_torchact/triton": {
+            "cuda_samples_us": [
+              539.135992527008,
+              585.7279896736145,
+              541.3119792938232
+            ],
+            "wall_samples_us": [
+              547.382005606778,
+              603.6769918864593,
+              546.5705035021529
+            ],
+            "round_medians_us": [
+              541.3119792938232
+            ],
+            "cuda_median_us": 541.3119792938232,
+            "cuda_p10_us": 539.5711898803711,
+            "cuda_p90_us": 576.8447875976562,
+            "wall_median_us": 547.382005606778,
+            "correctness": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0,
+              "passed": true
+            }
+          },
+          "where/loop_tritonact/torch": {
+            "cuda_samples_us": [
+              632.8319907188416,
+              645.1200246810913,
+              610.8160018920898
+            ],
+            "wall_samples_us": [
+              638.8879992300645,
+              658.4394868696108,
+              616.0999910207465
+            ],
+            "round_medians_us": [
+              632.8319907188416
+            ],
+            "cuda_median_us": 632.8319907188416,
+            "cuda_p10_us": 615.2191996574402,
+            "cuda_p90_us": 642.6624178886414,
+            "wall_median_us": 638.8879992300645,
+            "correctness": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0,
+              "passed": true
+            }
+          },
+          "where/loop_tritonact/triton": {
+            "cuda_samples_us": [
+              539.135992527008,
+              527.4400115013123,
+              520.3199982643127
+            ],
+            "wall_samples_us": [
+              545.1025062939152,
+              532.9799896571785,
+              526.6635125735775
+            ],
+            "round_medians_us": [
+              527.4400115013123
+            ],
+            "cuda_median_us": 527.4400115013123,
+            "cuda_p10_us": 521.7440009117126,
+            "cuda_p90_us": 536.7967963218689,
+            "wall_median_us": 532.9799896571785,
+            "correctness": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0,
+              "passed": true
+            }
+          },
+          "where/grouped_unfused/torch": {
+            "cuda_samples_us": [
+              445.96800208091736,
+              513.0239725112915,
+              461.3119959831238
+            ],
+            "wall_samples_us": [
+              451.5635082498193,
+              519.6955025894567,
+              467.2524955822155
+            ],
+            "round_medians_us": [
+              461.3119959831238
+            ],
+            "cuda_median_us": 461.3119959831238,
+            "cuda_p10_us": 449.03680086135864,
+            "cuda_p90_us": 502.68157720565796,
+            "wall_median_us": 467.2524955822155,
+            "correctness": {
+              "max_abs": 6.103515625e-05,
+              "relative_l2": 3.4207791941298638e-06,
+              "passed": true
+            }
+          },
+          "where/grouped_unfused/triton": {
+            "cuda_samples_us": [
+              434.688001871109,
+              368.1280016899109,
+              367.1039938926697
+            ],
+            "wall_samples_us": [
+              440.48250128980726,
+              373.4525089384988,
+              373.8180093932897
+            ],
+            "round_medians_us": [
+              368.1280016899109
+            ],
+            "cuda_median_us": 368.1280016899109,
+            "cuda_p10_us": 367.3087954521179,
+            "cuda_p90_us": 421.3760018348694,
+            "wall_median_us": 373.8180093932897,
+            "correctness": {
+              "max_abs": 6.103515625e-05,
+              "relative_l2": 3.4207791941298638e-06,
+              "passed": true
+            }
+          },
+          "where/grouped_fused/torch": {
+            "cuda_samples_us": [
+              481.79200291633606,
+              470.0160026550293,
+              432.1439862251282
+            ],
+            "wall_samples_us": [
+              487.89099673740566,
+              475.5929985549301,
+              437.26149306166917
+            ],
+            "round_medians_us": [
+              470.0160026550293
+            ],
+            "cuda_median_us": 470.0160026550293,
+            "cuda_p10_us": 439.7183895111084,
+            "cuda_p90_us": 479.4368028640747,
+            "wall_median_us": 475.5929985549301,
+            "correctness": {
+              "max_abs": 6.103515625e-05,
+              "relative_l2": 3.4207791941298638e-06,
+              "passed": true
+            }
+          },
+          "where/grouped_fused/triton": {
+            "cuda_samples_us": [
+              353.2800078392029,
+              350.2559959888458,
+              374.30399656295776
+            ],
+            "wall_samples_us": [
+              358.12900750897825,
+              356.1650082701817,
+              379.7639947151765
+            ],
+            "round_medians_us": [
+              353.2800078392029
+            ],
+            "cuda_median_us": 353.2800078392029,
+            "cuda_p10_us": 350.86079835891724,
+            "cuda_p90_us": 370.0991988182068,
+            "wall_median_us": 358.12900750897825,
+            "correctness": {
+              "max_abs": 6.103515625e-05,
+              "relative_l2": 3.4207791941298638e-06,
+              "passed": true
+            }
+          },
+          "sort/loop_torchact/torch": {
+            "cuda_samples_us": [
+              445.95199823379517,
+              445.95199823379517,
+              408.57601165771484
+            ],
+            "wall_samples_us": [
+              458.4465059451759,
+              459.35749949421734,
+              414.2835095990449
+            ],
+            "round_medians_us": [
+              445.95199823379517
+            ],
+            "cuda_median_us": 445.95199823379517,
+            "cuda_p10_us": 416.0512089729309,
+            "cuda_p90_us": 445.95199823379517,
+            "wall_median_us": 458.4465059451759,
+            "correctness": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0,
+              "passed": true
+            }
+          },
+          "sort/loop_torchact/triton": {
+            "cuda_samples_us": [
+              398.81598949432373,
+              379.37599420547485,
+              407.039999961853
+            ],
+            "wall_samples_us": [
+              404.11950612906367,
+              385.1189976558089,
+              415.77150113880634
+            ],
+            "round_medians_us": [
+              398.81598949432373
+            ],
+            "cuda_median_us": 398.81598949432373,
+            "cuda_p10_us": 383.26399326324463,
+            "cuda_p90_us": 405.39519786834717,
+            "wall_median_us": 404.11950612906367,
+            "correctness": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0,
+              "passed": true
+            }
+          },
+          "sort/loop_tritonact/torch": {
+            "cuda_samples_us": [
+              452.60798931121826,
+              447.488009929657,
+              417.279988527298
+            ],
+            "wall_samples_us": [
+              467.4780066125095,
+              460.6300062732771,
+              430.8395000407472
+            ],
+            "round_medians_us": [
+              447.488009929657
+            ],
+            "cuda_median_us": 447.488009929657,
+            "cuda_p10_us": 423.3215928077698,
+            "cuda_p90_us": 451.583993434906,
+            "wall_median_us": 460.6300062732771,
+            "correctness": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0,
+              "passed": true
+            }
+          },
+          "sort/loop_tritonact/triton": {
+            "cuda_samples_us": [
+              381.44001364707947,
+              369.6160018444061,
+              364.03200030326843
+            ],
+            "wall_samples_us": [
+              386.5964972646907,
+              375.34050352405757,
+              369.6950006997213
+            ],
+            "round_medians_us": [
+              369.6160018444061
+            ],
+            "cuda_median_us": 369.6160018444061,
+            "cuda_p10_us": 365.148800611496,
+            "cuda_p90_us": 379.0752112865448,
+            "wall_median_us": 375.34050352405757,
+            "correctness": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0,
+              "passed": true
+            }
+          },
+          "sort/grouped_unfused/torch": {
+            "cuda_samples_us": [
+              289.2799973487854,
+              298.880010843277,
+              290.9280061721802
+            ],
+            "wall_samples_us": [
+              294.7350003523752,
+              304.82400325126946,
+              297.62100894004107
+            ],
+            "round_medians_us": [
+              290.9280061721802
+            ],
+            "cuda_median_us": 290.9280061721802,
+            "cuda_p10_us": 289.60959911346436,
+            "cuda_p90_us": 297.2896099090576,
+            "wall_median_us": 297.62100894004107,
+            "correctness": {
+              "max_abs": 6.103515625e-05,
+              "relative_l2": 3.4207791941298638e-06,
+              "passed": true
+            }
+          },
+          "sort/grouped_unfused/triton": {
+            "cuda_samples_us": [
+              227.84000635147095,
+              247.75999784469604,
+              221.18400037288666
+            ],
+            "wall_samples_us": [
+              240.95000117085874,
+              253.6939864512533,
+              233.5659955861047
+            ],
+            "round_medians_us": [
+              227.84000635147095
+            ],
+            "cuda_median_us": 227.84000635147095,
+            "cuda_p10_us": 222.51520156860352,
+            "cuda_p90_us": 243.77599954605103,
+            "wall_median_us": 240.95000117085874,
+            "correctness": {
+              "max_abs": 6.103515625e-05,
+              "relative_l2": 3.4207791941298638e-06,
+              "passed": true
+            }
+          },
+          "sort/grouped_fused/torch": {
+            "cuda_samples_us": [
+              274.86398816108704,
+              288.7679934501648,
+              265.21599292755127
+            ],
+            "wall_samples_us": [
+              288.1379914470017,
+              295.1159985968843,
+              270.9660038817674
+            ],
+            "round_medians_us": [
+              274.86398816108704
+            ],
+            "cuda_median_us": 274.86398816108704,
+            "cuda_p10_us": 267.1455919742584,
+            "cuda_p90_us": 285.98719239234924,
+            "wall_median_us": 288.1379914470017,
+            "correctness": {
+              "max_abs": 6.103515625e-05,
+              "relative_l2": 3.4207791941298638e-06,
+              "passed": true
+            }
+          },
+          "sort/grouped_fused/triton": {
+            "cuda_samples_us": [
+              207.87200331687927,
+              194.04800236225128,
+              204.79999482631683
+            ],
+            "wall_samples_us": [
+              214.0094875358045,
+              200.08849969599396,
+              209.95699742343277
+            ],
+            "round_medians_us": [
+              204.79999482631683
+            ],
+            "cuda_median_us": 204.79999482631683,
+            "cuda_p10_us": 196.1984008550644,
+            "cuda_p90_us": 207.25760161876678,
+            "wall_median_us": 209.95699742343277,
+            "correctness": {
+              "max_abs": 6.103515625e-05,
+              "relative_l2": 3.4207791941298638e-06,
+              "passed": true
+            }
+          }
+        },
+        "measurement_orders": [
+          [
+            "sort/grouped_fused/torch",
+            "sort/loop_torchact/torch",
+            "sort/grouped_unfused/torch",
+            "sort/grouped_unfused/triton",
+            "native_routed_loop",
+            "where/loop_torchact/torch",
+            "where/grouped_unfused/triton",
+            "where/loop_torchact/triton",
+            "sort/grouped_fused/triton",
+            "where/grouped_unfused/torch",
+            "sort/loop_torchact/triton",
+            "sort/loop_tritonact/triton",
+            "where/grouped_fused/triton",
+            "where/loop_tritonact/triton",
+            "where/grouped_fused/torch",
+            "where/loop_tritonact/torch",
+            "sort/loop_tritonact/torch"
+          ],
+          [
+            "sort/loop_torchact/torch",
+            "native_routed_loop",
+            "where/grouped_unfused/torch",
+            "where/loop_torchact/triton",
+            "where/loop_tritonact/torch",
+            "sort/grouped_unfused/triton",
+            "where/loop_tritonact/triton",
+            "sort/grouped_fused/torch",
+            "where/grouped_unfused/triton",
+            "sort/grouped_unfused/torch",
+            "sort/loop_torchact/triton",
+            "sort/grouped_fused/triton",
+            "sort/loop_tritonact/triton",
+            "where/grouped_fused/triton",
+            "sort/loop_tritonact/torch",
+            "where/grouped_fused/torch",
+            "where/loop_torchact/torch"
+          ],
+          [
+            "sort/grouped_unfused/triton",
+            "where/grouped_unfused/torch",
+            "sort/grouped_unfused/torch",
+            "sort/grouped_fused/torch",
+            "sort/loop_tritonact/triton",
+            "native_routed_loop",
+            "where/grouped_fused/triton",
+            "sort/loop_torchact/triton",
+            "where/loop_torchact/triton",
+            "where/grouped_unfused/triton",
+            "where/grouped_fused/torch",
+            "where/loop_tritonact/triton",
+            "where/loop_tritonact/torch",
+            "sort/loop_torchact/torch",
+            "sort/loop_tritonact/torch",
+            "where/loop_torchact/torch",
+            "sort/grouped_fused/triton"
+          ]
+        ]
+      },
+      "router_included": {
+        "methods": {
+          "native": {
+            "cuda_samples_us": [
+              1156.0959815979004,
+              1071.6160535812378,
+              998.3999729156494
+            ],
+            "wall_samples_us": [
+              1162.8909996943548,
+              1078.007509931922,
+              1013.4870099136606
+            ],
+            "round_medians_us": [
+              1071.6160535812378
+            ],
+            "cuda_median_us": 1071.6160535812378,
+            "cuda_p10_us": 1013.0431890487671,
+            "cuda_p90_us": 1139.1999959945679,
+            "wall_median_us": 1078.007509931922,
+            "correctness": {
+              "max_abs": 0.0,
+              "relative_l2": 0.0,
+              "passed": true
+            }
+          },
+          "optimized": {
+            "cuda_samples_us": [
+              288.7679934501648,
+              288.7679934501648,
+              271.36000990867615
+            ],
+            "wall_samples_us": [
+              302.0940057467669,
+              304.0924930246547,
+              276.61149215418845
+            ],
+            "round_medians_us": [
+              288.7679934501648
+            ],
+            "cuda_median_us": 288.7679934501648,
+            "cuda_p10_us": 274.8416066169739,
+            "cuda_p90_us": 288.7679934501648,
+            "wall_median_us": 302.0940057467669,
+            "correctness": {
+              "max_abs": 6.103515625e-05,
+              "relative_l2": 3.4207791941298638e-06,
+              "passed": true
+            }
+          }
+        },
+        "measurement_orders": [
+          [
+            "optimized",
+            "native"
+          ],
+          [
+            "optimized",
+            "native"
+          ],
+          [
+            "native",
+            "optimized"
+          ]
+        ]
+      }
+    }
+  ],
+  "source_sha256": {
+    "/home/ggbond/Desktop/MoE/experiments/p0_p3_20261107/ablate_moe.py": "f74016bc8490d80411157590416f885413d4bd116a24f3d7d0460bc5cf458e75",
+    "moe/kernels.py": "6c7e2ce5164b5d846e71bf74f24795bdfbb3c414ff261578473e730cf1a461f5",
+    "moe/reference.py": "95ecac57f713d1f3ddcb6a18a57c613967160423d03653e50721a0881c397473",
+    "moe/hf_olmoe.py": "338223e5bea45bf2c578d0cbe0a2ed07cce84ba1dc6d443426afacd84a4fc381"
+  },
+  "nvidia_smi_latest": "Sun Nov 15 22:21:02 2026       \n+---------------------------------------------------------------------------------------+\n| NVIDIA-SMI 535.288.01             Driver Version: 535.288.01   CUDA Version: 12.2     |\n|-----------------------------------------+----------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |\n|                                         |                      |               MIG M. |\n|=========================================+======================+======================|\n|   0  NVIDIA GeForce RTX 4060 ...    Off | 00000000:01:00.0 Off |                  N/A |\n| N/A   42C    P0              19W /  80W |    323MiB /  8188MiB |      1%      Default |\n|                                         |                      |                  N/A |\n+-----------------------------------------+----------------------+----------------------+\n                                                                                         \n+---------------------------------------------------------------------------------------+\n| Processes:                                                                            |\n|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |\n|        ID   ID                                                             Usage      |\n|=======================================================================================|\n|    0   N/A  N/A      2030      G   /usr/lib/xorg/Xorg                            4MiB |\n|    0   N/A  N/A      2294    C+G   ...libexec/gnome-remote-desktop-daemon      164MiB |\n|    0   N/A  N/A    103247      C   ...miniconda3/envs/nanovllm/bin/python      142MiB |\n+---------------------------------------------------------------------------------------+\n",
+  "complete": true
+}

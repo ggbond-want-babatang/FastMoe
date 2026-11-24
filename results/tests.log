@@ -1,0 +1,11 @@
+test_empty_and_invalid (__main__.CPUReferenceTests.test_empty_and_invalid) ... ok
+test_independent_dense_oracle (__main__.CPUReferenceTests.test_independent_dense_oracle) ... ok
+test_cuda_against_fp32_oracle (__main__.CUDATests.test_cuda_against_fp32_oracle) ... ok
+test_end_to_end_and_fusion_ablation (__main__.CUDATests.test_end_to_end_and_fusion_ablation) ... ok
+test_grouped_gemm_and_fused_epilogue (__main__.CUDATests.test_grouped_gemm_and_fused_epilogue) ... ok
+test_routed_moe (__main__.CUDATests.test_routed_moe) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 14.110s
+
+OK

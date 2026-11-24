@@ -1,0 +1,7 @@
+Capture range started in the application.
+Generating '/tmp/nsys-report-edf8.qdstrm'
+Capture range ended in the application.
+[1/1] [0%                          ] nsys.nsys-rep[1/1] [0%                          ] nsys.nsys-rep[1/1] [=15%                        ] nsys.nsys-rep[1/1] [=====30%                    ] nsys.nsys-rep[1/1] [===================80%      ] nsys.nsys-rep[1/1] [===================82%      ] nsys.nsys-rep[1/1] [========================100%] nsys.nsys-rep[1/1] [========================100%] nsys.nsys-rep
+NVTX capture completed
+Generated:
+    /home/ggbond/Desktop/MoE/experiments/p0_p3_20261107/results/p0/nsys.nsys-rep

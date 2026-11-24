@@ -1,0 +1,7 @@
+P3 bf16 B=1 S=1: MoE L2=0.000750 MoE 9.35x decoder 5.66x
+P3 bf16 B=1 S=8: MoE L2=0.000224 MoE 3.40x decoder 3.25x
+P3 bf16 B=1 S=32: MoE L2=0.000049 MoE 2.79x decoder 2.65x
+P3 bf16 B=1 S=128: MoE L2=0.000000 MoE 3.20x decoder 2.93x
+P3 bf16 B=1 S=512: MoE L2=0.000000 MoE 2.48x decoder 2.17x
+P3 bf16 B=2 S=16: MoE L2=0.000086 MoE 3.59x decoder 3.34x
+All genuine pretrained layer comparisons passed

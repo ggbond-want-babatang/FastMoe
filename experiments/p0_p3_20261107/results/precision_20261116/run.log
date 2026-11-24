@@ -1,0 +1,33 @@
+SYNTHETIC torch.float16
+REAL torch.float16 0 T 1 text 0
+REAL torch.float16 1 T 8 text 1
+REAL torch.float16 2 T 32 text 2
+REAL torch.float16 3 T 128 text 0
+REAL torch.float16 4 T 512 text 1
+REAL torch.float16 5 T 1 text 2
+REAL torch.float16 6 T 8 text 0
+REAL torch.float16 7 T 32 text 1
+REAL torch.float16 8 T 128 text 2
+REAL torch.float16 9 T 512 text 0
+REAL torch.float16 10 T 1 text 1
+REAL torch.float16 11 T 8 text 2
+REAL torch.float16 12 T 32 text 0
+REAL torch.float16 13 T 128 text 1
+REAL torch.float16 14 T 512 text 2
+SYNTHETIC torch.bfloat16
+REAL torch.bfloat16 0 T 1 text 0
+REAL torch.bfloat16 1 T 8 text 1
+REAL torch.bfloat16 2 T 32 text 2
+REAL torch.bfloat16 3 T 128 text 0
+REAL torch.bfloat16 4 T 512 text 1
+REAL torch.bfloat16 5 T 1 text 2
+REAL torch.bfloat16 6 T 8 text 0
+REAL torch.bfloat16 7 T 32 text 1
+REAL torch.bfloat16 8 T 128 text 2
+REAL torch.bfloat16 9 T 512 text 0
+REAL torch.bfloat16 10 T 1 text 1
+REAL torch.bfloat16 11 T 8 text 2
+REAL torch.bfloat16 12 T 32 text 0
+REAL torch.bfloat16 13 T 128 text 1
+REAL torch.bfloat16 14 T 512 text 2
+COMPLETE 1926 metrics 0 numerical failures 0 structural failures

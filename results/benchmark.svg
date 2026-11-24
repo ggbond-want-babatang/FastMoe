@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620">
+<rect width="100%" height="100%" fill="#fff"/>
+<g font-family="Arial, sans-serif" fill="#162238">
+<text x="100" y="30" font-size="22">MoE end-to-end latency (E=8, Top-K=2)</text>
+<text x="100" y="53" font-size="13">NVIDIA GeForce RTX 4060 Laptop GPU | H=256, F=512 | fp16</text>
+<path d="M 100 510.0 H 750" stroke="#dfe5ed"/>
+<text x="88" y="515.0" text-anchor="end" font-size="13">100</text>
+<path d="M 100 292.5 H 750" stroke="#dfe5ed"/>
+<text x="88" y="297.5" text-anchor="end" font-size="13">1000</text>
+<path d="M 100 75.0 H 750" stroke="#dfe5ed"/>
+<text x="88" y="80.0" text-anchor="end" font-size="13">10000</text>
+<path d="M 100.0 75 V 510" stroke="#eef1f5"/>
+<text x="100.0" y="535" text-anchor="middle" font-size="13">1</text>
+<path d="M 277.27272727272725 75 V 510" stroke="#eef1f5"/>
+<text x="277.27272727272725" y="535" text-anchor="middle" font-size="13">8</text>
+<path d="M 395.45454545454544 75 V 510" stroke="#eef1f5"/>
+<text x="395.45454545454544" y="535" text-anchor="middle" font-size="13">32</text>
+<path d="M 513.6363636363636 75 V 510" stroke="#eef1f5"/>
+<text x="513.6363636363636" y="535" text-anchor="middle" font-size="13">128</text>
+<path d="M 631.8181818181819 75 V 510" stroke="#eef1f5"/>
+<text x="631.8181818181819" y="535" text-anchor="middle" font-size="13">512</text>
+<path d="M 750.0 75 V 510" stroke="#eef1f5"/>
+<text x="750.0" y="535" text-anchor="middle" font-size="13">2048</text>
+<path d="M 100 75 V 510 H 750" stroke="#162238" fill="none"/>
+<text x="425" y="565" text-anchor="middle" font-size="16">Tokens (log scale)</text>
+<text transform="translate(25 300) rotate(-90)" text-anchor="middle" font-size="16">CUDA event latency, us (log scale)</text>
+<polyline points="100.00,319.56 277.27,301.76 395.45,292.21 513.64,295.77 631.82,295.67 750.00,294.64" fill="none" stroke="#597084" stroke-width="3"/>
+<path d="M 100.0 322.25033380203456 V 318.268853962192" stroke="#597084" stroke-width="2"/>
+<circle cx="100.0" cy="319.55669976537376" r="4" fill="#597084"/>
+<path d="M 277.27272727272725 301.92910290822516 V 299.6652129819014" stroke="#597084" stroke-width="2"/>
+<circle cx="277.27272727272725" cy="301.76402810015577" r="4" fill="#597084"/>
+<path d="M 395.45454545454544 296.1584787412338 V 287.9518956257283" stroke="#597084" stroke-width="2"/>
+<circle cx="395.45454545454544" cy="292.2052428089288" r="4" fill="#597084"/>
+<path d="M 513.6363636363636 297.9301459480504 V 288.20418621990336" stroke="#597084" stroke-width="2"/>
+<circle cx="513.6363636363636" cy="295.7700860849189" r="4" fill="#597084"/>
+<path d="M 631.8181818181819 297.75422107209636 V 287.5716576277614" stroke="#597084" stroke-width="2"/>
+<circle cx="631.8181818181819" cy="295.670005087916" r="4" fill="#597084"/>
+<path d="M 750.0 295.3375801653052 V 291.46388253291974" stroke="#597084" stroke-width="2"/>
+<circle cx="750.0" cy="294.63685190463934" r="4" fill="#597084"/>
+<path d="M 780 100 h 22" stroke="#597084" stroke-width="3"/>
+<text x="810" y="105" font-size="13">torch_loop</text>
+<polyline points="100.00,421.33 277.27,422.48 395.45,413.94 513.64,422.35 631.82,419.96 750.00,380.93" fill="none" stroke="#dd8931" stroke-width="3"/>
+<path d="M 100.0 424.28479640664335 V 419.75492519044644" stroke="#dd8931" stroke-width="2"/>
+<circle cx="100.0" cy="421.3338371208576" r="4" fill="#dd8931"/>
+<path d="M 277.27272727272725 428.2881779126384 V 419.04215866729567" stroke="#dd8931" stroke-width="2"/>
+<circle cx="277.27272727272725" cy="422.47972477196595" r="4" fill="#dd8931"/>
+<path d="M 395.45454545454544 416.80326844177915 V 411.15736746705863" stroke="#dd8931" stroke-width="2"/>
+<circle cx="395.45454545454544" cy="413.93814099126274" r="4" fill="#dd8931"/>
+<path d="M 513.6363636363636 427.5899641931493 V 419.2169571241196" stroke="#dd8931" stroke-width="2"/>
+<circle cx="513.6363636363636" cy="422.3481725817179" r="4" fill="#dd8931"/>
+<path d="M 631.8181818181819 422.1857824827764 V 418.332447543005" stroke="#dd8931" stroke-width="2"/>
+<circle cx="631.8181818181819" cy="419.95667297163664" r="4" fill="#dd8931"/>
+<path d="M 750.0 381.988842320541 V 379.72944016818894" stroke="#dd8931" stroke-width="2"/>
+<circle cx="750.0" cy="380.9345842472642" r="4" fill="#dd8931"/>
+<path d="M 780 132 h 22" stroke="#dd8931" stroke-width="3"/>
+<text x="810" y="137" font-size="13">triton_unfused</text>
+<polyline points="100.00,424.57 277.27,428.67 395.45,426.12 513.64,429.77 631.82,425.04 750.00,396.81" fill="none" stroke="#147d73" stroke-width="3"/>
+<path d="M 100.0 427.29397834896236 V 422.80820037102075" stroke="#147d73" stroke-width="2"/>
+<circle cx="100.0" cy="424.5731193379848" r="4" fill="#147d73"/>
+<path d="M 277.27272727272725 431.2160520416482 V 425.6354085719295" stroke="#147d73" stroke-width="2"/>
+<circle cx="277.27272727272725" cy="428.67415653764704" r="4" fill="#147d73"/>
+<path d="M 395.45454545454544 429.619369006661 V 423.04387608204445" stroke="#147d73" stroke-width="2"/>
+<circle cx="395.45454545454544" cy="426.11923262757614" r="4" fill="#147d73"/>
+<path d="M 513.6363636363636 430.99228479030637 V 426.758191642155" stroke="#147d73" stroke-width="2"/>
+<circle cx="513.6363636363636" cy="429.7709361714977" r="4" fill="#147d73"/>
+<path d="M 631.8181818181819 426.91944817467936 V 423.3219843060452" stroke="#147d73" stroke-width="2"/>
+<circle cx="631.8181818181819" cy="425.0433189320948" r="4" fill="#147d73"/>
+<path d="M 750.0 397.3555170604608 V 395.1548816029532" stroke="#147d73" stroke-width="2"/>
+<circle cx="750.0" cy="396.81344970089987" r="4" fill="#147d73"/>
+<path d="M 780 164 h 22" stroke="#147d73" stroke-width="3"/>
+<text x="810" y="169" font-size="13">triton_fused</text>
+<text x="100" y="603" font-size="12">Median with P10-P90 bars; eager execution, warmup and compilation excluded. Includes routing and dispatch.</text>
+</g></svg>

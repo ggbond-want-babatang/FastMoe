@@ -1,0 +1,2164 @@
+{
+  "arguments": {
+    "mode": "torch",
+    "tokens": [
+      1,
+      128,
+      2048
+    ],
+    "iterations": 5
+  },
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "torch": "2.5.1+cu121",
+  "shape": {
+    "hidden": 256,
+    "ffn": 512,
+    "experts": 8,
+    "top_k": 2
+  },
+  "interpretation": "Stage CUDA intervals include host-feed idle and instrumentation overhead; parent/child regions overlap. Bare timing is independent.",
+  "cases": [
+    {
+      "tokens": 1,
+      "implementation": "baseline",
+      "uninstrumented": {
+        "cuda_median_us": 773.1093565622965,
+        "cuda_p10_us": 688.7125651041666,
+        "cuda_p90_us": 811.6906801859537,
+        "wall_median_us": 786.5377701818943,
+        "peak_allocated_bytes": 15944704,
+        "incremental_peak_bytes": 10752,
+        "cuda_samples_us": [
+          773.1093565622965,
+          792.9279804229736,
+          745.8133697509766,
+          709.2906634012858,
+          685.0986480712891,
+          696.2773005167643,
+          686.1440340677897,
+          692.5653616587321,
+          865.290641784668,
+          747.1679846445719,
+          787.4560356140137,
+          784.0426762898763,
+          807.5946966807047,
+          814.4213358561198,
+          806.9012959798177
+        ],
+        "wall_samples_us": [
+          786.5377701818943,
+          801.422322789828,
+          752.7476797501246,
+          713.7713643411795,
+          693.1227010985216,
+          702.6703096926212,
+          690.0165850917498,
+          700.0523619353771,
+          869.5699895421664,
+          754.1435770690441,
+          795.5011290808519,
+          791.8910123407841,
+          816.637339691321,
+          819.6965791285038,
+          811.7451022068659
+        ]
+      },
+      "stages": {
+        "router/linear": {
+          "median_cuda_interval_us": 48.895999789237976,
+          "median_cpu_region_us": 53.64092066884041,
+          "samples_us": [
+            162.81600296497345,
+            48.895999789237976,
+            49.95200037956238,
+            46.01600021123886,
+            39.872001856565475
+          ]
+        },
+        "router/topk_softmax": {
+          "median_cuda_interval_us": 49.855999648571014,
+          "median_cpu_region_us": 55.70519715547562,
+          "samples_us": [
+            63.48799914121628,
+            49.855999648571014,
+            49.15200173854828,
+            60.416001826524734,
+            39.07199949026108
+          ]
+        },
+        "baseline/router": {
+          "median_cuda_interval_us": 138.2399946451187,
+          "median_cpu_region_us": 149.1396687924862,
+          "samples_us": [
+            294.8800027370453,
+            143.36000382900238,
+            134.14399325847626,
+            138.2399946451187,
+            113.3119985461235
+          ]
+        },
+        "baseline/expert_loop_and_combine": {
+          "median_cuda_interval_us": 736.5120053291321,
+          "median_cpu_region_us": 743.3840073645115,
+          "samples_us": [
+            736.5120053291321,
+            727.0399928092957,
+            707.584023475647,
+            772.0959782600403,
+            791.7760014533997
+          ]
+        },
+        "baseline/full": {
+          "median_cuda_interval_us": 990.2080297470093,
+          "median_cpu_region_us": 996.6581128537655,
+          "samples_us": [
+            1580.9279680252075,
+            954.3039798736572,
+            925.7919788360596,
+            990.2080297470093,
+            1003.5200119018555
+          ]
+        }
+      },
+      "stage_events": [
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 162.81600296497345,
+          "cpu_region_us": 177.23161727190018
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 63.48799914121628,
+          "cpu_region_us": 71.02405652403831
+        },
+        {
+          "stage": "baseline/router",
+          "cuda_interval_us": 294.8800027370453,
+          "cpu_region_us": 314.95001167058945
+        },
+        {
+          "stage": "baseline/expert_loop_and_combine",
+          "cuda_interval_us": 736.5120053291321,
+          "cpu_region_us": 743.3840073645115
+        },
+        {
+          "stage": "baseline/full",
+          "cuda_interval_us": 1580.9279680252075,
+          "cpu_region_us": 1602.8950922191143
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 48.895999789237976,
+          "cpu_region_us": 53.64092066884041
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 49.855999648571014,
+          "cpu_region_us": 55.052805691957474
+        },
+        {
+          "stage": "baseline/router",
+          "cuda_interval_us": 143.36000382900238,
+          "cpu_region_us": 158.5870049893856
+        },
+        {
+          "stage": "baseline/expert_loop_and_combine",
+          "cuda_interval_us": 727.0399928092957,
+          "cpu_region_us": 732.8842766582966
+        },
+        {
+          "stage": "baseline/full",
+          "cuda_interval_us": 954.3039798736572,
+          "cpu_region_us": 968.7249548733234
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 49.95200037956238,
+          "cpu_region_us": 55.46398460865021
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 49.15200173854828,
+          "cpu_region_us": 55.70519715547562
+        },
+        {
+          "stage": "baseline/router",
+          "cuda_interval_us": 134.14399325847626,
+          "cpu_region_us": 149.1396687924862
+        },
+        {
+          "stage": "baseline/expert_loop_and_combine",
+          "cuda_interval_us": 707.584023475647,
+          "cpu_region_us": 712.84594014287
+        },
+        {
+          "stage": "baseline/full",
+          "cuda_interval_us": 925.7919788360596,
+          "cpu_region_us": 933.0091997981071
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 46.01600021123886,
+          "cpu_region_us": 50.95498636364937
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 60.416001826524734,
+          "cpu_region_us": 65.57302549481392
+        },
+        {
+          "stage": "baseline/router",
+          "cuda_interval_us": 138.2399946451187,
+          "cpu_region_us": 146.504957228899
+        },
+        {
+          "stage": "baseline/expert_loop_and_combine",
+          "cuda_interval_us": 772.0959782600403,
+          "cpu_region_us": 777.9281586408615
+        },
+        {
+          "stage": "baseline/full",
+          "cuda_interval_us": 990.2080297470093,
+          "cpu_region_us": 996.6581128537655
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 39.872001856565475,
+          "cpu_region_us": 45.47508433461189
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 39.07199949026108,
+          "cpu_region_us": 44.8739156126976
+        },
+        {
+          "stage": "baseline/router",
+          "cuda_interval_us": 113.3119985461235,
+          "cpu_region_us": 125.30479580163956
+        },
+        {
+          "stage": "baseline/expert_loop_and_combine",
+          "cuda_interval_us": 791.7760014533997,
+          "cpu_region_us": 797.8747598826885
+        },
+        {
+          "stage": "baseline/full",
+          "cuda_interval_us": 1003.5200119018555,
+          "cpu_region_us": 1013.3287869393826
+        }
+      ],
+      "trace": "results/p0/T1-baseline.trace.json"
+    },
+    {
+      "tokens": 1,
+      "implementation": "triton",
+      "uninstrumented": {
+        "cuda_median_us": 378.90132268269855,
+        "cuda_p10_us": 372.82774448394775,
+        "cuda_p90_us": 400.6741444269816,
+        "wall_median_us": 391.6740727921327,
+        "peak_allocated_bytes": 15940608,
+        "incremental_peak_bytes": 6656,
+        "cuda_samples_us": [
+          377.00267632802326,
+          385.25867462158203,
+          399.46667353312176,
+          400.9600083033244,
+          362.93331782023114,
+          371.16801738739014,
+          377.30133533477783,
+          378.90132268269855,
+          375.86132685343426,
+          376.41600767771405,
+          389.354666074117,
+          400.24534861246747,
+          421.7493136723836,
+          387.7760171890259,
+          375.3173351287842
+        ],
+        "wall_samples_us": [
+          391.6740727921327,
+          395.99525431791943,
+          409.4108007848263,
+          406.1809740960598,
+          373.7270211180051,
+          377.01986730098724,
+          383.63225758075714,
+          385.20572707057,
+          381.8189725279808,
+          382.6972097158432,
+          400.48733353614807,
+          410.85341945290565,
+          433.9132768412431,
+          393.0836295088132,
+          380.3929624458154
+        ]
+      },
+      "stages": {
+        "router/linear": {
+          "median_cuda_interval_us": 61.08799949288368,
+          "median_cpu_region_us": 76.49417966604233,
+          "samples_us": [
+            97.47199714183807,
+            54.496001452207565,
+            52.032001316547394,
+            69.43999975919724,
+            61.08799949288368
+          ]
+        },
+        "router/topk_softmax": {
+          "median_cuda_interval_us": 54.687999188899994,
+          "median_cpu_region_us": 62.74832412600517,
+          "samples_us": [
+            59.647999703884125,
+            53.599998354911804,
+            54.687999188899994,
+            60.70400029420853,
+            50.36799982190132
+          ]
+        },
+        "triton/router": {
+          "median_cuda_interval_us": 160.8320027589798,
+          "median_cpu_region_us": 167.10255295038223,
+          "samples_us": [
+            203.19999754428864,
+            147.74399995803833,
+            144.25599575042725,
+            169.3439930677414,
+            160.8320027589798
+          ]
+        },
+        "dispatch/sort": {
+          "median_cuda_interval_us": 82.07999914884567,
+          "median_cpu_region_us": 90.02909064292908,
+          "samples_us": [
+            82.07999914884567,
+            85.9839990735054,
+            91.16800129413605,
+            75.55200159549713,
+            76.67200267314911
+          ]
+        },
+        "dispatch/counts_offsets": {
+          "median_cuda_interval_us": 100.12800246477127,
+          "median_cpu_region_us": 108.37288573384285,
+          "samples_us": [
+            103.13600301742554,
+            100.12800246477127,
+            100.60799866914749,
+            89.66399729251862,
+            96.96000069379807
+          ]
+        },
+        "dispatch/gather": {
+          "median_cuda_interval_us": 60.70400029420853,
+          "median_cpu_region_us": 68.58771666884422,
+          "samples_us": [
+            83.55200290679932,
+            60.70400029420853,
+            50.04800111055374,
+            51.29599943757057,
+            62.144000083208084
+          ]
+        },
+        "dispatch/inverse": {
+          "median_cuda_interval_us": 45.43999955058098,
+          "median_cpu_region_us": 52.57828161120415,
+          "samples_us": [
+            66.49599969387054,
+            44.60800066590309,
+            45.43999955058098,
+            44.064000248909,
+            71.19999825954437
+          ]
+        },
+        "triton/dispatch": {
+          "median_cuda_interval_us": 358.14398527145386,
+          "median_cpu_region_us": 365.30476063489914,
+          "samples_us": [
+            404.2240083217621,
+            358.14398527145386,
+            354.68798875808716,
+            327.0080089569092,
+            377.85598635673523
+          ]
+        },
+        "triton/gate_up_swiglu": {
+          "median_cuda_interval_us": 67.55200028419495,
+          "median_cpu_region_us": 74.44992661476135,
+          "samples_us": [
+            74.36800003051758,
+            80.57600259780884,
+            67.55200028419495,
+            66.91200286149979,
+            66.6240006685257
+          ]
+        },
+        "triton/down": {
+          "median_cuda_interval_us": 57.792000472545624,
+          "median_cpu_region_us": 64.5006075501442,
+          "samples_us": [
+            52.928000688552856,
+            60.736000537872314,
+            64.31999802589417,
+            57.792000472545624,
+            56.15999922156334
+          ]
+        },
+        "triton/combine": {
+          "median_cuda_interval_us": 43.64800080657005,
+          "median_cpu_region_us": 51.40574648976326,
+          "samples_us": [
+            39.68000039458275,
+            40.76800122857094,
+            51.263999193906784,
+            44.76799815893173,
+            43.64800080657005
+          ]
+        },
+        "triton/full": {
+          "median_cuda_interval_us": 763.9039754867554,
+          "median_cpu_region_us": 770.9250785410404,
+          "samples_us": [
+            894.815981388092,
+            763.9039754867554,
+            756.0960054397583,
+            749.567985534668,
+            778.0159711837769
+          ]
+        }
+      },
+      "stage_events": [
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 97.47199714183807,
+          "cpu_region_us": 104.42594066262245
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 59.647999703884125,
+          "cpu_region_us": 68.13695654273033
+        },
+        {
+          "stage": "triton/router",
+          "cuda_interval_us": 203.19999754428864,
+          "cpu_region_us": 219.01074796915054
+        },
+        {
+          "stage": "dispatch/sort",
+          "cuda_interval_us": 82.07999914884567,
+          "cpu_region_us": 90.02909064292908
+        },
+        {
+          "stage": "dispatch/counts_offsets",
+          "cuda_interval_us": 103.13600301742554,
+          "cpu_region_us": 110.96801608800888
+        },
+        {
+          "stage": "dispatch/gather",
+          "cuda_interval_us": 83.55200290679932,
+          "cpu_region_us": 91.22071787714958
+        },
+        {
+          "stage": "dispatch/inverse",
+          "cuda_interval_us": 66.49599969387054,
+          "cpu_region_us": 73.37704300880432
+        },
+        {
+          "stage": "triton/dispatch",
+          "cuda_interval_us": 404.2240083217621,
+          "cpu_region_us": 411.79172694683075
+        },
+        {
+          "stage": "triton/gate_up_swiglu",
+          "cuda_interval_us": 74.36800003051758,
+          "cpu_region_us": 82.05417543649673
+        },
+        {
+          "stage": "triton/down",
+          "cuda_interval_us": 52.928000688552856,
+          "cpu_region_us": 61.25401705503464
+        },
+        {
+          "stage": "triton/combine",
+          "cuda_interval_us": 39.68000039458275,
+          "cpu_region_us": 46.98801785707474
+        },
+        {
+          "stage": "triton/full",
+          "cuda_interval_us": 894.815981388092,
+          "cpu_region_us": 919.6940809488297
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 54.496001452207565,
+          "cpu_region_us": 61.995815485715866
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 53.599998354911804,
+          "cpu_region_us": 61.68615072965622
+        },
+        {
+          "stage": "triton/router",
+          "cuda_interval_us": 147.74399995803833,
+          "cpu_region_us": 155.50199896097183
+        },
+        {
+          "stage": "dispatch/sort",
+          "cuda_interval_us": 85.9839990735054,
+          "cpu_region_us": 93.80606934428215
+        },
+        {
+          "stage": "dispatch/counts_offsets",
+          "cuda_interval_us": 100.12800246477127,
+          "cpu_region_us": 108.34261775016785
+        },
+        {
+          "stage": "dispatch/gather",
+          "cuda_interval_us": 60.70400029420853,
+          "cpu_region_us": 68.58771666884422
+        },
+        {
+          "stage": "dispatch/inverse",
+          "cuda_interval_us": 44.60800066590309,
+          "cpu_region_us": 51.29585042595863
+        },
+        {
+          "stage": "triton/dispatch",
+          "cuda_interval_us": 358.14398527145386,
+          "cpu_region_us": 365.30476063489914
+        },
+        {
+          "stage": "triton/gate_up_swiglu",
+          "cuda_interval_us": 80.57600259780884,
+          "cpu_region_us": 86.75316348671913
+        },
+        {
+          "stage": "triton/down",
+          "cuda_interval_us": 60.736000537872314,
+          "cpu_region_us": 67.75744259357452
+        },
+        {
+          "stage": "triton/combine",
+          "cuda_interval_us": 40.76800122857094,
+          "cpu_region_us": 48.30118268728256
+        },
+        {
+          "stage": "triton/full",
+          "cuda_interval_us": 763.9039754867554,
+          "cpu_region_us": 770.9250785410404
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 52.032001316547394,
+          "cpu_region_us": 58.809760957956314
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 54.687999188899994,
+          "cpu_region_us": 62.74832412600517
+        },
+        {
+          "stage": "triton/router",
+          "cuda_interval_us": 144.25599575042725,
+          "cpu_region_us": 150.95295384526253
+        },
+        {
+          "stage": "dispatch/sort",
+          "cuda_interval_us": 91.16800129413605,
+          "cpu_region_us": 100.04779323935509
+        },
+        {
+          "stage": "dispatch/counts_offsets",
+          "cuda_interval_us": 100.60799866914749,
+          "cpu_region_us": 108.37288573384285
+        },
+        {
+          "stage": "dispatch/gather",
+          "cuda_interval_us": 50.04800111055374,
+          "cpu_region_us": 57.93897435069084
+        },
+        {
+          "stage": "dispatch/inverse",
+          "cuda_interval_us": 45.43999955058098,
+          "cpu_region_us": 52.57828161120415
+        },
+        {
+          "stage": "triton/dispatch",
+          "cuda_interval_us": 354.68798875808716,
+          "cpu_region_us": 361.5780733525753
+        },
+        {
+          "stage": "triton/gate_up_swiglu",
+          "cuda_interval_us": 67.55200028419495,
+          "cpu_region_us": 74.44992661476135
+        },
+        {
+          "stage": "triton/down",
+          "cuda_interval_us": 64.31999802589417,
+          "cpu_region_us": 71.745365858078
+        },
+        {
+          "stage": "triton/combine",
+          "cuda_interval_us": 51.263999193906784,
+          "cpu_region_us": 57.7978789806366
+        },
+        {
+          "stage": "triton/full",
+          "cuda_interval_us": 756.0960054397583,
+          "cpu_region_us": 763.9210671186447
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 69.43999975919724,
+          "cpu_region_us": 76.49417966604233
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 60.70400029420853,
+          "cpu_region_us": 68.56909021735191
+        },
+        {
+          "stage": "triton/router",
+          "cuda_interval_us": 169.3439930677414,
+          "cpu_region_us": 176.1801540851593
+        },
+        {
+          "stage": "dispatch/sort",
+          "cuda_interval_us": 75.55200159549713,
+          "cpu_region_us": 82.64509961009026
+        },
+        {
+          "stage": "dispatch/counts_offsets",
+          "cuda_interval_us": 89.66399729251862,
+          "cpu_region_us": 97.91320189833641
+        },
+        {
+          "stage": "dispatch/gather",
+          "cuda_interval_us": 51.29599943757057,
+          "cpu_region_us": 59.08031016588211
+        },
+        {
+          "stage": "dispatch/inverse",
+          "cuda_interval_us": 44.064000248909,
+          "cpu_region_us": 51.09608173370361
+        },
+        {
+          "stage": "triton/dispatch",
+          "cuda_interval_us": 327.0080089569092,
+          "cpu_region_us": 333.97600054740906
+        },
+        {
+          "stage": "triton/gate_up_swiglu",
+          "cuda_interval_us": 66.91200286149979,
+          "cpu_region_us": 74.28973913192749
+        },
+        {
+          "stage": "triton/down",
+          "cuda_interval_us": 57.792000472545624,
+          "cpu_region_us": 64.5006075501442
+        },
+        {
+          "stage": "triton/combine",
+          "cuda_interval_us": 44.76799815893173,
+          "cpu_region_us": 51.40574648976326
+        },
+        {
+          "stage": "triton/full",
+          "cuda_interval_us": 749.567985534668,
+          "cpu_region_us": 769.0321654081345
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 61.08799949288368,
+          "cpu_region_us": 80.55102080106735
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 50.36799982190132,
+          "cpu_region_us": 56.895893067121506
+        },
+        {
+          "stage": "triton/router",
+          "cuda_interval_us": 160.8320027589798,
+          "cpu_region_us": 167.10255295038223
+        },
+        {
+          "stage": "dispatch/sort",
+          "cuda_interval_us": 76.67200267314911,
+          "cpu_region_us": 84.1580331325531
+        },
+        {
+          "stage": "dispatch/counts_offsets",
+          "cuda_interval_us": 96.96000069379807,
+          "cpu_region_us": 108.88418182730675
+        },
+        {
+          "stage": "dispatch/gather",
+          "cuda_interval_us": 62.144000083208084,
+          "cpu_region_us": 70.39215415716171
+        },
+        {
+          "stage": "dispatch/inverse",
+          "cuda_interval_us": 71.19999825954437,
+          "cpu_region_us": 78.49698886275291
+        },
+        {
+          "stage": "triton/dispatch",
+          "cuda_interval_us": 377.85598635673523,
+          "cpu_region_us": 384.2003643512726
+        },
+        {
+          "stage": "triton/gate_up_swiglu",
+          "cuda_interval_us": 66.6240006685257,
+          "cpu_region_us": 73.99870082736015
+        },
+        {
+          "stage": "triton/down",
+          "cuda_interval_us": 56.15999922156334,
+          "cpu_region_us": 63.81981074810028
+        },
+        {
+          "stage": "triton/combine",
+          "cuda_interval_us": 43.64800080657005,
+          "cpu_region_us": 51.466748118400574
+        },
+        {
+          "stage": "triton/full",
+          "cuda_interval_us": 778.0159711837769,
+          "cpu_region_us": 785.4821160435677
+        }
+      ],
+      "trace": "results/p0/T1-triton.trace.json"
+    },
+    {
+      "tokens": 128,
+      "implementation": "baseline",
+      "uninstrumented": {
+        "cuda_median_us": 1570.1227188110352,
+        "cuda_p10_us": 1480.9407869974773,
+        "cuda_p90_us": 1624.5546340942383,
+        "wall_median_us": 1578.488697608312,
+        "peak_allocated_bytes": 16464384,
+        "incremental_peak_bytes": 530432,
+        "cuda_samples_us": [
+          1570.1227188110352,
+          1533.9627265930176,
+          1598.464012145996,
+          1582.9013188680012,
+          1479.306697845459,
+          1561.3226890563965,
+          1628.885269165039,
+          1557.6319694519043,
+          1597.0239639282227,
+          1636.906623840332,
+          1562.5279744466145,
+          1424.9812761942546,
+          1483.3919207255046,
+          1573.2053120930989,
+          1618.058681488037
+        ],
+        "wall_samples_us": [
+          1586.4136318365734,
+          1544.4112941622734,
+          1608.4550879895687,
+          1591.943980505069,
+          1489.0814200043678,
+          1568.5133015116055,
+          1637.2357495129108,
+          1562.9262973864872,
+          1602.4503856897354,
+          1646.9303518533707,
+          1571.2354021767776,
+          1429.8098782698314,
+          1490.6106516718864,
+          1578.488697608312,
+          1630.2955336868763
+        ]
+      },
+      "stages": {
+        "router/linear": {
+          "median_cuda_interval_us": 73.40800017118454,
+          "median_cpu_region_us": 79.23785597085953,
+          "samples_us": [
+            120.57600170373917,
+            69.76000219583511,
+            91.07200056314468,
+            49.72799867391586,
+            73.40800017118454
+          ]
+        },
+        "router/topk_softmax": {
+          "median_cuda_interval_us": 62.84800171852112,
+          "median_cpu_region_us": 79.38919588923454,
+          "samples_us": [
+            70.65600156784058,
+            75.87199658155441,
+            62.3680017888546,
+            62.84800171852112,
+            62.17600032687187
+          ]
+        },
+        "baseline/router": {
+          "median_cuda_interval_us": 194.62400674819946,
+          "median_cpu_region_us": 202.79968157410622,
+          "samples_us": [
+            241.88800156116486,
+            198.30399751663208,
+            194.62400674819946,
+            165.66400229930878,
+            168.99199783802032
+          ]
+        },
+        "baseline/expert_loop_and_combine": {
+          "median_cuda_interval_us": 1487.936019897461,
+          "median_cpu_region_us": 1496.5352602303028,
+          "samples_us": [
+            1620.4479932785034,
+            1407.4879884719849,
+            1487.936019897461,
+            1448.896050453186,
+            1526.5920162200928
+          ]
+        },
+        "baseline/full": {
+          "median_cuda_interval_us": 1769.8240280151367,
+          "median_cpu_region_us": 1789.9749800562859,
+          "samples_us": [
+            1991.9999837875366,
+            1713.3760452270508,
+            1769.8240280151367,
+            1692.6720142364502,
+            1792.03200340271
+          ]
+        }
+      },
+      "stage_events": [
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 120.57600170373917,
+          "cpu_region_us": 130.23428618907928
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 70.65600156784058,
+          "cpu_region_us": 79.38919588923454
+        },
+        {
+          "stage": "baseline/router",
+          "cuda_interval_us": 241.88800156116486,
+          "cpu_region_us": 259.30674746632576
+        },
+        {
+          "stage": "baseline/expert_loop_and_combine",
+          "cuda_interval_us": 1620.4479932785034,
+          "cpu_region_us": 1630.2759759128094
+        },
+        {
+          "stage": "baseline/full",
+          "cuda_interval_us": 1991.9999837875366,
+          "cpu_region_us": 2018.2733424007893
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 69.76000219583511,
+          "cpu_region_us": 79.23785597085953
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 75.87199658155441,
+          "cpu_region_us": 94.1460020840168
+        },
+        {
+          "stage": "baseline/router",
+          "cuda_interval_us": 198.30399751663208,
+          "cpu_region_us": 213.5997638106346
+        },
+        {
+          "stage": "baseline/expert_loop_and_combine",
+          "cuda_interval_us": 1407.4879884719849,
+          "cpu_region_us": 1418.708823621273
+        },
+        {
+          "stage": "baseline/full",
+          "cuda_interval_us": 1713.3760452270508,
+          "cpu_region_us": 1733.219251036644
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 91.07200056314468,
+          "cpu_region_us": 99.2659479379654
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 62.3680017888546,
+          "cpu_region_us": 69.92137059569359
+        },
+        {
+          "stage": "baseline/router",
+          "cuda_interval_us": 194.62400674819946,
+          "cpu_region_us": 202.79968157410622
+        },
+        {
+          "stage": "baseline/expert_loop_and_combine",
+          "cuda_interval_us": 1487.936019897461,
+          "cpu_region_us": 1496.5352602303028
+        },
+        {
+          "stage": "baseline/full",
+          "cuda_interval_us": 1769.8240280151367,
+          "cpu_region_us": 1789.9749800562859
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 49.72799867391586,
+          "cpu_region_us": 56.395772844552994
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 62.84800171852112,
+          "cpu_region_us": 73.25690239667892
+        },
+        {
+          "stage": "baseline/router",
+          "cuda_interval_us": 165.66400229930878,
+          "cpu_region_us": 173.63578081130981
+        },
+        {
+          "stage": "baseline/expert_loop_and_combine",
+          "cuda_interval_us": 1448.896050453186,
+          "cpu_region_us": 1457.3917724192142
+        },
+        {
+          "stage": "baseline/full",
+          "cuda_interval_us": 1692.6720142364502,
+          "cpu_region_us": 1701.4597542583942
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 73.40800017118454,
+          "cpu_region_us": 62.83679977059364
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 62.17600032687187,
+          "cpu_region_us": 80.92215284705162
+        },
+        {
+          "stage": "baseline/router",
+          "cuda_interval_us": 168.99199783802032,
+          "cpu_region_us": 183.07333812117577
+        },
+        {
+          "stage": "baseline/expert_loop_and_combine",
+          "cuda_interval_us": 1526.5920162200928,
+          "cpu_region_us": 1534.7166918218136
+        },
+        {
+          "stage": "baseline/full",
+          "cuda_interval_us": 1792.03200340271,
+          "cpu_region_us": 1799.603458493948
+        }
+      ],
+      "trace": "results/p0/T128-baseline.trace.json"
+    },
+    {
+      "tokens": 128,
+      "implementation": "triton",
+      "uninstrumented": {
+        "cuda_median_us": 330.74132601420087,
+        "cuda_p10_us": 321.29067182540894,
+        "cuda_p90_us": 369.6832021077474,
+        "wall_median_us": 339.0953255196412,
+        "peak_allocated_bytes": 16529408,
+        "incremental_peak_bytes": 595456,
+        "cuda_samples_us": [
+          330.60266574223834,
+          334.6453507741292,
+          336.88533306121826,
+          330.74132601420087,
+          321.1413423220317,
+          327.5093237559001,
+          326.60265763600665,
+          334.4213167826335,
+          373.55732917785645,
+          363.8720115025838,
+          325.00267028808594,
+          321.51466608047485,
+          316.74667199452716,
+          354.4960021972656,
+          403.4666617711385
+        ],
+        "wall_samples_us": [
+          342.0809904734294,
+          339.2423192660014,
+          341.54703219731647,
+          338.24068183700246,
+          325.9810619056225,
+          332.4599626163642,
+          331.75495142738026,
+          339.0953255196412,
+          383.49224875370663,
+          369.35896302262944,
+          329.2970359325409,
+          326.2649600704511,
+          323.49955290555954,
+          364.11235729853314,
+          409.22360494732857
+        ]
+      },
+      "stages": {
+        "router/linear": {
+          "median_cuda_interval_us": 78.52800190448761,
+          "median_cpu_region_us": 85.87073534727097,
+          "samples_us": [
+            104.032002389431,
+            78.52800190448761,
+            60.54399907588959,
+            84.60800349712372,
+            77.05599814653397
+          ]
+        },
+        "router/topk_softmax": {
+          "median_cuda_interval_us": 65.92000275850296,
+          "median_cpu_region_us": 72.88716733455658,
+          "samples_us": [
+            78.33600044250488,
+            51.16799846291542,
+            62.111999839544296,
+            65.92000275850296,
+            69.60000097751617
+          ]
+        },
+        "triton/router": {
+          "median_cuda_interval_us": 192.03199446201324,
+          "median_cpu_region_us": 198.60221073031425,
+          "samples_us": [
+            258.04799795150757,
+            167.1680063009262,
+            160.70400178432465,
+            198.94400238990784,
+            192.03199446201324
+          ]
+        },
+        "dispatch/sort": {
+          "median_cuda_interval_us": 84.3840017914772,
+          "median_cpu_region_us": 93.47591549158096,
+          "samples_us": [
+            105.8880016207695,
+            76.12799853086472,
+            84.3840017914772,
+            78.62400263547897,
+            84.54400300979614
+          ]
+        },
+        "dispatch/counts_offsets": {
+          "median_cuda_interval_us": 104.00000214576721,
+          "median_cpu_region_us": 110.84787547588348,
+          "samples_us": [
+            104.22399640083313,
+            105.69600015878677,
+            104.00000214576721,
+            101.82400047779083,
+            99.39199686050415
+          ]
+        },
+        "dispatch/gather": {
+          "median_cuda_interval_us": 67.96800345182419,
+          "median_cpu_region_us": 74.820127338171,
+          "samples_us": [
+            83.55200290679932,
+            62.55999952554703,
+            74.97599720954895,
+            58.27200040221214,
+            67.96800345182419
+          ]
+        },
+        "dispatch/inverse": {
+          "median_cuda_interval_us": 55.456001311540604,
+          "median_cpu_region_us": 62.80699744820595,
+          "samples_us": [
+            51.19999870657921,
+            55.456001311540604,
+            51.4880008995533,
+            56.15999922156334,
+            61.85600161552429
+          ]
+        },
+        "triton/dispatch": {
+          "median_cuda_interval_us": 386.46399974823,
+          "median_cpu_region_us": 392.6060162484646,
+          "samples_us": [
+            428.99200320243835,
+            371.071994304657,
+            387.00801134109497,
+            376.0960102081299,
+            386.46399974823
+          ]
+        },
+        "triton/gate_up_swiglu": {
+          "median_cuda_interval_us": 65.05600363016129,
+          "median_cpu_region_us": 72.43640720844269,
+          "samples_us": [
+            71.68000191450119,
+            72.35199958086014,
+            64.2239972949028,
+            65.05600363016129,
+            64.64000046253204
+          ]
+        },
+        "triton/down": {
+          "median_cuda_interval_us": 57.631999254226685,
+          "median_cpu_region_us": 64.52994421124458,
+          "samples_us": [
+            57.631999254226685,
+            67.80800223350525,
+            68.15999746322632,
+            55.07199838757515,
+            56.28800019621849
+          ]
+        },
+        "triton/combine": {
+          "median_cuda_interval_us": 54.43200096487999,
+          "median_cpu_region_us": 61.625149101018906,
+          "samples_us": [
+            54.43200096487999,
+            43.99999976158142,
+            38.047999143600464,
+            54.52800169587135,
+            54.655998945236206
+          ]
+        },
+        "triton/full": {
+          "median_cuda_interval_us": 830.4319977760315,
+          "median_cpu_region_us": 849.5920337736607,
+          "samples_us": [
+            994.6560263633728,
+            803.2640218734741,
+            791.1999821662903,
+            839.0079736709595,
+            830.4319977760315
+          ]
+        }
+      },
+      "stage_events": [
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 104.032002389431,
+          "cpu_region_us": 122.90012091398239
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 78.33600044250488,
+          "cpu_region_us": 96.841249614954
+        },
+        {
+          "stage": "triton/router",
+          "cuda_interval_us": 258.04799795150757,
+          "cpu_region_us": 272.7010287344456
+        },
+        {
+          "stage": "dispatch/sort",
+          "cuda_interval_us": 105.8880016207695,
+          "cpu_region_us": 120.40510773658752
+        },
+        {
+          "stage": "dispatch/counts_offsets",
+          "cuda_interval_us": 104.22399640083313,
+          "cpu_region_us": 111.74986138939857
+        },
+        {
+          "stage": "dispatch/gather",
+          "cuda_interval_us": 83.55200290679932,
+          "cpu_region_us": 91.06099605560303
+        },
+        {
+          "stage": "dispatch/inverse",
+          "cuda_interval_us": 51.19999870657921,
+          "cpu_region_us": 58.05911496281624
+        },
+        {
+          "stage": "triton/dispatch",
+          "cuda_interval_us": 428.99200320243835,
+          "cpu_region_us": 435.62566861510277
+        },
+        {
+          "stage": "triton/gate_up_swiglu",
+          "cuda_interval_us": 71.68000191450119,
+          "cpu_region_us": 77.785924077034
+        },
+        {
+          "stage": "triton/down",
+          "cuda_interval_us": 57.631999254226685,
+          "cpu_region_us": 64.52994421124458
+        },
+        {
+          "stage": "triton/combine",
+          "cuda_interval_us": 54.43200096487999,
+          "cpu_region_us": 62.0158389210701
+        },
+        {
+          "stage": "triton/full",
+          "cuda_interval_us": 994.6560263633728,
+          "cpu_region_us": 1018.9809836447239
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 78.52800190448761,
+          "cpu_region_us": 85.87073534727097
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 51.16799846291542,
+          "cpu_region_us": 57.80905485153198
+        },
+        {
+          "stage": "triton/router",
+          "cuda_interval_us": 167.1680063009262,
+          "cpu_region_us": 181.82024359703064
+        },
+        {
+          "stage": "dispatch/sort",
+          "cuda_interval_us": 76.12799853086472,
+          "cpu_region_us": 87.47400715947151
+        },
+        {
+          "stage": "dispatch/counts_offsets",
+          "cuda_interval_us": 105.69600015878677,
+          "cpu_region_us": 113.713089376688
+        },
+        {
+          "stage": "dispatch/gather",
+          "cuda_interval_us": 62.55999952554703,
+          "cpu_region_us": 69.32998076081276
+        },
+        {
+          "stage": "dispatch/inverse",
+          "cuda_interval_us": 55.456001311540604,
+          "cpu_region_us": 62.80699744820595
+        },
+        {
+          "stage": "triton/dispatch",
+          "cuda_interval_us": 371.071994304657,
+          "cpu_region_us": 377.8580576181412
+        },
+        {
+          "stage": "triton/gate_up_swiglu",
+          "cuda_interval_us": 72.35199958086014,
+          "cpu_region_us": 78.44669744372368
+        },
+        {
+          "stage": "triton/down",
+          "cuda_interval_us": 67.80800223350525,
+          "cpu_region_us": 75.39195939898491
+        },
+        {
+          "stage": "triton/combine",
+          "cuda_interval_us": 43.99999976158142,
+          "cpu_region_us": 51.31680518388748
+        },
+        {
+          "stage": "triton/full",
+          "cuda_interval_us": 803.2640218734741,
+          "cpu_region_us": 819.3859830498695
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 60.54399907588959,
+          "cpu_region_us": 67.75697693228722
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 62.111999839544296,
+          "cpu_region_us": 70.70181891322136
+        },
+        {
+          "stage": "triton/router",
+          "cuda_interval_us": 160.70400178432465,
+          "cpu_region_us": 167.85413026809692
+        },
+        {
+          "stage": "dispatch/sort",
+          "cuda_interval_us": 84.3840017914772,
+          "cpu_region_us": 100.97911581397057
+        },
+        {
+          "stage": "dispatch/counts_offsets",
+          "cuda_interval_us": 104.00000214576721,
+          "cpu_region_us": 110.84787547588348
+        },
+        {
+          "stage": "dispatch/gather",
+          "cuda_interval_us": 74.97599720954895,
+          "cpu_region_us": 81.96290582418442
+        },
+        {
+          "stage": "dispatch/inverse",
+          "cuda_interval_us": 51.4880008995533,
+          "cpu_region_us": 58.27890709042549
+        },
+        {
+          "stage": "triton/dispatch",
+          "cuda_interval_us": 387.00801134109497,
+          "cpu_region_us": 394.2190669476986
+        },
+        {
+          "stage": "triton/gate_up_swiglu",
+          "cuda_interval_us": 64.2239972949028,
+          "cpu_region_us": 70.64221426844597
+        },
+        {
+          "stage": "triton/down",
+          "cuda_interval_us": 68.15999746322632,
+          "cpu_region_us": 75.05062967538834
+        },
+        {
+          "stage": "triton/combine",
+          "cuda_interval_us": 38.047999143600464,
+          "cpu_region_us": 44.85389217734337
+        },
+        {
+          "stage": "triton/full",
+          "cuda_interval_us": 791.1999821662903,
+          "cpu_region_us": 807.9838007688522
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 84.60800349712372,
+          "cpu_region_us": 91.82235226035118
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 65.92000275850296,
+          "cpu_region_us": 72.88716733455658
+        },
+        {
+          "stage": "triton/router",
+          "cuda_interval_us": 198.94400238990784,
+          "cpu_region_us": 214.33178335428238
+        },
+        {
+          "stage": "dispatch/sort",
+          "cuda_interval_us": 78.62400263547897,
+          "cpu_region_us": 93.47591549158096
+        },
+        {
+          "stage": "dispatch/counts_offsets",
+          "cuda_interval_us": 101.82400047779083,
+          "cpu_region_us": 108.79384353756905
+        },
+        {
+          "stage": "dispatch/gather",
+          "cuda_interval_us": 58.27200040221214,
+          "cpu_region_us": 65.69270044565201
+        },
+        {
+          "stage": "dispatch/inverse",
+          "cuda_interval_us": 56.15999922156334,
+          "cpu_region_us": 63.25775757431984
+        },
+        {
+          "stage": "triton/dispatch",
+          "cuda_interval_us": 376.0960102081299,
+          "cpu_region_us": 383.6187534034252
+        },
+        {
+          "stage": "triton/gate_up_swiglu",
+          "cuda_interval_us": 65.05600363016129,
+          "cpu_region_us": 72.43640720844269
+        },
+        {
+          "stage": "triton/down",
+          "cuda_interval_us": 55.07199838757515,
+          "cpu_region_us": 62.65658885240555
+        },
+        {
+          "stage": "triton/combine",
+          "cuda_interval_us": 54.52800169587135,
+          "cpu_region_us": 61.625149101018906
+        },
+        {
+          "stage": "triton/full",
+          "cuda_interval_us": 839.0079736709595,
+          "cpu_region_us": 857.1171201765537
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 77.05599814653397,
+          "cpu_region_us": 83.59691128134727
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 69.60000097751617,
+          "cpu_region_us": 76.25296711921692
+        },
+        {
+          "stage": "triton/router",
+          "cuda_interval_us": 192.03199446201324,
+          "cpu_region_us": 198.60221073031425
+        },
+        {
+          "stage": "dispatch/sort",
+          "cuda_interval_us": 84.54400300979614,
+          "cpu_region_us": 91.63236245512962
+        },
+        {
+          "stage": "dispatch/counts_offsets",
+          "cuda_interval_us": 99.39199686050415,
+          "cpu_region_us": 106.4990647137165
+        },
+        {
+          "stage": "dispatch/gather",
+          "cuda_interval_us": 67.96800345182419,
+          "cpu_region_us": 74.820127338171
+        },
+        {
+          "stage": "dispatch/inverse",
+          "cuda_interval_us": 61.85600161552429,
+          "cpu_region_us": 68.8391737639904
+        },
+        {
+          "stage": "triton/dispatch",
+          "cuda_interval_us": 386.46399974823,
+          "cpu_region_us": 392.6060162484646
+        },
+        {
+          "stage": "triton/gate_up_swiglu",
+          "cuda_interval_us": 64.64000046253204,
+          "cpu_region_us": 71.13395258784294
+        },
+        {
+          "stage": "triton/down",
+          "cuda_interval_us": 56.28800019621849,
+          "cpu_region_us": 63.28802555799484
+        },
+        {
+          "stage": "triton/combine",
+          "cuda_interval_us": 54.655998945236206,
+          "cpu_region_us": 62.03632801771164
+        },
+        {
+          "stage": "triton/full",
+          "cuda_interval_us": 830.4319977760315,
+          "cpu_region_us": 849.5920337736607
+        }
+      ],
+      "trace": "results/p0/T128-triton.trace.json"
+    },
+    {
+      "tokens": 2048,
+      "implementation": "baseline",
+      "uninstrumented": {
+        "cuda_median_us": 1554.9866358439128,
+        "cuda_p10_us": 1502.242151896159,
+        "cuda_p90_us": 1624.497127532959,
+        "wall_median_us": 1565.5242217083771,
+        "peak_allocated_bytes": 24061952,
+        "incremental_peak_bytes": 8128000,
+        "cuda_samples_us": [
+          1588.8959566752117,
+          1544.3520545959473,
+          1628.2134056091309,
+          1659.5306396484375,
+          1590.3894106547039,
+          1478.8799285888672,
+          1489.301363627116,
+          1618.9227104187012,
+          1547.6479530334473,
+          1534.0479214986165,
+          1554.9866358439128,
+          1601.1093457539876,
+          1547.3066965738933,
+          1565.674622853597,
+          1521.6533342997234
+        ],
+        "wall_samples_us": [
+          1600.443385541439,
+          1552.239681283633,
+          1633.8325416048367,
+          1667.6757174233596,
+          1596.4858854810398,
+          1486.3793427745502,
+          1497.203018516302,
+          1624.1475629309814,
+          1555.9163875877857,
+          1540.5376131335895,
+          1565.5242217083771,
+          1606.5814221898715,
+          1557.7532661457856,
+          1571.1116914947827,
+          1528.5317786037922
+        ]
+      },
+      "stages": {
+        "router/linear": {
+          "median_cuda_interval_us": 62.04799935221672,
+          "median_cpu_region_us": 70.5118291079998,
+          "samples_us": [
+            102.9760017991066,
+            67.74400174617767,
+            55.00800162553787,
+            62.04799935221672,
+            54.78399991989136
+          ]
+        },
+        "router/topk_softmax": {
+          "median_cuda_interval_us": 66.39999896287918,
+          "median_cpu_region_us": 75.19964128732681,
+          "samples_us": [
+            66.39999896287918,
+            100.0640019774437,
+            71.42399996519089,
+            65.2799978852272,
+            64.51199948787689
+          ]
+        },
+        "baseline/router": {
+          "median_cuda_interval_us": 171.2000072002411,
+          "median_cpu_region_us": 188.07221204042435,
+          "samples_us": [
+            224.2880016565323,
+            209.3760073184967,
+            171.1360067129135,
+            171.2000072002411,
+            165.21599888801575
+          ]
+        },
+        "baseline/expert_loop_and_combine": {
+          "median_cuda_interval_us": 1547.0399856567383,
+          "median_cpu_region_us": 1555.596012622118,
+          "samples_us": [
+            1573.1840133666992,
+            1505.120038986206,
+            1413.7279987335205,
+            1547.0399856567383,
+            1565.2159452438354
+          ]
+        },
+        "baseline/full": {
+          "median_cuda_interval_us": 1827.9039859771729,
+          "median_cpu_region_us": 1843.8156694173813,
+          "samples_us": [
+            1938.9439821243286,
+            1826.4960050582886,
+            1680.8639764785767,
+            1827.9039859771729,
+            1832.8959941864014
+          ]
+        }
+      },
+      "stage_events": [
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 102.9760017991066,
+          "cpu_region_us": 110.73797941207886
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 66.39999896287918,
+          "cpu_region_us": 75.19964128732681
+        },
+        {
+          "stage": "baseline/router",
+          "cuda_interval_us": 224.2880016565323,
+          "cpu_region_us": 240.6807616353035
+        },
+        {
+          "stage": "baseline/expert_loop_and_combine",
+          "cuda_interval_us": 1573.1840133666992,
+          "cpu_region_us": 1581.0737386345863
+        },
+        {
+          "stage": "baseline/full",
+          "cuda_interval_us": 1938.9439821243286,
+          "cpu_region_us": 1965.1739858090878
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 67.74400174617767,
+          "cpu_region_us": 75.6918452680111
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 100.0640019774437,
+          "cpu_region_us": 107.24132880568504
+        },
+        {
+          "stage": "baseline/router",
+          "cuda_interval_us": 209.3760073184967,
+          "cpu_region_us": 217.26684644818306
+        },
+        {
+          "stage": "baseline/expert_loop_and_combine",
+          "cuda_interval_us": 1505.120038986206,
+          "cpu_region_us": 1513.2958069443703
+        },
+        {
+          "stage": "baseline/full",
+          "cuda_interval_us": 1826.4960050582886,
+          "cpu_region_us": 1846.6305918991566
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 55.00800162553787,
+          "cpu_region_us": 62.72830069065094
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 71.42399996519089,
+          "cpu_region_us": 78.94821465015411
+        },
+        {
+          "stage": "baseline/router",
+          "cuda_interval_us": 171.1360067129135,
+          "cpu_region_us": 179.28611487150192
+        },
+        {
+          "stage": "baseline/expert_loop_and_combine",
+          "cuda_interval_us": 1413.7279987335205,
+          "cpu_region_us": 1422.0247976481915
+        },
+        {
+          "stage": "baseline/full",
+          "cuda_interval_us": 1680.8639764785767,
+          "cpu_region_us": 1688.795629888773
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 62.04799935221672,
+          "cpu_region_us": 70.5118291079998
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 65.2799978852272,
+          "cpu_region_us": 73.52698594331741
+        },
+        {
+          "stage": "baseline/router",
+          "cuda_interval_us": 171.2000072002411,
+          "cpu_region_us": 188.07221204042435
+        },
+        {
+          "stage": "baseline/expert_loop_and_combine",
+          "cuda_interval_us": 1547.0399856567383,
+          "cpu_region_us": 1555.596012622118
+        },
+        {
+          "stage": "baseline/full",
+          "cuda_interval_us": 1827.9039859771729,
+          "cpu_region_us": 1843.595877289772
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 54.78399991989136,
+          "cpu_region_us": 63.24797868728638
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 64.51199948787689,
+          "cpu_region_us": 75.11116564273834
+        },
+        {
+          "stage": "baseline/router",
+          "cuda_interval_us": 165.21599888801575,
+          "cpu_region_us": 187.20095977187157
+        },
+        {
+          "stage": "baseline/expert_loop_and_combine",
+          "cuda_interval_us": 1565.2159452438354,
+          "cpu_region_us": 1576.1340036988258
+        },
+        {
+          "stage": "baseline/full",
+          "cuda_interval_us": 1832.8959941864014,
+          "cpu_region_us": 1843.8156694173813
+        }
+      ],
+      "trace": "results/p0/T2048-baseline.trace.json"
+    },
+    {
+      "tokens": 2048,
+      "implementation": "triton",
+      "uninstrumented": {
+        "cuda_median_us": 378.32534313201904,
+        "cuda_p10_us": 367.38559405008954,
+        "cuda_p90_us": 420.0704018274943,
+        "wall_median_us": 382.97800347208977,
+        "peak_allocated_bytes": 25453568,
+        "incremental_peak_bytes": 9519616,
+        "cuda_samples_us": [
+          415.96798102060956,
+          427.25332578023273,
+          422.80534903208417,
+          412.1280113855998,
+          401.5359878540039,
+          410.3786547978719,
+          389.5253340403239,
+          368.127981821696,
+          369.9306646982829,
+          378.32534313201904,
+          368.341326713562,
+          366.89066886901855,
+          373.3333349227905,
+          363.9039993286133,
+          375.5413293838501
+        ],
+        "wall_samples_us": [
+          433.03131436308223,
+          437.0322761436303,
+          432.7576607465744,
+          421.5734079480171,
+          407.8843630850315,
+          420.75539628664654,
+          400.10005856553715,
+          373.41006100177765,
+          378.5393200814724,
+          382.97800347208977,
+          373.15596515933674,
+          372.18397483229637,
+          377.9083490371704,
+          368.74103049437207,
+          380.76362883051235
+        ]
+      },
+      "stages": {
+        "router/linear": {
+          "median_cuda_interval_us": 74.94399696588516,
+          "median_cpu_region_us": 93.70595216751099,
+          "samples_us": [
+            295.3920066356659,
+            239.07199501991272,
+            74.94399696588516,
+            43.168000876903534,
+            63.93600255250931
+          ]
+        },
+        "router/topk_softmax": {
+          "median_cuda_interval_us": 84.95999872684479,
+          "median_cpu_region_us": 93.39535608887672,
+          "samples_us": [
+            84.95999872684479,
+            85.60000360012054,
+            87.07199990749359,
+            54.11199852824211,
+            66.59200042486191
+          ]
+        },
+        "triton/router": {
+          "median_cuda_interval_us": 227.48799622058868,
+          "median_cpu_region_us": 240.31987413764,
+          "samples_us": [
+            447.2320079803467,
+            370.40001153945923,
+            227.48799622058868,
+            125.88800489902496,
+            176.83200538158417
+          ]
+        },
+        "dispatch/sort": {
+          "median_cuda_interval_us": 90.7519981265068,
+          "median_cpu_region_us": 107.7023334801197,
+          "samples_us": [
+            93.24800223112106,
+            112.09599673748016,
+            90.7519981265068,
+            88.0960002541542,
+            89.34400230646133
+          ]
+        },
+        "dispatch/counts_offsets": {
+          "median_cuda_interval_us": 121.34400010108948,
+          "median_cpu_region_us": 128.72088700532913,
+          "samples_us": [
+            121.34400010108948,
+            115.10399729013443,
+            124.9919980764389,
+            106.39999806880951,
+            127.16799974441528
+          ]
+        },
+        "dispatch/gather": {
+          "median_cuda_interval_us": 73.95199686288834,
+          "median_cpu_region_us": 80.78105747699738,
+          "samples_us": [
+            74.49600100517273,
+            73.05599749088287,
+            81.66400343179703,
+            73.95199686288834,
+            58.78400057554245
+          ]
+        },
+        "dispatch/inverse": {
+          "median_cuda_interval_us": 55.424001067876816,
+          "median_cpu_region_us": 62.69803270697594,
+          "samples_us": [
+            60.15999987721443,
+            51.42400041222572,
+            61.15199998021126,
+            46.81599885225296,
+            55.424001067876816
+          ]
+        },
+        "triton/dispatch": {
+          "median_cuda_interval_us": 432.0639967918396,
+          "median_cpu_region_us": 448.91098514199257,
+          "samples_us": [
+            441.50400161743164,
+            432.0639967918396,
+            451.29600167274475,
+            394.3359851837158,
+            403.51998805999756
+          ]
+        },
+        "triton/gate_up_swiglu": {
+          "median_cuda_interval_us": 159.96800363063812,
+          "median_cpu_region_us": 79.1880302131176,
+          "samples_us": [
+            349.4719862937927,
+            159.55199301242828,
+            165.3439998626709,
+            151.90400183200836,
+            159.96800363063812
+          ]
+        },
+        "triton/down": {
+          "median_cuda_interval_us": 77.2479996085167,
+          "median_cpu_region_us": 71.45386189222336,
+          "samples_us": [
+            76.51200145483017,
+            80.48000186681747,
+            77.2479996085167,
+            76.80000364780426,
+            81.56800270080566
+          ]
+        },
+        "triton/combine": {
+          "median_cuda_interval_us": 7.135999854654074,
+          "median_cpu_region_us": 51.94731056690216,
+          "samples_us": [
+            7.135999854654074,
+            7.23200011998415,
+            7.104000076651573,
+            7.104000076651573,
+            7.327999919652939
+          ]
+        },
+        "triton/full": {
+          "median_cuda_interval_us": 976.4800071716309,
+          "median_cpu_region_us": 945.8931162953377,
+          "samples_us": [
+            1464.8959636688232,
+            1113.2479906082153,
+            976.4800071716309,
+            780.896008014679,
+            854.8160195350647
+          ]
+        }
+      },
+      "stage_events": [
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 295.3920066356659,
+          "cpu_region_us": 311.0729157924652
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 84.95999872684479,
+          "cpu_region_us": 93.39535608887672
+        },
+        {
+          "stage": "triton/router",
+          "cuda_interval_us": 447.2320079803467,
+          "cpu_region_us": 465.3520882129669
+        },
+        {
+          "stage": "dispatch/sort",
+          "cuda_interval_us": 93.24800223112106,
+          "cpu_region_us": 107.7023334801197
+        },
+        {
+          "stage": "dispatch/counts_offsets",
+          "cuda_interval_us": 121.34400010108948,
+          "cpu_region_us": 128.72088700532913
+        },
+        {
+          "stage": "dispatch/gather",
+          "cuda_interval_us": 74.49600100517273,
+          "cpu_region_us": 81.93403482437134
+        },
+        {
+          "stage": "dispatch/inverse",
+          "cuda_interval_us": 60.15999987721443,
+          "cpu_region_us": 67.90831685066223
+        },
+        {
+          "stage": "triton/dispatch",
+          "cuda_interval_us": 441.50400161743164,
+          "cpu_region_us": 448.91098514199257
+        },
+        {
+          "stage": "triton/gate_up_swiglu",
+          "cuda_interval_us": 349.4719862937927,
+          "cpu_region_us": 278.96277606487274
+        },
+        {
+          "stage": "triton/down",
+          "cuda_interval_us": 76.51200145483017,
+          "cpu_region_us": 80.40107786655426
+        },
+        {
+          "stage": "triton/combine",
+          "cuda_interval_us": 7.135999854654074,
+          "cpu_region_us": 64.06009197235107
+        },
+        {
+          "stage": "triton/full",
+          "cuda_interval_us": 1464.8959636688232,
+          "cpu_region_us": 1492.0062385499477
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 239.07199501991272,
+          "cpu_region_us": 249.7783862054348
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 85.60000360012054,
+          "cpu_region_us": 93.99605914950371
+        },
+        {
+          "stage": "triton/router",
+          "cuda_interval_us": 370.40001153945923,
+          "cpu_region_us": 387.6360133290291
+        },
+        {
+          "stage": "dispatch/sort",
+          "cuda_interval_us": 112.09599673748016,
+          "cpu_region_us": 127.08781287074089
+        },
+        {
+          "stage": "dispatch/counts_offsets",
+          "cuda_interval_us": 115.10399729013443,
+          "cpu_region_us": 123.56182560324669
+        },
+        {
+          "stage": "dispatch/gather",
+          "cuda_interval_us": 73.05599749088287,
+          "cpu_region_us": 80.40107786655426
+        },
+        {
+          "stage": "dispatch/inverse",
+          "cuda_interval_us": 51.42400041222572,
+          "cpu_region_us": 59.81232970952988
+        },
+        {
+          "stage": "triton/dispatch",
+          "cuda_interval_us": 432.0639967918396,
+          "cpu_region_us": 450.44394209980965
+        },
+        {
+          "stage": "triton/gate_up_swiglu",
+          "cuda_interval_us": 159.55199301242828,
+          "cpu_region_us": 79.1880302131176
+        },
+        {
+          "stage": "triton/down",
+          "cuda_interval_us": 80.48000186681747,
+          "cpu_region_us": 73.93909618258476
+        },
+        {
+          "stage": "triton/combine",
+          "cuda_interval_us": 7.23200011998415,
+          "cpu_region_us": 65.78303873538971
+        },
+        {
+          "stage": "triton/full",
+          "cuda_interval_us": 1113.2479906082153,
+          "cpu_region_us": 1119.7892017662525
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 74.94399696588516,
+          "cpu_region_us": 93.70595216751099
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 87.07199990749359,
+          "cpu_region_us": 109.33494195342064
+        },
+        {
+          "stage": "triton/router",
+          "cuda_interval_us": 227.48799622058868,
+          "cpu_region_us": 240.31987413764
+        },
+        {
+          "stage": "dispatch/sort",
+          "cuda_interval_us": 90.7519981265068,
+          "cpu_region_us": 99.176075309515
+        },
+        {
+          "stage": "dispatch/counts_offsets",
+          "cuda_interval_us": 124.9919980764389,
+          "cpu_region_us": 133.90090316534042
+        },
+        {
+          "stage": "dispatch/gather",
+          "cuda_interval_us": 81.66400343179703,
+          "cpu_region_us": 98.74487295746803
+        },
+        {
+          "stage": "dispatch/inverse",
+          "cuda_interval_us": 61.15199998021126,
+          "cpu_region_us": 69.00914013385773
+        },
+        {
+          "stage": "triton/dispatch",
+          "cuda_interval_us": 451.29600167274475,
+          "cpu_region_us": 458.3187401294708
+        },
+        {
+          "stage": "triton/gate_up_swiglu",
+          "cuda_interval_us": 165.3439998626709,
+          "cpu_region_us": 85.63976734876633
+        },
+        {
+          "stage": "triton/down",
+          "cuda_interval_us": 77.2479996085167,
+          "cpu_region_us": 55.21392449736595
+        },
+        {
+          "stage": "triton/combine",
+          "cuda_interval_us": 7.104000076651573,
+          "cpu_region_us": 46.59779369831085
+        },
+        {
+          "stage": "triton/full",
+          "cuda_interval_us": 976.4800071716309,
+          "cpu_region_us": 945.8931162953377
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 43.168000876903534,
+          "cpu_region_us": 60.81443279981613
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 54.11199852824211,
+          "cpu_region_us": 62.02608346939087
+        },
+        {
+          "stage": "triton/router",
+          "cuda_interval_us": 125.88800489902496,
+          "cpu_region_us": 153.8577489554882
+        },
+        {
+          "stage": "dispatch/sort",
+          "cuda_interval_us": 88.0960002541542,
+          "cpu_region_us": 108.53307321667671
+        },
+        {
+          "stage": "dispatch/counts_offsets",
+          "cuda_interval_us": 106.39999806880951,
+          "cpu_region_us": 113.713089376688
+        },
+        {
+          "stage": "dispatch/gather",
+          "cuda_interval_us": 73.95199686288834,
+          "cpu_region_us": 80.78105747699738
+        },
+        {
+          "stage": "dispatch/inverse",
+          "cuda_interval_us": 46.81599885225296,
+          "cpu_region_us": 53.99109795689583
+        },
+        {
+          "stage": "triton/dispatch",
+          "cuda_interval_us": 394.3359851837158,
+          "cpu_region_us": 401.17185562849045
+        },
+        {
+          "stage": "triton/gate_up_swiglu",
+          "cuda_interval_us": 151.90400183200836,
+          "cpu_region_us": 73.03664460778236
+        },
+        {
+          "stage": "triton/down",
+          "cuda_interval_us": 76.80000364780426,
+          "cpu_region_us": 71.45386189222336
+        },
+        {
+          "stage": "triton/combine",
+          "cuda_interval_us": 7.104000076651573,
+          "cpu_region_us": 49.53332245349884
+        },
+        {
+          "stage": "triton/full",
+          "cuda_interval_us": 780.896008014679,
+          "cpu_region_us": 794.6491241455078
+        },
+        {
+          "stage": "router/linear",
+          "cuda_interval_us": 63.93600255250931,
+          "cpu_region_us": 71.11392915248871
+        },
+        {
+          "stage": "router/topk_softmax",
+          "cuda_interval_us": 66.59200042486191,
+          "cpu_region_us": 73.34724068641663
+        },
+        {
+          "stage": "triton/router",
+          "cuda_interval_us": 176.83200538158417,
+          "cpu_region_us": 183.90407785773277
+        },
+        {
+          "stage": "dispatch/sort",
+          "cuda_interval_us": 89.34400230646133,
+          "cpu_region_us": 103.16306725144386
+        },
+        {
+          "stage": "dispatch/counts_offsets",
+          "cuda_interval_us": 127.16799974441528,
+          "cpu_region_us": 136.0648311674595
+        },
+        {
+          "stage": "dispatch/gather",
+          "cuda_interval_us": 58.78400057554245,
+          "cpu_region_us": 65.17302244901657
+        },
+        {
+          "stage": "dispatch/inverse",
+          "cuda_interval_us": 55.424001067876816,
+          "cpu_region_us": 62.69803270697594
+        },
+        {
+          "stage": "triton/dispatch",
+          "cuda_interval_us": 403.51998805999756,
+          "cpu_region_us": 410.8198918402195
+        },
+        {
+          "stage": "triton/gate_up_swiglu",
+          "cuda_interval_us": 159.96800363063812,
+          "cpu_region_us": 75.44085383415222
+        },
+        {
+          "stage": "triton/down",
+          "cuda_interval_us": 81.56800270080566,
+          "cpu_region_us": 61.104074120521545
+        },
+        {
+          "stage": "triton/combine",
+          "cuda_interval_us": 7.327999919652939,
+          "cpu_region_us": 51.94731056690216
+        },
+        {
+          "stage": "triton/full",
+          "cuda_interval_us": 854.8160195350647,
+          "cpu_region_us": 835.4559540748596
+        }
+      ],
+      "trace": "results/p0/T2048-triton.trace.json"
+    }
+  ]
+}

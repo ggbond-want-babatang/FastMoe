@@ -1,0 +1,1145 @@
+end_to_end         T=   1 E= 4 K=1 router  torch_loop          390.49 us  1.00x
+end_to_end         T=   1 E= 4 K=1 router  triton_unfused      269.31 us  1.45x
+end_to_end         T=   1 E= 4 K=1 router  triton_fused        234.84 us  1.66x
+routed_moe         T=   1 E= 4 K=1 uniform torch_loop          353.28 us  1.00x
+routed_moe         T=   1 E= 4 K=1 uniform triton_fused        189.10 us  1.87x
+grouped_gemm       T=   1 E= 4 K=1 uniform torch_cublas         28.31 us  1.00x
+grouped_gemm       T=   1 E= 4 K=1 uniform triton_grouped       23.15 us  1.22x
+gate_up_swiglu     T=   1 E= 4 K=1 uniform torch_cublas         61.12 us  1.00x
+gate_up_swiglu     T=   1 E= 4 K=1 uniform triton_fused         23.55 us  2.60x
+routed_moe         T=   1 E= 4 K=1 random  torch_loop          343.99 us  1.00x
+routed_moe         T=   1 E= 4 K=1 random  triton_fused        187.10 us  1.84x
+grouped_gemm       T=   1 E= 4 K=1 random  torch_cublas         29.70 us  1.00x
+grouped_gemm       T=   1 E= 4 K=1 random  triton_grouped       19.71 us  1.51x
+gate_up_swiglu     T=   1 E= 4 K=1 random  torch_cublas         62.81 us  1.00x
+gate_up_swiglu     T=   1 E= 4 K=1 random  triton_fused         23.16 us  2.71x
+routed_moe         T=   1 E= 4 K=1 skewed  torch_loop          357.03 us  1.00x
+routed_moe         T=   1 E= 4 K=1 skewed  triton_fused        184.34 us  1.94x
+grouped_gemm       T=   1 E= 4 K=1 skewed  torch_cublas         27.37 us  1.00x
+grouped_gemm       T=   1 E= 4 K=1 skewed  triton_grouped       20.82 us  1.31x
+gate_up_swiglu     T=   1 E= 4 K=1 skewed  torch_cublas         59.39 us  1.00x
+gate_up_swiglu     T=   1 E= 4 K=1 skewed  triton_fused         19.80 us  3.00x
+end_to_end         T=   8 E= 4 K=1 router  torch_loop          514.71 us  1.00x
+end_to_end         T=   8 E= 4 K=1 router  triton_unfused      255.66 us  2.01x
+end_to_end         T=   8 E= 4 K=1 router  triton_fused        238.33 us  2.16x
+routed_moe         T=   8 E= 4 K=1 uniform torch_loop          536.92 us  1.00x
+routed_moe         T=   8 E= 4 K=1 uniform triton_fused        192.51 us  2.79x
+grouped_gemm       T=   8 E= 4 K=1 uniform torch_cublas         39.25 us  1.00x
+grouped_gemm       T=   8 E= 4 K=1 uniform triton_grouped       20.82 us  1.89x
+gate_up_swiglu     T=   8 E= 4 K=1 uniform torch_cublas         69.93 us  1.00x
+gate_up_swiglu     T=   8 E= 4 K=1 uniform triton_fused         24.51 us  2.85x
+routed_moe         T=   8 E= 4 K=1 random  torch_loop          495.89 us  1.00x
+routed_moe         T=   8 E= 4 K=1 random  triton_fused        191.48 us  2.59x
+grouped_gemm       T=   8 E= 4 K=1 random  torch_cublas         42.39 us  1.00x
+grouped_gemm       T=   8 E= 4 K=1 random  triton_grouped       23.21 us  1.83x
+gate_up_swiglu     T=   8 E= 4 K=1 random  torch_cublas         74.84 us  1.00x
+gate_up_swiglu     T=   8 E= 4 K=1 random  triton_fused         19.71 us  3.80x
+routed_moe         T=   8 E= 4 K=1 skewed  torch_loop          343.72 us  1.00x
+routed_moe         T=   8 E= 4 K=1 skewed  triton_fused        194.15 us  1.77x
+grouped_gemm       T=   8 E= 4 K=1 skewed  torch_cublas         24.23 us  1.00x
+grouped_gemm       T=   8 E= 4 K=1 skewed  triton_grouped       23.21 us  1.04x
+gate_up_swiglu     T=   8 E= 4 K=1 skewed  torch_cublas         57.37 us  1.00x
+gate_up_swiglu     T=   8 E= 4 K=1 skewed  triton_fused         21.85 us  2.63x
+end_to_end         T=  32 E= 4 K=1 router  torch_loop          518.83 us  1.00x
+end_to_end         T=  32 E= 4 K=1 router  triton_unfused      256.75 us  2.02x
+end_to_end         T=  32 E= 4 K=1 router  triton_fused        238.65 us  2.17x
+routed_moe         T=  32 E= 4 K=1 uniform torch_loop          544.09 us  1.00x
+routed_moe         T=  32 E= 4 K=1 uniform triton_fused        190.46 us  2.86x
+grouped_gemm       T=  32 E= 4 K=1 uniform torch_cublas         37.55 us  1.00x
+grouped_gemm       T=  32 E= 4 K=1 uniform triton_grouped       20.48 us  1.83x
+gate_up_swiglu     T=  32 E= 4 K=1 uniform torch_cublas         70.59 us  1.00x
+gate_up_swiglu     T=  32 E= 4 K=1 uniform triton_fused         23.55 us  3.00x
+routed_moe         T=  32 E= 4 K=1 random  torch_loop          497.38 us  1.00x
+routed_moe         T=  32 E= 4 K=1 random  triton_fused        187.05 us  2.66x
+grouped_gemm       T=  32 E= 4 K=1 random  torch_cublas         38.91 us  1.00x
+grouped_gemm       T=  32 E= 4 K=1 random  triton_grouped       21.08 us  1.85x
+gate_up_swiglu     T=  32 E= 4 K=1 random  torch_cublas         68.27 us  1.00x
+gate_up_swiglu     T=  32 E= 4 K=1 random  triton_fused         22.86 us  2.99x
+routed_moe         T=  32 E= 4 K=1 skewed  torch_loop          343.10 us  1.00x
+routed_moe         T=  32 E= 4 K=1 skewed  triton_fused        188.35 us  1.82x
+grouped_gemm       T=  32 E= 4 K=1 skewed  torch_cublas         25.94 us  1.00x
+grouped_gemm       T=  32 E= 4 K=1 skewed  triton_grouped       22.53 us  1.15x
+gate_up_swiglu     T=  32 E= 4 K=1 skewed  torch_cublas         58.37 us  1.00x
+gate_up_swiglu     T=  32 E= 4 K=1 skewed  triton_fused         22.46 us  2.60x
+end_to_end         T= 128 E= 4 K=1 router  torch_loop          530.77 us  1.00x
+end_to_end         T= 128 E= 4 K=1 router  triton_unfused      249.86 us  2.12x
+end_to_end         T= 128 E= 4 K=1 router  triton_fused        244.71 us  2.17x
+routed_moe         T= 128 E= 4 K=1 uniform torch_loop          495.62 us  1.00x
+routed_moe         T= 128 E= 4 K=1 uniform triton_fused        197.29 us  2.51x
+grouped_gemm       T= 128 E= 4 K=1 uniform torch_cublas         38.57 us  1.00x
+grouped_gemm       T= 128 E= 4 K=1 uniform triton_grouped       23.89 us  1.61x
+gate_up_swiglu     T= 128 E= 4 K=1 uniform torch_cublas         69.63 us  1.00x
+gate_up_swiglu     T= 128 E= 4 K=1 uniform triton_fused         19.80 us  3.52x
+routed_moe         T= 128 E= 4 K=1 random  torch_loop          535.89 us  1.00x
+routed_moe         T= 128 E= 4 K=1 random  triton_fused        189.10 us  2.83x
+grouped_gemm       T= 128 E= 4 K=1 random  torch_cublas         38.57 us  1.00x
+grouped_gemm       T= 128 E= 4 K=1 random  triton_grouped       24.23 us  1.59x
+gate_up_swiglu     T= 128 E= 4 K=1 random  torch_cublas         72.36 us  1.00x
+gate_up_swiglu     T= 128 E= 4 K=1 random  triton_fused         24.23 us  2.99x
+routed_moe         T= 128 E= 4 K=1 skewed  torch_loop          349.50 us  1.00x
+routed_moe         T= 128 E= 4 K=1 skewed  triton_fused        192.51 us  1.82x
+grouped_gemm       T= 128 E= 4 K=1 skewed  torch_cublas         24.62 us  1.00x
+grouped_gemm       T= 128 E= 4 K=1 skewed  triton_grouped       21.50 us  1.14x
+gate_up_swiglu     T= 128 E= 4 K=1 skewed  torch_cublas         57.40 us  1.00x
+gate_up_swiglu     T= 128 E= 4 K=1 skewed  triton_fused         20.76 us  2.77x
+end_to_end         T= 512 E= 4 K=1 router  torch_loop          516.76 us  1.00x
+end_to_end         T= 512 E= 4 K=1 router  triton_unfused      257.73 us  2.01x
+end_to_end         T= 512 E= 4 K=1 router  triton_fused        241.92 us  2.14x
+routed_moe         T= 512 E= 4 K=1 uniform torch_loop          529.07 us  1.00x
+routed_moe         T= 512 E= 4 K=1 uniform triton_fused        193.88 us  2.73x
+grouped_gemm       T= 512 E= 4 K=1 uniform torch_cublas         41.30 us  1.00x
+grouped_gemm       T= 512 E= 4 K=1 uniform triton_grouped       35.16 us  1.17x
+gate_up_swiglu     T= 512 E= 4 K=1 uniform torch_cublas         75.78 us  1.00x
+gate_up_swiglu     T= 512 E= 4 K=1 uniform triton_fused         24.30 us  3.12x
+routed_moe         T= 512 E= 4 K=1 random  torch_loop          492.54 us  1.00x
+routed_moe         T= 512 E= 4 K=1 random  triton_fused        197.24 us  2.50x
+grouped_gemm       T= 512 E= 4 K=1 random  torch_cublas         40.62 us  1.00x
+grouped_gemm       T= 512 E= 4 K=1 random  triton_grouped       38.55 us  1.05x
+gate_up_swiglu     T= 512 E= 4 K=1 random  torch_cublas         77.48 us  1.00x
+gate_up_swiglu     T= 512 E= 4 K=1 random  triton_fused         24.23 us  3.20x
+routed_moe         T= 512 E= 4 K=1 skewed  torch_loop          350.21 us  1.00x
+routed_moe         T= 512 E= 4 K=1 skewed  triton_fused        196.95 us  1.78x
+grouped_gemm       T= 512 E= 4 K=1 skewed  torch_cublas         28.98 us  1.00x
+grouped_gemm       T= 512 E= 4 K=1 skewed  triton_grouped       32.19 us  0.90x
+gate_up_swiglu     T= 512 E= 4 K=1 skewed  torch_cublas         60.13 us  1.00x
+gate_up_swiglu     T= 512 E= 4 K=1 skewed  triton_fused         29.35 us  2.05x
+end_to_end         T=2048 E= 4 K=1 router  torch_loop          525.31 us  1.00x
+end_to_end         T=2048 E= 4 K=1 router  triton_unfused      257.71 us  2.04x
+end_to_end         T=2048 E= 4 K=1 router  triton_fused        246.83 us  2.13x
+routed_moe         T=2048 E= 4 K=1 uniform torch_loop          524.29 us  1.00x
+routed_moe         T=2048 E= 4 K=1 uniform triton_fused        210.26 us  2.49x
+grouped_gemm       T=2048 E= 4 K=1 uniform torch_cublas         92.47 us  1.00x
+grouped_gemm       T=2048 E= 4 K=1 uniform triton_grouped       83.29 us  1.11x
+gate_up_swiglu     T=2048 E= 4 K=1 uniform torch_cublas        151.21 us  1.00x
+gate_up_swiglu     T=2048 E= 4 K=1 uniform triton_fused         63.42 us  2.38x
+routed_moe         T=2048 E= 4 K=1 random  torch_loop          492.54 us  1.00x
+routed_moe         T=2048 E= 4 K=1 random  triton_fused        217.80 us  2.26x
+grouped_gemm       T=2048 E= 4 K=1 random  torch_cublas         93.18 us  1.00x
+grouped_gemm       T=2048 E= 4 K=1 random  triton_grouped       85.01 us  1.10x
+gate_up_swiglu     T=2048 E= 4 K=1 random  torch_cublas        150.19 us  1.00x
+gate_up_swiglu     T=2048 E= 4 K=1 random  triton_fused         63.49 us  2.37x
+routed_moe         T=2048 E= 4 K=1 skewed  torch_loop          453.29 us  1.00x
+routed_moe         T=2048 E= 4 K=1 skewed  triton_fused        214.36 us  2.11x
+grouped_gemm       T=2048 E= 4 K=1 skewed  torch_cublas         76.12 us  1.00x
+grouped_gemm       T=2048 E= 4 K=1 skewed  triton_grouped       82.26 us  0.93x
+gate_up_swiglu     T=2048 E= 4 K=1 skewed  torch_cublas        130.65 us  1.00x
+gate_up_swiglu     T=2048 E= 4 K=1 skewed  triton_fused         61.78 us  2.11x
+end_to_end         T=   1 E= 4 K=2 router  torch_loop          438.24 us  1.00x
+end_to_end         T=   1 E= 4 K=2 router  triton_unfused      250.86 us  1.75x
+end_to_end         T=   1 E= 4 K=2 router  triton_fused        237.57 us  1.84x
+routed_moe         T=   1 E= 4 K=2 uniform torch_loop          396.97 us  1.00x
+routed_moe         T=   1 E= 4 K=2 uniform triton_fused        198.66 us  2.00x
+grouped_gemm       T=   1 E= 4 K=2 uniform torch_cublas         37.55 us  1.00x
+grouped_gemm       T=   1 E= 4 K=2 uniform triton_grouped       23.21 us  1.62x
+gate_up_swiglu     T=   1 E= 4 K=2 uniform torch_cublas         76.46 us  1.00x
+gate_up_swiglu     T=   1 E= 4 K=2 uniform triton_fused         22.23 us  3.44x
+routed_moe         T=   1 E= 4 K=2 random  torch_loop          433.83 us  1.00x
+routed_moe         T=   1 E= 4 K=2 random  triton_fused        197.29 us  2.20x
+grouped_gemm       T=   1 E= 4 K=2 random  torch_cublas         36.18 us  1.00x
+grouped_gemm       T=   1 E= 4 K=2 random  triton_grouped       20.48 us  1.77x
+gate_up_swiglu     T=   1 E= 4 K=2 random  torch_cublas         73.05 us  1.00x
+gate_up_swiglu     T=   1 E= 4 K=2 random  triton_fused         23.81 us  3.07x
+routed_moe         T=   1 E= 4 K=2 skewed  torch_loop          385.72 us  1.00x
+routed_moe         T=   1 E= 4 K=2 skewed  triton_fused        180.57 us  2.14x
+grouped_gemm       T=   1 E= 4 K=2 skewed  torch_cublas         35.50 us  1.00x
+grouped_gemm       T=   1 E= 4 K=2 skewed  triton_grouped       22.88 us  1.55x
+gate_up_swiglu     T=   1 E= 4 K=2 skewed  torch_cublas         67.27 us  1.00x
+gate_up_swiglu     T=   1 E= 4 K=2 skewed  triton_fused         23.21 us  2.90x
+end_to_end         T=   8 E= 4 K=2 router  torch_loop          517.12 us  1.00x
+end_to_end         T=   8 E= 4 K=2 router  triton_unfused      252.86 us  2.05x
+end_to_end         T=   8 E= 4 K=2 router  triton_fused        229.73 us  2.25x
+routed_moe         T=   8 E= 4 K=2 uniform torch_loop          517.13 us  1.00x
+routed_moe         T=   8 E= 4 K=2 uniform triton_fused        186.05 us  2.78x
+grouped_gemm       T=   8 E= 4 K=2 uniform torch_cublas         39.56 us  1.00x
+grouped_gemm       T=   8 E= 4 K=2 uniform triton_grouped       22.19 us  1.78x
+gate_up_swiglu     T=   8 E= 4 K=2 uniform torch_cublas         68.92 us  1.00x
+gate_up_swiglu     T=   8 E= 4 K=2 uniform triton_fused         22.46 us  3.07x
+routed_moe         T=   8 E= 4 K=2 random  torch_loop          505.17 us  1.00x
+routed_moe         T=   8 E= 4 K=2 random  triton_fused        190.81 us  2.65x
+grouped_gemm       T=   8 E= 4 K=2 random  torch_cublas         39.94 us  1.00x
+grouped_gemm       T=   8 E= 4 K=2 random  triton_grouped       22.53 us  1.77x
+gate_up_swiglu     T=   8 E= 4 K=2 random  torch_cublas         72.64 us  1.00x
+gate_up_swiglu     T=   8 E= 4 K=2 random  triton_fused         19.80 us  3.67x
+routed_moe         T=   8 E= 4 K=2 skewed  torch_loop          384.00 us  1.00x
+routed_moe         T=   8 E= 4 K=2 skewed  triton_fused        197.03 us  1.95x
+grouped_gemm       T=   8 E= 4 K=2 skewed  torch_cublas         29.35 us  1.00x
+grouped_gemm       T=   8 E= 4 K=2 skewed  triton_grouped       20.10 us  1.46x
+gate_up_swiglu     T=   8 E= 4 K=2 skewed  torch_cublas         61.10 us  1.00x
+gate_up_swiglu     T=   8 E= 4 K=2 skewed  triton_fused         23.21 us  2.63x
+end_to_end         T=  32 E= 4 K=2 router  torch_loop          564.54 us  1.00x
+end_to_end         T=  32 E= 4 K=2 router  triton_unfused      258.79 us  2.18x
+end_to_end         T=  32 E= 4 K=2 router  triton_fused        236.20 us  2.39x
+routed_moe         T=  32 E= 4 K=2 uniform torch_loop          472.39 us  1.00x
+routed_moe         T=  32 E= 4 K=2 uniform triton_fused        191.14 us  2.47x
+grouped_gemm       T=  32 E= 4 K=2 uniform torch_cublas         38.62 us  1.00x
+grouped_gemm       T=  32 E= 4 K=2 uniform triton_grouped       19.11 us  2.02x
+gate_up_swiglu     T=  32 E= 4 K=2 uniform torch_cublas         69.97 us  1.00x
+gate_up_swiglu     T=  32 E= 4 K=2 uniform triton_fused         24.23 us  2.89x
+routed_moe         T=  32 E= 4 K=2 random  torch_loop          473.38 us  1.00x
+routed_moe         T=  32 E= 4 K=2 random  triton_fused        201.07 us  2.35x
+grouped_gemm       T=  32 E= 4 K=2 random  torch_cublas         38.23 us  1.00x
+grouped_gemm       T=  32 E= 4 K=2 random  triton_grouped       23.21 us  1.65x
+gate_up_swiglu     T=  32 E= 4 K=2 random  torch_cublas         70.31 us  1.00x
+gate_up_swiglu     T=  32 E= 4 K=2 random  triton_fused         23.89 us  2.94x
+routed_moe         T=  32 E= 4 K=2 skewed  torch_loop          385.02 us  1.00x
+routed_moe         T=  32 E= 4 K=2 skewed  triton_fused        194.22 us  1.98x
+grouped_gemm       T=  32 E= 4 K=2 skewed  torch_cublas         29.01 us  1.00x
+grouped_gemm       T=  32 E= 4 K=2 skewed  triton_grouped       19.11 us  1.52x
+gate_up_swiglu     T=  32 E= 4 K=2 skewed  torch_cublas         62.46 us  1.00x
+gate_up_swiglu     T=  32 E= 4 K=2 skewed  triton_fused         21.85 us  2.86x
+end_to_end         T= 128 E= 4 K=2 router  torch_loop          519.85 us  1.00x
+end_to_end         T= 128 E= 4 K=2 router  triton_unfused      254.60 us  2.04x
+end_to_end         T= 128 E= 4 K=2 router  triton_fused        238.87 us  2.18x
+routed_moe         T= 128 E= 4 K=2 uniform torch_loop          559.79 us  1.00x
+routed_moe         T= 128 E= 4 K=2 uniform triton_fused        189.05 us  2.96x
+grouped_gemm       T= 128 E= 4 K=2 uniform torch_cublas         37.89 us  1.00x
+grouped_gemm       T= 128 E= 4 K=2 uniform triton_grouped       24.60 us  1.54x
+gate_up_swiglu     T= 128 E= 4 K=2 uniform torch_cublas         70.66 us  1.00x
+gate_up_swiglu     T= 128 E= 4 K=2 uniform triton_fused         24.15 us  2.93x
+routed_moe         T= 128 E= 4 K=2 random  torch_loop          481.26 us  1.00x
+routed_moe         T= 128 E= 4 K=2 random  triton_fused        189.40 us  2.54x
+grouped_gemm       T= 128 E= 4 K=2 random  torch_cublas         40.28 us  1.00x
+grouped_gemm       T= 128 E= 4 K=2 random  triton_grouped       24.57 us  1.64x
+gate_up_swiglu     T= 128 E= 4 K=2 random  torch_cublas         72.02 us  1.00x
+gate_up_swiglu     T= 128 E= 4 K=2 random  triton_fused         21.13 us  3.41x
+routed_moe         T= 128 E= 4 K=2 skewed  torch_loop          385.37 us  1.00x
+routed_moe         T= 128 E= 4 K=2 skewed  triton_fused        184.66 us  2.09x
+grouped_gemm       T= 128 E= 4 K=2 skewed  torch_cublas         29.35 us  1.00x
+grouped_gemm       T= 128 E= 4 K=2 skewed  triton_grouped       23.89 us  1.23x
+gate_up_swiglu     T= 128 E= 4 K=2 skewed  torch_cublas         62.81 us  1.00x
+gate_up_swiglu     T= 128 E= 4 K=2 skewed  triton_fused         23.55 us  2.67x
+end_to_end         T= 512 E= 4 K=2 router  torch_loop          505.80 us  1.00x
+end_to_end         T= 512 E= 4 K=2 router  triton_unfused      250.88 us  2.02x
+end_to_end         T= 512 E= 4 K=2 router  triton_fused        248.49 us  2.04x
+routed_moe         T= 512 E= 4 K=2 uniform torch_loop          468.28 us  1.00x
+routed_moe         T= 512 E= 4 K=2 uniform triton_fused        203.78 us  2.30x
+grouped_gemm       T= 512 E= 4 K=2 uniform torch_cublas         56.66 us  1.00x
+grouped_gemm       T= 512 E= 4 K=2 uniform triton_grouped       50.18 us  1.13x
+gate_up_swiglu     T= 512 E= 4 K=2 uniform torch_cublas         89.09 us  1.00x
+gate_up_swiglu     T= 512 E= 4 K=2 uniform triton_fused         37.89 us  2.35x
+routed_moe         T= 512 E= 4 K=2 random  torch_loop          526.66 us  1.00x
+routed_moe         T= 512 E= 4 K=2 random  triton_fused        193.54 us  2.72x
+grouped_gemm       T= 512 E= 4 K=2 random  torch_cublas         55.64 us  1.00x
+grouped_gemm       T= 512 E= 4 K=2 random  triton_grouped       50.86 us  1.09x
+gate_up_swiglu     T= 512 E= 4 K=2 random  torch_cublas         88.41 us  1.00x
+gate_up_swiglu     T= 512 E= 4 K=2 random  triton_fused         37.55 us  2.35x
+routed_moe         T= 512 E= 4 K=2 skewed  torch_loop          379.22 us  1.00x
+routed_moe         T= 512 E= 4 K=2 skewed  triton_fused        191.84 us  1.98x
+grouped_gemm       T= 512 E= 4 K=2 skewed  torch_cublas         49.83 us  1.00x
+grouped_gemm       T= 512 E= 4 K=2 skewed  triton_grouped       49.83 us  1.00x
+gate_up_swiglu     T= 512 E= 4 K=2 skewed  torch_cublas         82.26 us  1.00x
+gate_up_swiglu     T= 512 E= 4 K=2 skewed  triton_fused         38.23 us  2.15x
+end_to_end         T=2048 E= 4 K=2 router  torch_loop          636.50 us  1.00x
+end_to_end         T=2048 E= 4 K=2 router  triton_unfused      382.29 us  1.66x
+end_to_end         T=2048 E= 4 K=2 router  triton_fused        322.60 us  1.97x
+routed_moe         T=2048 E= 4 K=2 uniform torch_loop          581.97 us  1.00x
+routed_moe         T=2048 E= 4 K=2 uniform triton_fused        281.94 us  2.06x
+grouped_gemm       T=2048 E= 4 K=2 uniform torch_cublas        136.53 us  1.00x
+grouped_gemm       T=2048 E= 4 K=2 uniform triton_grouped      151.21 us  0.90x
+gate_up_swiglu     T=2048 E= 4 K=2 uniform torch_cublas        315.39 us  1.00x
+gate_up_swiglu     T=2048 E= 4 K=2 uniform triton_fused        105.13 us  3.00x
+routed_moe         T=2048 E= 4 K=2 random  torch_loop          586.44 us  1.00x
+routed_moe         T=2048 E= 4 K=2 random  triton_fused        282.97 us  2.07x
+grouped_gemm       T=2048 E= 4 K=2 random  torch_cublas        137.22 us  1.00x
+grouped_gemm       T=2048 E= 4 K=2 random  triton_grouped      153.60 us  0.89x
+gate_up_swiglu     T=2048 E= 4 K=2 random  torch_cublas        318.49 us  1.00x
+gate_up_swiglu     T=2048 E= 4 K=2 random  triton_fused        110.25 us  2.89x
+routed_moe         T=2048 E= 4 K=2 skewed  torch_loop          595.62 us  1.00x
+routed_moe         T=2048 E= 4 K=2 skewed  triton_fused        280.59 us  2.12x
+grouped_gemm       T=2048 E= 4 K=2 skewed  torch_cublas        135.85 us  1.00x
+grouped_gemm       T=2048 E= 4 K=2 skewed  triton_grouped      159.40 us  0.85x
+gate_up_swiglu     T=2048 E= 4 K=2 skewed  torch_cublas        322.22 us  1.00x
+gate_up_swiglu     T=2048 E= 4 K=2 skewed  triton_fused        108.54 us  2.97x
+end_to_end         T=   1 E= 4 K=4 router  torch_loop          512.34 us  1.00x
+end_to_end         T=   1 E= 4 K=4 router  triton_unfused      245.76 us  2.08x
+end_to_end         T=   1 E= 4 K=4 router  triton_fused        231.42 us  2.21x
+routed_moe         T=   1 E= 4 K=4 uniform torch_loop          480.91 us  1.00x
+routed_moe         T=   1 E= 4 K=4 uniform triton_fused        195.24 us  2.46x
+grouped_gemm       T=   1 E= 4 K=4 uniform torch_cublas         48.47 us  1.00x
+grouped_gemm       T=   1 E= 4 K=4 uniform triton_grouped       19.72 us  2.46x
+gate_up_swiglu     T=   1 E= 4 K=4 uniform torch_cublas         80.55 us  1.00x
+gate_up_swiglu     T=   1 E= 4 K=4 uniform triton_fused         21.77 us  3.70x
+routed_moe         T=   1 E= 4 K=4 random  torch_loop          530.07 us  1.00x
+routed_moe         T=   1 E= 4 K=4 random  triton_fused        186.02 us  2.85x
+grouped_gemm       T=   1 E= 4 K=4 random  torch_cublas         48.74 us  1.00x
+grouped_gemm       T=   1 E= 4 K=4 random  triton_grouped       19.46 us  2.50x
+gate_up_swiglu     T=   1 E= 4 K=4 random  torch_cublas         85.33 us  1.00x
+gate_up_swiglu     T=   1 E= 4 K=4 random  triton_fused         20.14 us  4.24x
+routed_moe         T=   1 E= 4 K=4 skewed  torch_loop          483.67 us  1.00x
+routed_moe         T=   1 E= 4 K=4 skewed  triton_fused        184.66 us  2.62x
+grouped_gemm       T=   1 E= 4 K=4 skewed  torch_cublas         48.44 us  1.00x
+grouped_gemm       T=   1 E= 4 K=4 skewed  triton_grouped       20.82 us  2.33x
+gate_up_swiglu     T=   1 E= 4 K=4 skewed  torch_cublas         83.29 us  1.00x
+gate_up_swiglu     T=   1 E= 4 K=4 skewed  triton_fused         19.11 us  4.36x
+end_to_end         T=   8 E= 4 K=4 router  torch_loop          533.25 us  1.00x
+end_to_end         T=   8 E= 4 K=4 router  triton_unfused      260.78 us  2.04x
+end_to_end         T=   8 E= 4 K=4 router  triton_fused        234.50 us  2.27x
+routed_moe         T=   8 E= 4 K=4 uniform torch_loop          523.27 us  1.00x
+routed_moe         T=   8 E= 4 K=4 uniform triton_fused        190.12 us  2.75x
+grouped_gemm       T=   8 E= 4 K=4 uniform torch_cublas         37.53 us  1.00x
+grouped_gemm       T=   8 E= 4 K=4 uniform triton_grouped       25.59 us  1.47x
+gate_up_swiglu     T=   8 E= 4 K=4 uniform torch_cublas         70.40 us  1.00x
+gate_up_swiglu     T=   8 E= 4 K=4 uniform triton_fused         22.53 us  3.12x
+routed_moe         T=   8 E= 4 K=4 random  torch_loop          489.13 us  1.00x
+routed_moe         T=   8 E= 4 K=4 random  triton_fused        190.09 us  2.57x
+grouped_gemm       T=   8 E= 4 K=4 random  torch_cublas         38.23 us  1.00x
+grouped_gemm       T=   8 E= 4 K=4 random  triton_grouped       19.80 us  1.93x
+gate_up_swiglu     T=   8 E= 4 K=4 random  torch_cublas         69.29 us  1.00x
+gate_up_swiglu     T=   8 E= 4 K=4 random  triton_fused         18.43 us  3.76x
+routed_moe         T=   8 E= 4 K=4 skewed  torch_loop          509.61 us  1.00x
+routed_moe         T=   8 E= 4 K=4 skewed  triton_fused        186.03 us  2.74x
+grouped_gemm       T=   8 E= 4 K=4 skewed  torch_cublas         37.89 us  1.00x
+grouped_gemm       T=   8 E= 4 K=4 skewed  triton_grouped       19.11 us  1.98x
+gate_up_swiglu     T=   8 E= 4 K=4 skewed  torch_cublas         70.66 us  1.00x
+gate_up_swiglu     T=   8 E= 4 K=4 skewed  triton_fused         22.53 us  3.14x
+end_to_end         T=  32 E= 4 K=4 router  torch_loop          509.95 us  1.00x
+end_to_end         T=  32 E= 4 K=4 router  triton_unfused      253.61 us  2.01x
+end_to_end         T=  32 E= 4 K=4 router  triton_fused        237.14 us  2.15x
+routed_moe         T=  32 E= 4 K=4 uniform torch_loop          490.50 us  1.00x
+routed_moe         T=  32 E= 4 K=4 uniform triton_fused        199.34 us  2.46x
+grouped_gemm       T=  32 E= 4 K=4 uniform torch_cublas         38.85 us  1.00x
+grouped_gemm       T=  32 E= 4 K=4 uniform triton_grouped       23.21 us  1.67x
+gate_up_swiglu     T=  32 E= 4 K=4 uniform torch_cublas         71.34 us  1.00x
+gate_up_swiglu     T=  32 E= 4 K=4 uniform triton_fused         25.60 us  2.79x
+routed_moe         T=  32 E= 4 K=4 random  torch_loop          487.77 us  1.00x
+routed_moe         T=  32 E= 4 K=4 random  triton_fused        190.08 us  2.57x
+grouped_gemm       T=  32 E= 4 K=4 random  torch_cublas         38.57 us  1.00x
+grouped_gemm       T=  32 E= 4 K=4 random  triton_grouped       23.55 us  1.64x
+gate_up_swiglu     T=  32 E= 4 K=4 random  torch_cublas         72.64 us  1.00x
+gate_up_swiglu     T=  32 E= 4 K=4 random  triton_fused         23.24 us  3.13x
+routed_moe         T=  32 E= 4 K=4 skewed  torch_loop          479.23 us  1.00x
+routed_moe         T=  32 E= 4 K=4 skewed  triton_fused        195.24 us  2.45x
+grouped_gemm       T=  32 E= 4 K=4 skewed  torch_cublas         39.23 us  1.00x
+grouped_gemm       T=  32 E= 4 K=4 skewed  triton_grouped       23.21 us  1.69x
+gate_up_swiglu     T=  32 E= 4 K=4 skewed  torch_cublas         70.66 us  1.00x
+gate_up_swiglu     T=  32 E= 4 K=4 skewed  triton_fused         22.53 us  3.14x
+end_to_end         T= 128 E= 4 K=4 router  torch_loop          519.18 us  1.00x
+end_to_end         T= 128 E= 4 K=4 router  triton_unfused      247.47 us  2.10x
+end_to_end         T= 128 E= 4 K=4 router  triton_fused        239.62 us  2.17x
+routed_moe         T= 128 E= 4 K=4 uniform torch_loop          485.38 us  1.00x
+routed_moe         T= 128 E= 4 K=4 uniform triton_fused        198.66 us  2.44x
+grouped_gemm       T= 128 E= 4 K=4 uniform torch_cublas         40.28 us  1.00x
+grouped_gemm       T= 128 E= 4 K=4 uniform triton_grouped       37.21 us  1.08x
+gate_up_swiglu     T= 128 E= 4 K=4 uniform torch_cublas         72.02 us  1.00x
+gate_up_swiglu     T= 128 E= 4 K=4 uniform triton_fused         27.31 us  2.64x
+routed_moe         T= 128 E= 4 K=4 random  torch_loop          476.50 us  1.00x
+routed_moe         T= 128 E= 4 K=4 random  triton_fused        204.47 us  2.33x
+grouped_gemm       T= 128 E= 4 K=4 random  torch_cublas         40.94 us  1.00x
+grouped_gemm       T= 128 E= 4 K=4 random  triton_grouped       35.49 us  1.15x
+gate_up_swiglu     T= 128 E= 4 K=4 random  torch_cublas         76.05 us  1.00x
+gate_up_swiglu     T= 128 E= 4 K=4 random  triton_fused         27.31 us  2.79x
+routed_moe         T= 128 E= 4 K=4 skewed  torch_loop          477.22 us  1.00x
+routed_moe         T= 128 E= 4 K=4 skewed  triton_fused        193.54 us  2.47x
+grouped_gemm       T= 128 E= 4 K=4 skewed  torch_cublas         39.25 us  1.00x
+grouped_gemm       T= 128 E= 4 K=4 skewed  triton_grouped       30.38 us  1.29x
+gate_up_swiglu     T= 128 E= 4 K=4 skewed  torch_cublas         72.70 us  1.00x
+gate_up_swiglu     T= 128 E= 4 K=4 skewed  triton_fused         26.62 us  2.73x
+end_to_end         T= 512 E= 4 K=4 router  torch_loop          557.06 us  1.00x
+end_to_end         T= 512 E= 4 K=4 router  triton_unfused      277.50 us  2.01x
+end_to_end         T= 512 E= 4 K=4 router  triton_fused        253.27 us  2.20x
+routed_moe         T= 512 E= 4 K=4 uniform torch_loop          476.84 us  1.00x
+routed_moe         T= 512 E= 4 K=4 uniform triton_fused        216.06 us  2.21x
+grouped_gemm       T= 512 E= 4 K=4 uniform torch_cublas         92.84 us  1.00x
+grouped_gemm       T= 512 E= 4 K=4 uniform triton_grouped       84.31 us  1.10x
+gate_up_swiglu     T= 512 E= 4 K=4 uniform torch_cublas        150.19 us  1.00x
+gate_up_swiglu     T= 512 E= 4 K=4 uniform triton_fused         62.81 us  2.39x
+routed_moe         T= 512 E= 4 K=4 random  torch_loop          479.23 us  1.00x
+routed_moe         T= 512 E= 4 K=4 random  triton_fused        216.06 us  2.22x
+grouped_gemm       T= 512 E= 4 K=4 random  torch_cublas         93.87 us  1.00x
+grouped_gemm       T= 512 E= 4 K=4 random  triton_grouped       80.55 us  1.17x
+gate_up_swiglu     T= 512 E= 4 K=4 random  torch_cublas        150.53 us  1.00x
+gate_up_swiglu     T= 512 E= 4 K=4 random  triton_fused         62.12 us  2.42x
+routed_moe         T= 512 E= 4 K=4 skewed  torch_loop          487.77 us  1.00x
+routed_moe         T= 512 E= 4 K=4 skewed  triton_fused        207.85 us  2.35x
+grouped_gemm       T= 512 E= 4 K=4 skewed  torch_cublas         92.77 us  1.00x
+grouped_gemm       T= 512 E= 4 K=4 skewed  triton_grouped       83.29 us  1.11x
+gate_up_swiglu     T= 512 E= 4 K=4 skewed  torch_cublas        150.53 us  1.00x
+gate_up_swiglu     T= 512 E= 4 K=4 skewed  triton_fused         63.15 us  2.38x
+end_to_end         T=2048 E= 4 K=4 router  torch_loop          922.97 us  1.00x
+end_to_end         T=2048 E= 4 K=4 router  triton_unfused      695.64 us  1.33x
+end_to_end         T=2048 E= 4 K=4 router  triton_fused        550.91 us  1.68x
+routed_moe         T=2048 E= 4 K=4 uniform torch_loop          916.14 us  1.00x
+routed_moe         T=2048 E= 4 K=4 uniform triton_fused        509.61 us  1.80x
+grouped_gemm       T=2048 E= 4 K=4 uniform torch_cublas        367.96 us  1.00x
+grouped_gemm       T=2048 E= 4 K=4 uniform triton_grouped      292.52 us  1.26x
+gate_up_swiglu     T=2048 E= 4 K=4 uniform torch_cublas        831.83 us  1.00x
+gate_up_swiglu     T=2048 E= 4 K=4 uniform triton_fused        205.14 us  4.05x
+routed_moe         T=2048 E= 4 K=4 random  torch_loop          899.75 us  1.00x
+routed_moe         T=2048 E= 4 K=4 random  triton_fused        494.59 us  1.82x
+grouped_gemm       T=2048 E= 4 K=4 random  torch_cublas        368.98 us  1.00x
+grouped_gemm       T=2048 E= 4 K=4 random  triton_grouped      291.84 us  1.26x
+gate_up_swiglu     T=2048 E= 4 K=4 random  torch_cublas        822.27 us  1.00x
+gate_up_swiglu     T=2048 E= 4 K=4 random  triton_fused        204.46 us  4.02x
+routed_moe         T=2048 E= 4 K=4 skewed  torch_loop          884.68 us  1.00x
+routed_moe         T=2048 E= 4 K=4 skewed  triton_fused        491.18 us  1.80x
+grouped_gemm       T=2048 E= 4 K=4 skewed  torch_cublas        367.62 us  1.00x
+grouped_gemm       T=2048 E= 4 K=4 skewed  triton_grouped      291.81 us  1.26x
+gate_up_swiglu     T=2048 E= 4 K=4 skewed  torch_cublas        813.40 us  1.00x
+gate_up_swiglu     T=2048 E= 4 K=4 skewed  triton_fused        203.09 us  4.01x
+end_to_end         T=   1 E= 8 K=1 router  torch_loop          664.58 us  1.00x
+end_to_end         T=   1 E= 8 K=1 router  triton_unfused      249.51 us  2.66x
+end_to_end         T=   1 E= 8 K=1 router  triton_fused        244.74 us  2.72x
+routed_moe         T=   1 E= 8 K=1 uniform torch_loop          583.00 us  1.00x
+routed_moe         T=   1 E= 8 K=1 uniform triton_fused        179.20 us  3.25x
+grouped_gemm       T=   1 E= 8 K=1 uniform torch_cublas         47.77 us  1.00x
+grouped_gemm       T=   1 E= 8 K=1 uniform triton_grouped       19.80 us  2.41x
+gate_up_swiglu     T=   1 E= 8 K=1 uniform torch_cublas         81.92 us  1.00x
+gate_up_swiglu     T=   1 E= 8 K=1 uniform triton_fused         20.82 us  3.93x
+routed_moe         T=   1 E= 8 K=1 random  torch_loop          582.35 us  1.00x
+routed_moe         T=   1 E= 8 K=1 random  triton_fused        178.52 us  3.26x
+grouped_gemm       T=   1 E= 8 K=1 random  torch_cublas         47.10 us  1.00x
+grouped_gemm       T=   1 E= 8 K=1 random  triton_grouped       19.46 us  2.42x
+gate_up_swiglu     T=   1 E= 8 K=1 random  torch_cublas         80.90 us  1.00x
+gate_up_swiglu     T=   1 E= 8 K=1 random  triton_fused         20.14 us  4.02x
+routed_moe         T=   1 E= 8 K=1 skewed  torch_loop          618.50 us  1.00x
+routed_moe         T=   1 E= 8 K=1 skewed  triton_fused        189.10 us  3.27x
+grouped_gemm       T=   1 E= 8 K=1 skewed  torch_cublas         50.52 us  1.00x
+grouped_gemm       T=   1 E= 8 K=1 skewed  triton_grouped       19.46 us  2.60x
+gate_up_swiglu     T=   1 E= 8 K=1 skewed  torch_cublas         83.97 us  1.00x
+gate_up_swiglu     T=   1 E= 8 K=1 skewed  triton_fused         18.77 us  4.47x
+end_to_end         T=   8 E= 8 K=1 router  torch_loop          886.10 us  1.00x
+end_to_end         T=   8 E= 8 K=1 router  triton_unfused      214.41 us  4.13x
+end_to_end         T=   8 E= 8 K=1 router  triton_fused        223.89 us  3.96x
+routed_moe         T=   8 E= 8 K=1 uniform torch_loop          943.45 us  1.00x
+routed_moe         T=   8 E= 8 K=1 uniform triton_fused        204.38 us  4.62x
+grouped_gemm       T=   8 E= 8 K=1 uniform torch_cublas         91.48 us  1.00x
+grouped_gemm       T=   8 E= 8 K=1 uniform triton_grouped       23.55 us  3.88x
+gate_up_swiglu     T=   8 E= 8 K=1 uniform torch_cublas        128.68 us  1.00x
+gate_up_swiglu     T=   8 E= 8 K=1 uniform triton_fused         23.89 us  5.39x
+routed_moe         T=   8 E= 8 K=1 random  torch_loop          743.77 us  1.00x
+routed_moe         T=   8 E= 8 K=1 random  triton_fused        192.17 us  3.87x
+grouped_gemm       T=   8 E= 8 K=1 random  torch_cublas         59.35 us  1.00x
+grouped_gemm       T=   8 E= 8 K=1 random  triton_grouped       20.14 us  2.95x
+gate_up_swiglu     T=   8 E= 8 K=1 random  torch_cublas         90.10 us  1.00x
+gate_up_swiglu     T=   8 E= 8 K=1 random  triton_fused         20.82 us  4.33x
+routed_moe         T=   8 E= 8 K=1 skewed  torch_loop          614.40 us  1.00x
+routed_moe         T=   8 E= 8 K=1 skewed  triton_fused        187.73 us  3.27x
+grouped_gemm       T=   8 E= 8 K=1 skewed  torch_cublas         51.20 us  1.00x
+grouped_gemm       T=   8 E= 8 K=1 skewed  triton_grouped       23.55 us  2.17x
+gate_up_swiglu     T=   8 E= 8 K=1 skewed  torch_cublas         79.87 us  1.00x
+gate_up_swiglu     T=   8 E= 8 K=1 skewed  triton_fused         23.87 us  3.35x
+end_to_end         T=  32 E= 8 K=1 router  torch_loop          974.51 us  1.00x
+end_to_end         T=  32 E= 8 K=1 router  triton_unfused      257.02 us  3.79x
+end_to_end         T=  32 E= 8 K=1 router  triton_fused        242.69 us  4.02x
+routed_moe         T=  32 E= 8 K=1 uniform torch_loop          922.98 us  1.00x
+routed_moe         T=  32 E= 8 K=1 uniform triton_fused        188.16 us  4.91x
+grouped_gemm       T=  32 E= 8 K=1 uniform torch_cublas         70.66 us  1.00x
+grouped_gemm       T=  32 E= 8 K=1 uniform triton_grouped       27.31 us  2.59x
+gate_up_swiglu     T=  32 E= 8 K=1 uniform torch_cublas        104.77 us  1.00x
+gate_up_swiglu     T=  32 E= 8 K=1 uniform triton_fused         24.92 us  4.20x
+routed_moe         T=  32 E= 8 K=1 random  torch_loop          921.60 us  1.00x
+routed_moe         T=  32 E= 8 K=1 random  triton_fused        205.06 us  4.49x
+grouped_gemm       T=  32 E= 8 K=1 random  torch_cublas         70.66 us  1.00x
+grouped_gemm       T=  32 E= 8 K=1 random  triton_grouped       25.60 us  2.76x
+gate_up_swiglu     T=  32 E= 8 K=1 random  torch_cublas        106.50 us  1.00x
+gate_up_swiglu     T=  32 E= 8 K=1 random  triton_fused         24.58 us  4.33x
+routed_moe         T=  32 E= 8 K=1 skewed  torch_loop          600.06 us  1.00x
+routed_moe         T=  32 E= 8 K=1 skewed  triton_fused        196.95 us  3.05x
+grouped_gemm       T=  32 E= 8 K=1 skewed  torch_cublas         45.10 us  1.00x
+grouped_gemm       T=  32 E= 8 K=1 skewed  triton_grouped       29.06 us  1.55x
+gate_up_swiglu     T=  32 E= 8 K=1 skewed  torch_cublas         79.53 us  1.00x
+gate_up_swiglu     T=  32 E= 8 K=1 skewed  triton_fused         28.35 us  2.81x
+end_to_end         T= 128 E= 8 K=1 router  torch_loop         1085.44 us  1.00x
+end_to_end         T= 128 E= 8 K=1 router  triton_unfused      249.88 us  4.34x
+end_to_end         T= 128 E= 8 K=1 router  triton_fused        224.94 us  4.83x
+routed_moe         T= 128 E= 8 K=1 uniform torch_loop          955.73 us  1.00x
+routed_moe         T= 128 E= 8 K=1 uniform triton_fused        196.27 us  4.87x
+grouped_gemm       T= 128 E= 8 K=1 uniform torch_cublas         70.66 us  1.00x
+grouped_gemm       T= 128 E= 8 K=1 uniform triton_grouped       25.26 us  2.80x
+gate_up_swiglu     T= 128 E= 8 K=1 uniform torch_cublas        103.35 us  1.00x
+gate_up_swiglu     T= 128 E= 8 K=1 uniform triton_fused         25.26 us  4.09x
+routed_moe         T= 128 E= 8 K=1 random  torch_loop         1031.49 us  1.00x
+routed_moe         T= 128 E= 8 K=1 random  triton_fused        200.41 us  5.15x
+grouped_gemm       T= 128 E= 8 K=1 random  torch_cublas         70.36 us  1.00x
+grouped_gemm       T= 128 E= 8 K=1 random  triton_grouped       26.97 us  2.61x
+gate_up_swiglu     T= 128 E= 8 K=1 random  torch_cublas        107.86 us  1.00x
+gate_up_swiglu     T= 128 E= 8 K=1 random  triton_fused         25.92 us  4.16x
+routed_moe         T= 128 E= 8 K=1 skewed  torch_loop          580.61 us  1.00x
+routed_moe         T= 128 E= 8 K=1 skewed  triton_fused        189.05 us  3.07x
+grouped_gemm       T= 128 E= 8 K=1 skewed  torch_cublas         47.45 us  1.00x
+grouped_gemm       T= 128 E= 8 K=1 skewed  triton_grouped       23.55 us  2.01x
+gate_up_swiglu     T= 128 E= 8 K=1 skewed  torch_cublas         77.82 us  1.00x
+gate_up_swiglu     T= 128 E= 8 K=1 skewed  triton_fused         21.78 us  3.57x
+end_to_end         T= 512 E= 8 K=1 router  torch_loop          973.48 us  1.00x
+end_to_end         T= 512 E= 8 K=1 router  triton_unfused      244.39 us  3.98x
+end_to_end         T= 512 E= 8 K=1 router  triton_fused        238.25 us  4.09x
+routed_moe         T= 512 E= 8 K=1 uniform torch_loop          926.04 us  1.00x
+routed_moe         T= 512 E= 8 K=1 uniform triton_fused        196.22 us  4.72x
+grouped_gemm       T= 512 E= 8 K=1 uniform torch_cublas         69.97 us  1.00x
+grouped_gemm       T= 512 E= 8 K=1 uniform triton_grouped       34.13 us  2.05x
+gate_up_swiglu     T= 512 E= 8 K=1 uniform torch_cublas        103.75 us  1.00x
+gate_up_swiglu     T= 512 E= 8 K=1 uniform triton_fused         29.35 us  3.53x
+routed_moe         T= 512 E= 8 K=1 random  torch_loop          902.40 us  1.00x
+routed_moe         T= 512 E= 8 K=1 random  triton_fused        191.83 us  4.70x
+grouped_gemm       T= 512 E= 8 K=1 random  torch_cublas         72.70 us  1.00x
+grouped_gemm       T= 512 E= 8 K=1 random  triton_grouped       36.18 us  2.01x
+gate_up_swiglu     T= 512 E= 8 K=1 random  torch_cublas        113.62 us  1.00x
+gate_up_swiglu     T= 512 E= 8 K=1 random  triton_fused         32.43 us  3.50x
+routed_moe         T= 512 E= 8 K=1 skewed  torch_loop          593.58 us  1.00x
+routed_moe         T= 512 E= 8 K=1 skewed  triton_fused        205.48 us  2.89x
+grouped_gemm       T= 512 E= 8 K=1 skewed  torch_cublas         38.83 us  1.00x
+grouped_gemm       T= 512 E= 8 K=1 skewed  triton_grouped       34.13 us  1.14x
+gate_up_swiglu     T= 512 E= 8 K=1 skewed  torch_cublas         72.36 us  1.00x
+gate_up_swiglu     T= 512 E= 8 K=1 skewed  triton_fused         29.01 us  2.49x
+end_to_end         T=2048 E= 8 K=1 router  torch_loop          941.06 us  1.00x
+end_to_end         T=2048 E= 8 K=1 router  triton_unfused      274.77 us  3.42x
+end_to_end         T=2048 E= 8 K=1 router  triton_fused        260.42 us  3.61x
+routed_moe         T=2048 E= 8 K=1 uniform torch_loop          930.07 us  1.00x
+routed_moe         T=2048 E= 8 K=1 uniform triton_fused        216.06 us  4.30x
+grouped_gemm       T=2048 E= 8 K=1 uniform torch_cublas        108.54 us  1.00x
+grouped_gemm       T=2048 E= 8 K=1 uniform triton_grouped       84.65 us  1.28x
+gate_up_swiglu     T=2048 E= 8 K=1 uniform torch_cublas        170.33 us  1.00x
+gate_up_swiglu     T=2048 E= 8 K=1 uniform triton_fused         63.46 us  2.68x
+routed_moe         T=2048 E= 8 K=1 random  torch_loop          942.08 us  1.00x
+routed_moe         T=2048 E= 8 K=1 random  triton_fused        220.84 us  4.27x
+grouped_gemm       T=2048 E= 8 K=1 random  torch_cublas        106.84 us  1.00x
+grouped_gemm       T=2048 E= 8 K=1 random  triton_grouped       89.09 us  1.20x
+gate_up_swiglu     T=2048 E= 8 K=1 random  torch_cublas        165.21 us  1.00x
+gate_up_swiglu     T=2048 E= 8 K=1 random  triton_fused         65.19 us  2.53x
+routed_moe         T=2048 E= 8 K=1 skewed  torch_loop          691.54 us  1.00x
+routed_moe         T=2048 E= 8 K=1 skewed  triton_fused        216.75 us  3.19x
+grouped_gemm       T=2048 E= 8 K=1 skewed  torch_cublas         75.43 us  1.00x
+grouped_gemm       T=2048 E= 8 K=1 skewed  triton_grouped       83.63 us  0.90x
+gate_up_swiglu     T=2048 E= 8 K=1 skewed  torch_cublas        131.75 us  1.00x
+gate_up_swiglu     T=2048 E= 8 K=1 skewed  triton_fused         62.46 us  2.11x
+end_to_end         T=   1 E= 8 K=2 router  torch_loop          750.93 us  1.00x
+end_to_end         T=   1 E= 8 K=2 router  triton_unfused      255.66 us  2.94x
+end_to_end         T=   1 E= 8 K=2 router  triton_fused        247.04 us  3.04x
+routed_moe         T=   1 E= 8 K=2 uniform torch_loop          644.10 us  1.00x
+routed_moe         T=   1 E= 8 K=2 uniform triton_fused        182.61 us  3.53x
+grouped_gemm       T=   1 E= 8 K=2 uniform torch_cublas         59.40 us  1.00x
+grouped_gemm       T=   1 E= 8 K=2 uniform triton_grouped       24.23 us  2.45x
+gate_up_swiglu     T=   1 E= 8 K=2 uniform torch_cublas         88.70 us  1.00x
+gate_up_swiglu     T=   1 E= 8 K=2 uniform triton_fused         23.94 us  3.71x
+routed_moe         T=   1 E= 8 K=2 random  torch_loop          637.95 us  1.00x
+routed_moe         T=   1 E= 8 K=2 random  triton_fused        200.02 us  3.19x
+grouped_gemm       T=   1 E= 8 K=2 random  torch_cublas         55.68 us  1.00x
+grouped_gemm       T=   1 E= 8 K=2 random  triton_grouped       27.57 us  2.02x
+gate_up_swiglu     T=   1 E= 8 K=2 random  torch_cublas         89.09 us  1.00x
+gate_up_swiglu     T=   1 E= 8 K=2 random  triton_fused         22.88 us  3.89x
+routed_moe         T=   1 E= 8 K=2 skewed  torch_loop          644.10 us  1.00x
+routed_moe         T=   1 E= 8 K=2 skewed  triton_fused        197.29 us  3.26x
+grouped_gemm       T=   1 E= 8 K=2 skewed  torch_cublas         56.92 us  1.00x
+grouped_gemm       T=   1 E= 8 K=2 skewed  triton_grouped       20.82 us  2.73x
+gate_up_swiglu     T=   1 E= 8 K=2 skewed  torch_cublas         92.51 us  1.00x
+gate_up_swiglu     T=   1 E= 8 K=2 skewed  triton_fused         21.80 us  4.24x
+end_to_end         T=   8 E= 8 K=2 router  torch_loop          906.58 us  1.00x
+end_to_end         T=   8 E= 8 K=2 router  triton_unfused      252.58 us  3.59x
+end_to_end         T=   8 E= 8 K=2 router  triton_fused        236.54 us  3.83x
+routed_moe         T=   8 E= 8 K=2 uniform torch_loop         1003.52 us  1.00x
+routed_moe         T=   8 E= 8 K=2 uniform triton_fused        183.24 us  5.48x
+grouped_gemm       T=   8 E= 8 K=2 uniform torch_cublas         70.31 us  1.00x
+grouped_gemm       T=   8 E= 8 K=2 uniform triton_grouped       27.93 us  2.52x
+gate_up_swiglu     T=   8 E= 8 K=2 uniform torch_cublas        119.13 us  1.00x
+gate_up_swiglu     T=   8 E= 8 K=2 uniform triton_fused         24.53 us  4.86x
+routed_moe         T=   8 E= 8 K=2 random  torch_loop          955.73 us  1.00x
+routed_moe         T=   8 E= 8 K=2 random  triton_fused        194.56 us  4.91x
+grouped_gemm       T=   8 E= 8 K=2 random  torch_cublas         73.73 us  1.00x
+grouped_gemm       T=   8 E= 8 K=2 random  triton_grouped       25.91 us  2.85x
+gate_up_swiglu     T=   8 E= 8 K=2 random  torch_cublas        117.09 us  1.00x
+gate_up_swiglu     T=   8 E= 8 K=2 random  triton_fused         25.60 us  4.57x
+routed_moe         T=   8 E= 8 K=2 skewed  torch_loop          633.53 us  1.00x
+routed_moe         T=   8 E= 8 K=2 skewed  triton_fused        193.19 us  3.28x
+grouped_gemm       T=   8 E= 8 K=2 skewed  torch_cublas         51.20 us  1.00x
+grouped_gemm       T=   8 E= 8 K=2 skewed  triton_grouped       22.19 us  2.31x
+gate_up_swiglu     T=   8 E= 8 K=2 skewed  torch_cublas         82.91 us  1.00x
+gate_up_swiglu     T=   8 E= 8 K=2 skewed  triton_fused         22.86 us  3.63x
+end_to_end         T=  32 E= 8 K=2 router  torch_loop         1003.13 us  1.00x
+end_to_end         T=  32 E= 8 K=2 router  triton_unfused      276.48 us  3.63x
+end_to_end         T=  32 E= 8 K=2 router  triton_fused        243.03 us  4.13x
+routed_moe         T=  32 E= 8 K=2 uniform torch_loop          927.74 us  1.00x
+routed_moe         T=  32 E= 8 K=2 uniform triton_fused        184.38 us  5.03x
+grouped_gemm       T=  32 E= 8 K=2 uniform torch_cublas         70.31 us  1.00x
+grouped_gemm       T=  32 E= 8 K=2 uniform triton_grouped       25.60 us  2.75x
+gate_up_swiglu     T=  32 E= 8 K=2 uniform torch_cublas        101.03 us  1.00x
+gate_up_swiglu     T=  32 E= 8 K=2 uniform triton_fused         22.18 us  4.56x
+routed_moe         T=  32 E= 8 K=2 random  torch_loop          952.32 us  1.00x
+routed_moe         T=  32 E= 8 K=2 random  triton_fused        186.69 us  5.10x
+grouped_gemm       T=  32 E= 8 K=2 random  torch_cublas         75.68 us  1.00x
+grouped_gemm       T=  32 E= 8 K=2 random  triton_grouped       22.79 us  3.32x
+gate_up_swiglu     T=  32 E= 8 K=2 random  torch_cublas        104.11 us  1.00x
+gate_up_swiglu     T=  32 E= 8 K=2 random  triton_fused         23.89 us  4.36x
+routed_moe         T=  32 E= 8 K=2 skewed  torch_loop          629.70 us  1.00x
+routed_moe         T=  32 E= 8 K=2 skewed  triton_fused        192.51 us  3.27x
+grouped_gemm       T=  32 E= 8 K=2 skewed  torch_cublas         49.91 us  1.00x
+grouped_gemm       T=  32 E= 8 K=2 skewed  triton_grouped       21.85 us  2.28x
+gate_up_swiglu     T=  32 E= 8 K=2 skewed  torch_cublas         81.99 us  1.00x
+gate_up_swiglu     T=  32 E= 8 K=2 skewed  triton_fused         21.85 us  3.75x
+end_to_end         T= 128 E= 8 K=2 router  torch_loop          965.97 us  1.00x
+end_to_end         T= 128 E= 8 K=2 router  triton_unfused      252.93 us  3.82x
+end_to_end         T= 128 E= 8 K=2 router  triton_fused        233.81 us  4.13x
+routed_moe         T= 128 E= 8 K=2 uniform torch_loop         1016.49 us  1.00x
+routed_moe         T= 128 E= 8 K=2 uniform triton_fused        198.67 us  5.12x
+grouped_gemm       T= 128 E= 8 K=2 uniform torch_cublas         69.63 us  1.00x
+grouped_gemm       T= 128 E= 8 K=2 uniform triton_grouped       27.22 us  2.56x
+gate_up_swiglu     T= 128 E= 8 K=2 uniform torch_cublas        115.11 us  1.00x
+gate_up_swiglu     T= 128 E= 8 K=2 uniform triton_fused         21.50 us  5.35x
+routed_moe         T= 128 E= 8 K=2 random  torch_loop          908.99 us  1.00x
+routed_moe         T= 128 E= 8 K=2 random  triton_fused        187.39 us  4.85x
+grouped_gemm       T= 128 E= 8 K=2 random  torch_cublas         70.03 us  1.00x
+grouped_gemm       T= 128 E= 8 K=2 random  triton_grouped       26.93 us  2.60x
+gate_up_swiglu     T= 128 E= 8 K=2 random  torch_cublas        105.50 us  1.00x
+gate_up_swiglu     T= 128 E= 8 K=2 random  triton_fused         23.89 us  4.42x
+routed_moe         T= 128 E= 8 K=2 skewed  torch_loop          642.47 us  1.00x
+routed_moe         T= 128 E= 8 K=2 skewed  triton_fused        191.15 us  3.36x
+grouped_gemm       T= 128 E= 8 K=2 skewed  torch_cublas         49.48 us  1.00x
+grouped_gemm       T= 128 E= 8 K=2 skewed  triton_grouped       28.97 us  1.71x
+gate_up_swiglu     T= 128 E= 8 K=2 skewed  torch_cublas         94.21 us  1.00x
+gate_up_swiglu     T= 128 E= 8 K=2 skewed  triton_fused         24.53 us  3.84x
+end_to_end         T= 512 E= 8 K=2 router  torch_loop          967.00 us  1.00x
+end_to_end         T= 512 E= 8 K=2 router  triton_unfused      259.41 us  3.73x
+end_to_end         T= 512 E= 8 K=2 router  triton_fused        245.81 us  3.93x
+routed_moe         T= 512 E= 8 K=2 uniform torch_loop          925.35 us  1.00x
+routed_moe         T= 512 E= 8 K=2 uniform triton_fused        197.39 us  4.69x
+grouped_gemm       T= 512 E= 8 K=2 uniform torch_cublas         72.70 us  1.00x
+grouped_gemm       T= 512 E= 8 K=2 uniform triton_grouped       48.13 us  1.51x
+gate_up_swiglu     T= 512 E= 8 K=2 uniform torch_cublas        106.49 us  1.00x
+gate_up_swiglu     T= 512 E= 8 K=2 uniform triton_fused         38.57 us  2.76x
+routed_moe         T= 512 E= 8 K=2 random  torch_loop          931.50 us  1.00x
+routed_moe         T= 512 E= 8 K=2 random  triton_fused        192.85 us  4.83x
+grouped_gemm       T= 512 E= 8 K=2 random  torch_cublas         72.45 us  1.00x
+grouped_gemm       T= 512 E= 8 K=2 random  triton_grouped       53.59 us  1.35x
+gate_up_swiglu     T= 512 E= 8 K=2 random  torch_cublas        112.70 us  1.00x
+gate_up_swiglu     T= 512 E= 8 K=2 random  triton_fused         38.22 us  2.95x
+tile_sweep         T= 512 E= 8 K=2 random  torch_cublas        123.22 us  1.00x
+tile_sweep         T= 512 E= 8 K=2 random  BM16_BN32            67.55 us  1.82x
+tile_sweep         T= 512 E= 8 K=2 random  BM16_BN64            57.32 us  2.15x
+tile_sweep         T= 512 E= 8 K=2 random  BM16_BN128           49.15 us  2.51x
+tile_sweep         T= 512 E= 8 K=2 random  BM32_BN32            71.61 us  1.72x
+tile_sweep         T= 512 E= 8 K=2 random  BM32_BN64            40.62 us  3.03x
+tile_sweep         T= 512 E= 8 K=2 random  BM32_BN128           41.64 us  2.96x
+tile_sweep         T= 512 E= 8 K=2 random  BM64_BN32            44.37 us  2.78x
+tile_sweep         T= 512 E= 8 K=2 random  BM64_BN64            42.67 us  2.89x
+tile_sweep         T= 512 E= 8 K=2 random  BM64_BN128           45.74 us  2.69x
+routed_moe         T= 512 E= 8 K=2 skewed  torch_loop          633.88 us  1.00x
+routed_moe         T= 512 E= 8 K=2 skewed  triton_fused        204.45 us  3.10x
+grouped_gemm       T= 512 E= 8 K=2 skewed  torch_cublas         50.18 us  1.00x
+grouped_gemm       T= 512 E= 8 K=2 skewed  triton_grouped       51.54 us  0.97x
+gate_up_swiglu     T= 512 E= 8 K=2 skewed  torch_cublas         83.56 us  1.00x
+gate_up_swiglu     T= 512 E= 8 K=2 skewed  triton_fused         41.23 us  2.03x
+end_to_end         T=2048 E= 8 K=2 router  torch_loop          977.63 us  1.00x
+end_to_end         T=2048 E= 8 K=2 router  triton_unfused      392.11 us  2.49x
+end_to_end         T=2048 E= 8 K=2 router  triton_fused        331.43 us  2.95x
+routed_moe         T=2048 E= 8 K=2 uniform torch_loop          927.06 us  1.00x
+routed_moe         T=2048 E= 8 K=2 uniform triton_fused        292.18 us  3.17x
+grouped_gemm       T=2048 E= 8 K=2 uniform torch_cublas        186.02 us  1.00x
+grouped_gemm       T=2048 E= 8 K=2 uniform triton_grouped      157.70 us  1.18x
+gate_up_swiglu     T=2048 E= 8 K=2 uniform torch_cublas        385.01 us  1.00x
+gate_up_swiglu     T=2048 E= 8 K=2 uniform triton_fused        109.56 us  3.51x
+routed_moe         T=2048 E= 8 K=2 random  torch_loop          934.89 us  1.00x
+routed_moe         T=2048 E= 8 K=2 random  triton_fused        296.62 us  3.15x
+grouped_gemm       T=2048 E= 8 K=2 random  torch_cublas        187.38 us  1.00x
+grouped_gemm       T=2048 E= 8 K=2 random  triton_grouped      162.82 us  1.15x
+gate_up_swiglu     T=2048 E= 8 K=2 random  torch_cublas        379.22 us  1.00x
+gate_up_swiglu     T=2048 E= 8 K=2 random  triton_fused        114.35 us  3.32x
+routed_moe         T=2048 E= 8 K=2 skewed  torch_loop          847.94 us  1.00x
+routed_moe         T=2048 E= 8 K=2 skewed  triton_fused        291.84 us  2.91x
+grouped_gemm       T=2048 E= 8 K=2 skewed  torch_cublas        134.49 us  1.00x
+grouped_gemm       T=2048 E= 8 K=2 skewed  triton_grouped      154.26 us  0.87x
+gate_up_swiglu     T=2048 E= 8 K=2 skewed  torch_cublas        309.59 us  1.00x
+gate_up_swiglu     T=2048 E= 8 K=2 skewed  triton_fused        109.57 us  2.83x
+end_to_end         T=   1 E= 8 K=4 router  torch_loop          775.78 us  1.00x
+end_to_end         T=   1 E= 8 K=4 router  triton_unfused      252.15 us  3.08x
+end_to_end         T=   1 E= 8 K=4 router  triton_fused        242.35 us  3.20x
+routed_moe         T=   1 E= 8 K=4 uniform torch_loop          795.65 us  1.00x
+routed_moe         T=   1 E= 8 K=4 uniform triton_fused        189.10 us  4.21x
+grouped_gemm       T=   1 E= 8 K=4 uniform torch_cublas         70.36 us  1.00x
+grouped_gemm       T=   1 E= 8 K=4 uniform triton_grouped       22.53 us  3.12x
+gate_up_swiglu     T=   1 E= 8 K=4 uniform torch_cublas        118.78 us  1.00x
+gate_up_swiglu     T=   1 E= 8 K=4 uniform triton_fused         24.82 us  4.79x
+routed_moe         T=   1 E= 8 K=4 random  torch_loop          752.98 us  1.00x
+routed_moe         T=   1 E= 8 K=4 random  triton_fused        195.24 us  3.86x
+grouped_gemm       T=   1 E= 8 K=4 random  torch_cublas         70.31 us  1.00x
+grouped_gemm       T=   1 E= 8 K=4 random  triton_grouped       22.87 us  3.07x
+gate_up_swiglu     T=   1 E= 8 K=4 random  torch_cublas        103.77 us  1.00x
+gate_up_swiglu     T=   1 E= 8 K=4 random  triton_fused         23.90 us  4.34x
+routed_moe         T=   1 E= 8 K=4 skewed  torch_loop          732.16 us  1.00x
+routed_moe         T=   1 E= 8 K=4 skewed  triton_fused        188.01 us  3.89x
+grouped_gemm       T=   1 E= 8 K=4 skewed  torch_cublas         73.76 us  1.00x
+grouped_gemm       T=   1 E= 8 K=4 skewed  triton_grouped       23.54 us  3.13x
+gate_up_swiglu     T=   1 E= 8 K=4 skewed  torch_cublas        119.47 us  1.00x
+gate_up_swiglu     T=   1 E= 8 K=4 skewed  triton_fused         20.48 us  5.83x
+end_to_end         T=   8 E= 8 K=4 router  torch_loop          974.51 us  1.00x
+end_to_end         T=   8 E= 8 K=4 router  triton_unfused      253.27 us  3.85x
+end_to_end         T=   8 E= 8 K=4 router  triton_fused        235.52 us  4.14x
+routed_moe         T=   8 E= 8 K=4 uniform torch_loop         1013.76 us  1.00x
+routed_moe         T=   8 E= 8 K=4 uniform triton_fused        193.62 us  5.24x
+grouped_gemm       T=   8 E= 8 K=4 uniform torch_cublas         73.11 us  1.00x
+grouped_gemm       T=   8 E= 8 K=4 uniform triton_grouped       23.89 us  3.06x
+gate_up_swiglu     T=   8 E= 8 K=4 uniform torch_cublas        103.82 us  1.00x
+gate_up_swiglu     T=   8 E= 8 K=4 uniform triton_fused         24.92 us  4.17x
+routed_moe         T=   8 E= 8 K=4 random  torch_loop          964.27 us  1.00x
+routed_moe         T=   8 E= 8 K=4 random  triton_fused        194.90 us  4.95x
+grouped_gemm       T=   8 E= 8 K=4 random  torch_cublas         66.56 us  1.00x
+grouped_gemm       T=   8 E= 8 K=4 random  triton_grouped       27.30 us  2.44x
+gate_up_swiglu     T=   8 E= 8 K=4 random  torch_cublas        103.08 us  1.00x
+gate_up_swiglu     T=   8 E= 8 K=4 random  triton_fused         25.26 us  4.08x
+routed_moe         T=   8 E= 8 K=4 skewed  torch_loop          735.91 us  1.00x
+routed_moe         T=   8 E= 8 K=4 skewed  triton_fused        190.14 us  3.87x
+grouped_gemm       T=   8 E= 8 K=4 skewed  torch_cublas         57.34 us  1.00x
+grouped_gemm       T=   8 E= 8 K=4 skewed  triton_grouped       19.46 us  2.95x
+gate_up_swiglu     T=   8 E= 8 K=4 skewed  torch_cublas         87.04 us  1.00x
+gate_up_swiglu     T=   8 E= 8 K=4 skewed  triton_fused         25.26 us  3.45x
+end_to_end         T=  32 E= 8 K=4 router  torch_loop         1012.05 us  1.00x
+end_to_end         T=  32 E= 8 K=4 router  triton_unfused      264.90 us  3.82x
+end_to_end         T=  32 E= 8 K=4 router  triton_fused        251.90 us  4.02x
+routed_moe         T=  32 E= 8 K=4 uniform torch_loop          951.64 us  1.00x
+routed_moe         T=  32 E= 8 K=4 uniform triton_fused        199.69 us  4.77x
+grouped_gemm       T=  32 E= 8 K=4 uniform torch_cublas         69.97 us  1.00x
+grouped_gemm       T=  32 E= 8 K=4 uniform triton_grouped       26.28 us  2.66x
+gate_up_swiglu     T=  32 E= 8 K=4 uniform torch_cublas        102.83 us  1.00x
+gate_up_swiglu     T=  32 E= 8 K=4 uniform triton_fused         23.55 us  4.37x
+routed_moe         T=  32 E= 8 K=4 random  torch_loop          909.92 us  1.00x
+routed_moe         T=  32 E= 8 K=4 random  triton_fused        188.76 us  4.82x
+grouped_gemm       T=  32 E= 8 K=4 random  torch_cublas         71.71 us  1.00x
+grouped_gemm       T=  32 E= 8 K=4 random  triton_grouped       22.53 us  3.18x
+gate_up_swiglu     T=  32 E= 8 K=4 random  torch_cublas        105.13 us  1.00x
+gate_up_swiglu     T=  32 E= 8 K=4 random  triton_fused         21.16 us  4.97x
+routed_moe         T=  32 E= 8 K=4 skewed  torch_loop          722.94 us  1.00x
+routed_moe         T=  32 E= 8 K=4 skewed  triton_fused        190.46 us  3.80x
+grouped_gemm       T=  32 E= 8 K=4 skewed  torch_cublas         61.44 us  1.00x
+grouped_gemm       T=  32 E= 8 K=4 skewed  triton_grouped       23.21 us  2.65x
+gate_up_swiglu     T=  32 E= 8 K=4 skewed  torch_cublas         95.23 us  1.00x
+gate_up_swiglu     T=  32 E= 8 K=4 skewed  triton_fused         20.82 us  4.57x
+end_to_end         T= 128 E= 8 K=4 router  torch_loop         1061.55 us  1.00x
+end_to_end         T= 128 E= 8 K=4 router  triton_unfused      274.36 us  3.87x
+end_to_end         T= 128 E= 8 K=4 router  triton_fused        257.71 us  4.12x
+routed_moe         T= 128 E= 8 K=4 uniform torch_loop          893.61 us  1.00x
+routed_moe         T= 128 E= 8 K=4 uniform triton_fused        190.81 us  4.68x
+grouped_gemm       T= 128 E= 8 K=4 uniform torch_cublas         73.02 us  1.00x
+grouped_gemm       T= 128 E= 8 K=4 uniform triton_grouped       30.36 us  2.41x
+gate_up_swiglu     T= 128 E= 8 K=4 uniform torch_cublas        104.45 us  1.00x
+gate_up_swiglu     T= 128 E= 8 K=4 uniform triton_fused         29.01 us  3.60x
+routed_moe         T= 128 E= 8 K=4 random  torch_loop          927.40 us  1.00x
+routed_moe         T= 128 E= 8 K=4 random  triton_fused        208.63 us  4.45x
+grouped_gemm       T= 128 E= 8 K=4 random  torch_cublas         74.13 us  1.00x
+grouped_gemm       T= 128 E= 8 K=4 random  triton_grouped       35.84 us  2.07x
+gate_up_swiglu     T= 128 E= 8 K=4 random  torch_cublas        106.23 us  1.00x
+gate_up_swiglu     T= 128 E= 8 K=4 random  triton_fused         30.38 us  3.50x
+routed_moe         T= 128 E= 8 K=4 skewed  torch_loop          736.60 us  1.00x
+routed_moe         T= 128 E= 8 K=4 skewed  triton_fused        193.17 us  3.81x
+grouped_gemm       T= 128 E= 8 K=4 skewed  torch_cublas         58.37 us  1.00x
+grouped_gemm       T= 128 E= 8 K=4 skewed  triton_grouped       34.10 us  1.71x
+gate_up_swiglu     T= 128 E= 8 K=4 skewed  torch_cublas         95.57 us  1.00x
+gate_up_swiglu     T= 128 E= 8 K=4 skewed  triton_fused         32.68 us  2.92x
+end_to_end         T= 512 E= 8 K=4 router  torch_loop          948.57 us  1.00x
+end_to_end         T= 512 E= 8 K=4 router  triton_unfused      295.94 us  3.21x
+end_to_end         T= 512 E= 8 K=4 router  triton_fused        269.63 us  3.52x
+routed_moe         T= 512 E= 8 K=4 uniform torch_loop          909.31 us  1.00x
+routed_moe         T= 512 E= 8 K=4 uniform triton_fused        218.79 us  4.16x
+grouped_gemm       T= 512 E= 8 K=4 uniform torch_cublas        108.14 us  1.00x
+grouped_gemm       T= 512 E= 8 K=4 uniform triton_grouped       81.92 us  1.32x
+gate_up_swiglu     T= 512 E= 8 K=4 uniform torch_cublas        164.18 us  1.00x
+gate_up_swiglu     T= 512 E= 8 K=4 uniform triton_fused         64.13 us  2.56x
+routed_moe         T= 512 E= 8 K=4 random  torch_loop          957.44 us  1.00x
+routed_moe         T= 512 E= 8 K=4 random  triton_fused        227.67 us  4.21x
+grouped_gemm       T= 512 E= 8 K=4 random  torch_cublas        106.82 us  1.00x
+grouped_gemm       T= 512 E= 8 K=4 random  triton_grouped       89.77 us  1.19x
+gate_up_swiglu     T= 512 E= 8 K=4 random  torch_cublas        164.52 us  1.00x
+gate_up_swiglu     T= 512 E= 8 K=4 random  triton_fused         64.85 us  2.54x
+routed_moe         T= 512 E= 8 K=4 skewed  torch_loop          780.97 us  1.00x
+routed_moe         T= 512 E= 8 K=4 skewed  triton_fused        210.54 us  3.71x
+grouped_gemm       T= 512 E= 8 K=4 skewed  torch_cublas         92.50 us  1.00x
+grouped_gemm       T= 512 E= 8 K=4 skewed  triton_grouped       81.55 us  1.13x
+gate_up_swiglu     T= 512 E= 8 K=4 skewed  torch_cublas        148.48 us  1.00x
+gate_up_swiglu     T= 512 E= 8 K=4 skewed  triton_fused         63.46 us  2.34x
+end_to_end         T=2048 E= 8 K=4 router  torch_loop         1256.11 us  1.00x
+end_to_end         T=2048 E= 8 K=4 router  triton_unfused      690.46 us  1.82x
+end_to_end         T=2048 E= 8 K=4 router  triton_fused        550.91 us  2.28x
+routed_moe         T=2048 E= 8 K=4 uniform torch_loop         1172.14 us  1.00x
+routed_moe         T=2048 E= 8 K=4 uniform triton_fused        492.54 us  2.38x
+grouped_gemm       T=2048 E= 8 K=4 uniform torch_cublas        385.02 us  1.00x
+grouped_gemm       T=2048 E= 8 K=4 uniform triton_grouped      288.09 us  1.34x
+gate_up_swiglu     T=2048 E= 8 K=4 uniform torch_cublas        823.30 us  1.00x
+gate_up_swiglu     T=2048 E= 8 K=4 uniform triton_fused        206.49 us  3.99x
+routed_moe         T=2048 E= 8 K=4 random  torch_loop         1184.39 us  1.00x
+routed_moe         T=2048 E= 8 K=4 random  triton_fused        499.03 us  2.37x
+grouped_gemm       T=2048 E= 8 K=4 random  torch_cublas        384.00 us  1.00x
+grouped_gemm       T=2048 E= 8 K=4 random  triton_grouped      296.28 us  1.30x
+gate_up_swiglu     T=2048 E= 8 K=4 random  torch_cublas        833.88 us  1.00x
+gate_up_swiglu     T=2048 E= 8 K=4 random  triton_fused        210.26 us  3.97x
+routed_moe         T=2048 E= 8 K=4 skewed  torch_loop         1177.60 us  1.00x
+routed_moe         T=2048 E= 8 K=4 skewed  triton_fused        491.09 us  2.40x
+grouped_gemm       T=2048 E= 8 K=4 skewed  torch_cublas        364.89 us  1.00x
+grouped_gemm       T=2048 E= 8 K=4 skewed  triton_grouped      290.13 us  1.26x
+gate_up_swiglu     T=2048 E= 8 K=4 skewed  torch_cublas        821.88 us  1.00x
+gate_up_swiglu     T=2048 E= 8 K=4 skewed  triton_fused        205.14 us  4.01x
+end_to_end         T=   1 E=16 K=1 router  torch_loop         1132.83 us  1.00x
+end_to_end         T=   1 E=16 K=1 router  triton_unfused      240.98 us  4.70x
+end_to_end         T=   1 E=16 K=1 router  triton_fused        235.26 us  4.82x
+routed_moe         T=   1 E=16 K=1 uniform torch_loop         1082.75 us  1.00x
+routed_moe         T=   1 E=16 K=1 uniform triton_fused        210.60 us  5.14x
+grouped_gemm       T=   1 E=16 K=1 uniform torch_cublas         71.97 us  1.00x
+grouped_gemm       T=   1 E=16 K=1 uniform triton_grouped       22.87 us  3.15x
+gate_up_swiglu     T=   1 E=16 K=1 uniform torch_cublas        105.13 us  1.00x
+gate_up_swiglu     T=   1 E=16 K=1 uniform triton_fused         24.92 us  4.22x
+routed_moe         T=   1 E=16 K=1 random  torch_loop         1131.52 us  1.00x
+routed_moe         T=   1 E=16 K=1 random  triton_fused        187.05 us  6.05x
+grouped_gemm       T=   1 E=16 K=1 random  torch_cublas         83.90 us  1.00x
+grouped_gemm       T=   1 E=16 K=1 random  triton_grouped       21.50 us  3.90x
+gate_up_swiglu     T=   1 E=16 K=1 random  torch_cublas        119.83 us  1.00x
+gate_up_swiglu     T=   1 E=16 K=1 random  triton_fused         23.55 us  5.09x
+routed_moe         T=   1 E=16 K=1 skewed  torch_loop         1139.10 us  1.00x
+routed_moe         T=   1 E=16 K=1 skewed  triton_fused        193.54 us  5.89x
+grouped_gemm       T=   1 E=16 K=1 skewed  torch_cublas         73.05 us  1.00x
+grouped_gemm       T=   1 E=16 K=1 skewed  triton_grouped       24.58 us  2.97x
+gate_up_swiglu     T=   1 E=16 K=1 skewed  torch_cublas        112.98 us  1.00x
+gate_up_swiglu     T=   1 E=16 K=1 skewed  triton_fused         24.93 us  4.53x
+end_to_end         T=   8 E=16 K=1 router  torch_loop         1505.28 us  1.00x
+end_to_end         T=   8 E=16 K=1 router  triton_unfused      257.34 us  5.85x
+end_to_end         T=   8 E=16 K=1 router  triton_fused        257.71 us  5.84x
+routed_moe         T=   8 E=16 K=1 uniform torch_loop         1472.85 us  1.00x
+routed_moe         T=   8 E=16 K=1 uniform triton_fused        187.05 us  7.87x
+grouped_gemm       T=   8 E=16 K=1 uniform torch_cublas        124.93 us  1.00x
+grouped_gemm       T=   8 E=16 K=1 uniform triton_grouped       24.58 us  5.08x
+gate_up_swiglu     T=   8 E=16 K=1 uniform torch_cublas        160.42 us  1.00x
+gate_up_swiglu     T=   8 E=16 K=1 uniform triton_fused         26.62 us  6.03x
+routed_moe         T=   8 E=16 K=1 random  torch_loop         1372.16 us  1.00x
+routed_moe         T=   8 E=16 K=1 random  triton_fused        197.97 us  6.93x
+grouped_gemm       T=   8 E=16 K=1 random  torch_cublas        109.23 us  1.00x
+grouped_gemm       T=   8 E=16 K=1 random  triton_grouped       23.21 us  4.71x
+gate_up_swiglu     T=   8 E=16 K=1 random  torch_cublas        140.98 us  1.00x
+gate_up_swiglu     T=   8 E=16 K=1 random  triton_fused         20.14 us  7.00x
+routed_moe         T=   8 E=16 K=1 skewed  torch_loop         1093.29 us  1.00x
+routed_moe         T=   8 E=16 K=1 skewed  triton_fused        206.51 us  5.29x
+grouped_gemm       T=   8 E=16 K=1 skewed  torch_cublas         72.70 us  1.00x
+grouped_gemm       T=   8 E=16 K=1 skewed  triton_grouped       19.43 us  3.74x
+gate_up_swiglu     T=   8 E=16 K=1 skewed  torch_cublas        102.68 us  1.00x
+gate_up_swiglu     T=   8 E=16 K=1 skewed  triton_fused         21.50 us  4.77x
+end_to_end         T=  32 E=16 K=1 router  torch_loop         1772.54 us  1.00x
+end_to_end         T=  32 E=16 K=1 router  triton_unfused      265.56 us  6.67x
+end_to_end         T=  32 E=16 K=1 router  triton_fused        233.81 us  7.58x
+routed_moe         T=  32 E=16 K=1 uniform torch_loop         1781.76 us  1.00x
+routed_moe         T=  32 E=16 K=1 uniform triton_fused        195.24 us  9.13x
+grouped_gemm       T=  32 E=16 K=1 uniform torch_cublas        130.73 us  1.00x
+grouped_gemm       T=  32 E=16 K=1 uniform triton_grouped       35.48 us  3.68x
+gate_up_swiglu     T=  32 E=16 K=1 uniform torch_cublas        166.93 us  1.00x
+gate_up_swiglu     T=  32 E=16 K=1 uniform triton_fused         29.01 us  5.75x
+routed_moe         T=  32 E=16 K=1 random  torch_loop         1692.97 us  1.00x
+routed_moe         T=  32 E=16 K=1 random  triton_fused        190.81 us  8.87x
+grouped_gemm       T=  32 E=16 K=1 random  torch_cublas        125.27 us  1.00x
+grouped_gemm       T=  32 E=16 K=1 random  triton_grouped       27.65 us  4.53x
+gate_up_swiglu     T=  32 E=16 K=1 random  torch_cublas        160.10 us  1.00x
+gate_up_swiglu     T=  32 E=16 K=1 random  triton_fused         25.51 us  6.27x
+routed_moe         T=  32 E=16 K=1 skewed  torch_loop         1081.02 us  1.00x
+routed_moe         T=  32 E=16 K=1 skewed  triton_fused        199.34 us  5.42x
+grouped_gemm       T=  32 E=16 K=1 skewed  torch_cublas         69.00 us  1.00x
+grouped_gemm       T=  32 E=16 K=1 skewed  triton_grouped       27.37 us  2.52x
+gate_up_swiglu     T=  32 E=16 K=1 skewed  torch_cublas        105.13 us  1.00x
+gate_up_swiglu     T=  32 E=16 K=1 skewed  triton_fused         23.13 us  4.55x
+end_to_end         T= 128 E=16 K=1 router  torch_loop         1874.94 us  1.00x
+end_to_end         T= 128 E=16 K=1 router  triton_unfused      242.35 us  7.74x
+end_to_end         T= 128 E=16 K=1 router  triton_fused        247.81 us  7.57x
+routed_moe         T= 128 E=16 K=1 uniform torch_loop         1839.10 us  1.00x
+routed_moe         T= 128 E=16 K=1 uniform triton_fused        202.11 us  9.10x
+grouped_gemm       T= 128 E=16 K=1 uniform torch_cublas        127.32 us  1.00x
+grouped_gemm       T= 128 E=16 K=1 uniform triton_grouped       31.72 us  4.01x
+gate_up_swiglu     T= 128 E=16 K=1 uniform torch_cublas        164.90 us  1.00x
+gate_up_swiglu     T= 128 E=16 K=1 uniform triton_fused         26.62 us  6.19x
+routed_moe         T= 128 E=16 K=1 random  torch_loop         1810.77 us  1.00x
+routed_moe         T= 128 E=16 K=1 random  triton_fused        191.49 us  9.46x
+grouped_gemm       T= 128 E=16 K=1 random  torch_cublas        140.55 us  1.00x
+grouped_gemm       T= 128 E=16 K=1 random  triton_grouped       31.74 us  4.43x
+gate_up_swiglu     T= 128 E=16 K=1 random  torch_cublas        166.23 us  1.00x
+gate_up_swiglu     T= 128 E=16 K=1 random  triton_fused         30.68 us  5.42x
+routed_moe         T= 128 E=16 K=1 skewed  torch_loop         1043.43 us  1.00x
+routed_moe         T= 128 E=16 K=1 skewed  triton_fused        189.44 us  5.51x
+grouped_gemm       T= 128 E=16 K=1 skewed  torch_cublas         69.63 us  1.00x
+grouped_gemm       T= 128 E=16 K=1 skewed  triton_grouped       20.78 us  3.35x
+gate_up_swiglu     T= 128 E=16 K=1 skewed  torch_cublas        100.05 us  1.00x
+gate_up_swiglu     T= 128 E=16 K=1 skewed  triton_fused         23.51 us  4.26x
+end_to_end         T= 512 E=16 K=1 router  torch_loop         1911.18 us  1.00x
+end_to_end         T= 512 E=16 K=1 router  triton_unfused      249.17 us  7.67x
+end_to_end         T= 512 E=16 K=1 router  triton_fused        244.73 us  7.81x
+routed_moe         T= 512 E=16 K=1 uniform torch_loop         1798.54 us  1.00x
+routed_moe         T= 512 E=16 K=1 uniform triton_fused        194.22 us  9.26x
+grouped_gemm       T= 512 E=16 K=1 uniform torch_cublas        129.71 us  1.00x
+grouped_gemm       T= 512 E=16 K=1 uniform triton_grouped       37.16 us  3.49x
+gate_up_swiglu     T= 512 E=16 K=1 uniform torch_cublas        186.10 us  1.00x
+gate_up_swiglu     T= 512 E=16 K=1 uniform triton_fused         28.57 us  6.51x
+routed_moe         T= 512 E=16 K=1 random  torch_loop         1860.61 us  1.00x
+routed_moe         T= 512 E=16 K=1 random  triton_fused        201.73 us  9.22x
+grouped_gemm       T= 512 E=16 K=1 random  torch_cublas        132.73 us  1.00x
+grouped_gemm       T= 512 E=16 K=1 random  triton_grouped       38.57 us  3.44x
+gate_up_swiglu     T= 512 E=16 K=1 random  torch_cublas        168.62 us  1.00x
+gate_up_swiglu     T= 512 E=16 K=1 random  triton_fused         34.13 us  4.94x
+routed_moe         T= 512 E=16 K=1 skewed  torch_loop         1074.94 us  1.00x
+routed_moe         T= 512 E=16 K=1 skewed  triton_fused        192.51 us  5.58x
+grouped_gemm       T= 512 E=16 K=1 skewed  torch_cublas         69.97 us  1.00x
+grouped_gemm       T= 512 E=16 K=1 skewed  triton_grouped       30.72 us  2.28x
+gate_up_swiglu     T= 512 E=16 K=1 skewed  torch_cublas        101.03 us  1.00x
+gate_up_swiglu     T= 512 E=16 K=1 skewed  triton_fused         27.29 us  3.70x
+end_to_end         T=2048 E=16 K=1 router  torch_loop         1939.84 us  1.00x
+end_to_end         T=2048 E=16 K=1 router  triton_unfused      278.53 us  6.96x
+end_to_end         T=2048 E=16 K=1 router  triton_fused        276.14 us  7.02x
+routed_moe         T=2048 E=16 K=1 uniform torch_loop         1815.21 us  1.00x
+routed_moe         T=2048 E=16 K=1 uniform triton_fused        209.24 us  8.68x
+grouped_gemm       T=2048 E=16 K=1 uniform torch_cublas        139.95 us  1.00x
+grouped_gemm       T=2048 E=16 K=1 uniform triton_grouped       89.09 us  1.57x
+gate_up_swiglu     T=2048 E=16 K=1 uniform torch_cublas        201.39 us  1.00x
+gate_up_swiglu     T=2048 E=16 K=1 uniform triton_fused         65.19 us  3.09x
+routed_moe         T=2048 E=16 K=1 random  torch_loop         1828.86 us  1.00x
+routed_moe         T=2048 E=16 K=1 random  triton_fused        214.70 us  8.52x
+grouped_gemm       T=2048 E=16 K=1 random  torch_cublas        136.19 us  1.00x
+grouped_gemm       T=2048 E=16 K=1 random  triton_grouped       97.28 us  1.40x
+gate_up_swiglu     T=2048 E=16 K=1 random  torch_cublas        202.06 us  1.00x
+gate_up_swiglu     T=2048 E=16 K=1 random  triton_fused         70.66 us  2.86x
+routed_moe         T=2048 E=16 K=1 skewed  torch_loop         1164.98 us  1.00x
+routed_moe         T=2048 E=16 K=1 skewed  triton_fused        204.80 us  5.69x
+grouped_gemm       T=2048 E=16 K=1 skewed  torch_cublas         77.77 us  1.00x
+grouped_gemm       T=2048 E=16 K=1 skewed  triton_grouped       87.69 us  0.89x
+gate_up_swiglu     T=2048 E=16 K=1 skewed  torch_cublas        137.56 us  1.00x
+gate_up_swiglu     T=2048 E=16 K=1 skewed  triton_fused         63.48 us  2.17x
+end_to_end         T=   1 E=16 K=2 router  torch_loop         1162.58 us  1.00x
+end_to_end         T=   1 E=16 K=2 router  triton_unfused      273.75 us  4.25x
+end_to_end         T=   1 E=16 K=2 router  triton_fused        231.08 us  5.03x
+routed_moe         T=   1 E=16 K=2 uniform torch_loop         1138.35 us  1.00x
+routed_moe         T=   1 E=16 K=2 uniform triton_fused        199.00 us  5.72x
+grouped_gemm       T=   1 E=16 K=2 uniform torch_cublas         81.49 us  1.00x
+grouped_gemm       T=   1 E=16 K=2 uniform triton_grouped       21.49 us  3.79x
+gate_up_swiglu     T=   1 E=16 K=2 uniform torch_cublas        114.09 us  1.00x
+gate_up_swiglu     T=   1 E=16 K=2 uniform triton_fused         23.81 us  4.79x
+routed_moe         T=   1 E=16 K=2 random  torch_loop         1104.50 us  1.00x
+routed_moe         T=   1 E=16 K=2 random  triton_fused        186.71 us  5.92x
+grouped_gemm       T=   1 E=16 K=2 random  torch_cublas         84.30 us  1.00x
+grouped_gemm       T=   1 E=16 K=2 random  triton_grouped       20.76 us  4.06x
+gate_up_swiglu     T=   1 E=16 K=2 random  torch_cublas        120.49 us  1.00x
+gate_up_swiglu     T=   1 E=16 K=2 random  triton_fused         20.42 us  5.90x
+routed_moe         T=   1 E=16 K=2 skewed  torch_loop         1143.13 us  1.00x
+routed_moe         T=   1 E=16 K=2 skewed  triton_fused        193.19 us  5.92x
+grouped_gemm       T=   1 E=16 K=2 skewed  torch_cublas         79.89 us  1.00x
+grouped_gemm       T=   1 E=16 K=2 skewed  triton_grouped       27.96 us  2.86x
+gate_up_swiglu     T=   1 E=16 K=2 skewed  torch_cublas        116.37 us  1.00x
+gate_up_swiglu     T=   1 E=16 K=2 skewed  triton_fused         23.61 us  4.93x
+end_to_end         T=   8 E=16 K=2 router  torch_loop         1569.11 us  1.00x
+end_to_end         T=   8 E=16 K=2 router  triton_unfused      250.28 us  6.27x
+end_to_end         T=   8 E=16 K=2 router  triton_fused        236.92 us  6.62x
+routed_moe         T=   8 E=16 K=2 uniform torch_loop         1830.91 us  1.00x
+routed_moe         T=   8 E=16 K=2 uniform triton_fused        197.65 us  9.26x
+grouped_gemm       T=   8 E=16 K=2 uniform torch_cublas        179.54 us  1.00x
+grouped_gemm       T=   8 E=16 K=2 uniform triton_grouped       34.13 us  5.26x
+gate_up_swiglu     T=   8 E=16 K=2 uniform torch_cublas        213.33 us  1.00x
+gate_up_swiglu     T=   8 E=16 K=2 uniform triton_fused         26.26 us  8.12x
+routed_moe         T=   8 E=16 K=2 random  torch_loop         1556.14 us  1.00x
+routed_moe         T=   8 E=16 K=2 random  triton_fused        189.85 us  8.20x
+grouped_gemm       T=   8 E=16 K=2 random  torch_cublas        138.92 us  1.00x
+grouped_gemm       T=   8 E=16 K=2 random  triton_grouped       29.70 us  4.68x
+gate_up_swiglu     T=   8 E=16 K=2 random  torch_cublas        180.57 us  1.00x
+gate_up_swiglu     T=   8 E=16 K=2 random  triton_fused         27.31 us  6.61x
+routed_moe         T=   8 E=16 K=2 skewed  torch_loop         1174.87 us  1.00x
+routed_moe         T=   8 E=16 K=2 skewed  triton_fused        192.85 us  6.09x
+grouped_gemm       T=   8 E=16 K=2 skewed  torch_cublas         75.15 us  1.00x
+grouped_gemm       T=   8 E=16 K=2 skewed  triton_grouped       28.03 us  2.68x
+gate_up_swiglu     T=   8 E=16 K=2 skewed  torch_cublas        108.54 us  1.00x
+gate_up_swiglu     T=   8 E=16 K=2 skewed  triton_fused         24.54 us  4.42x
+end_to_end         T=  32 E=16 K=2 router  torch_loop         1849.40 us  1.00x
+end_to_end         T=  32 E=16 K=2 router  triton_unfused      248.58 us  7.44x
+end_to_end         T=  32 E=16 K=2 router  triton_fused        241.66 us  7.65x
+routed_moe         T=  32 E=16 K=2 uniform torch_loop         1872.58 us  1.00x
+routed_moe         T=  32 E=16 K=2 uniform triton_fused        200.36 us  9.35x
+grouped_gemm       T=  32 E=16 K=2 uniform torch_cublas        133.77 us  1.00x
+grouped_gemm       T=  32 E=16 K=2 uniform triton_grouped       32.77 us  4.08x
+gate_up_swiglu     T=  32 E=16 K=2 uniform torch_cublas        166.57 us  1.00x
+gate_up_swiglu     T=  32 E=16 K=2 uniform triton_fused         29.70 us  5.61x
+routed_moe         T=  32 E=16 K=2 random  torch_loop         1858.56 us  1.00x
+routed_moe         T=  32 E=16 K=2 random  triton_fused        200.36 us  9.28x
+grouped_gemm       T=  32 E=16 K=2 random  torch_cublas        136.17 us  1.00x
+grouped_gemm       T=  32 E=16 K=2 random  triton_grouped       32.43 us  4.20x
+gate_up_swiglu     T=  32 E=16 K=2 random  torch_cublas        174.47 us  1.00x
+gate_up_swiglu     T=  32 E=16 K=2 random  triton_fused         27.65 us  6.31x
+routed_moe         T=  32 E=16 K=2 skewed  torch_loop         1133.57 us  1.00x
+routed_moe         T=  32 E=16 K=2 skewed  triton_fused        191.49 us  5.92x
+grouped_gemm       T=  32 E=16 K=2 skewed  torch_cublas         76.44 us  1.00x
+grouped_gemm       T=  32 E=16 K=2 skewed  triton_grouped       22.78 us  3.35x
+gate_up_swiglu     T=  32 E=16 K=2 skewed  torch_cublas        106.15 us  1.00x
+gate_up_swiglu     T=  32 E=16 K=2 skewed  triton_fused         21.76 us  4.88x
+end_to_end         T= 128 E=16 K=2 router  torch_loop         1941.50 us  1.00x
+end_to_end         T= 128 E=16 K=2 router  triton_unfused      259.82 us  7.47x
+end_to_end         T= 128 E=16 K=2 router  triton_fused        245.42 us  7.91x
+routed_moe         T= 128 E=16 K=2 uniform torch_loop         1826.57 us  1.00x
+routed_moe         T= 128 E=16 K=2 uniform triton_fused        209.24 us  8.73x
+grouped_gemm       T= 128 E=16 K=2 uniform torch_cublas        130.39 us  1.00x
+grouped_gemm       T= 128 E=16 K=2 uniform triton_grouped       34.47 us  3.78x
+gate_up_swiglu     T= 128 E=16 K=2 uniform torch_cublas        165.15 us  1.00x
+gate_up_swiglu     T= 128 E=16 K=2 uniform triton_fused         29.35 us  5.63x
+routed_moe         T= 128 E=16 K=2 random  torch_loop         1878.70 us  1.00x
+routed_moe         T= 128 E=16 K=2 random  triton_fused        201.39 us  9.33x
+grouped_gemm       T= 128 E=16 K=2 random  torch_cublas        128.29 us  1.00x
+grouped_gemm       T= 128 E=16 K=2 random  triton_grouped       33.45 us  3.84x
+gate_up_swiglu     T= 128 E=16 K=2 random  torch_cublas        169.98 us  1.00x
+gate_up_swiglu     T= 128 E=16 K=2 random  triton_fused         25.26 us  6.73x
+routed_moe         T= 128 E=16 K=2 skewed  torch_loop         1135.96 us  1.00x
+routed_moe         T= 128 E=16 K=2 skewed  triton_fused        189.10 us  6.01x
+grouped_gemm       T= 128 E=16 K=2 skewed  torch_cublas         75.37 us  1.00x
+grouped_gemm       T= 128 E=16 K=2 skewed  triton_grouped       27.65 us  2.73x
+gate_up_swiglu     T= 128 E=16 K=2 skewed  torch_cublas        109.23 us  1.00x
+gate_up_swiglu     T= 128 E=16 K=2 skewed  triton_fused         25.60 us  4.27x
+end_to_end         T= 512 E=16 K=2 router  torch_loop         1850.29 us  1.00x
+end_to_end         T= 512 E=16 K=2 router  triton_unfused      268.29 us  6.90x
+end_to_end         T= 512 E=16 K=2 router  triton_fused        257.97 us  7.17x
+routed_moe         T= 512 E=16 K=2 uniform torch_loop         1856.17 us  1.00x
+routed_moe         T= 512 E=16 K=2 uniform triton_fused        203.51 us  9.12x
+grouped_gemm       T= 512 E=16 K=2 uniform torch_cublas        132.78 us  1.00x
+grouped_gemm       T= 512 E=16 K=2 uniform triton_grouped       50.52 us  2.63x
+gate_up_swiglu     T= 512 E=16 K=2 uniform torch_cublas        165.27 us  1.00x
+gate_up_swiglu     T= 512 E=16 K=2 uniform triton_fused         39.25 us  4.21x
+routed_moe         T= 512 E=16 K=2 random  torch_loop         1861.89 us  1.00x
+routed_moe         T= 512 E=16 K=2 random  triton_fused        205.82 us  9.05x
+grouped_gemm       T= 512 E=16 K=2 random  torch_cublas        137.17 us  1.00x
+grouped_gemm       T= 512 E=16 K=2 random  triton_grouped       60.07 us  2.28x
+gate_up_swiglu     T= 512 E=16 K=2 random  torch_cublas        178.52 us  1.00x
+gate_up_swiglu     T= 512 E=16 K=2 random  triton_fused         47.38 us  3.77x
+routed_moe         T= 512 E=16 K=2 skewed  torch_loop         1131.86 us  1.00x
+routed_moe         T= 512 E=16 K=2 skewed  triton_fused        203.78 us  5.55x
+grouped_gemm       T= 512 E=16 K=2 skewed  torch_cublas         66.90 us  1.00x
+grouped_gemm       T= 512 E=16 K=2 skewed  triton_grouped       52.91 us  1.26x
+gate_up_swiglu     T= 512 E=16 K=2 skewed  torch_cublas        103.77 us  1.00x
+gate_up_swiglu     T= 512 E=16 K=2 skewed  triton_fused         38.14 us  2.72x
+end_to_end         T=2048 E=16 K=2 router  torch_loop         1858.56 us  1.00x
+end_to_end         T=2048 E=16 K=2 router  triton_unfused      415.74 us  4.47x
+end_to_end         T=2048 E=16 K=2 router  triton_fused        353.94 us  5.25x
+routed_moe         T=2048 E=16 K=2 uniform torch_loop         1748.31 us  1.00x
+routed_moe         T=2048 E=16 K=2 uniform triton_fused        288.05 us  6.07x
+grouped_gemm       T=2048 E=16 K=2 uniform torch_cublas        215.38 us  1.00x
+grouped_gemm       T=2048 E=16 K=2 uniform triton_grouped      159.40 us  1.35x
+gate_up_swiglu     T=2048 E=16 K=2 uniform torch_cublas        397.65 us  1.00x
+gate_up_swiglu     T=2048 E=16 K=2 uniform triton_fused        111.62 us  3.56x
+routed_moe         T=2048 E=16 K=2 random  torch_loop         1797.80 us  1.00x
+routed_moe         T=2048 E=16 K=2 random  triton_fused        302.08 us  5.95x
+grouped_gemm       T=2048 E=16 K=2 random  torch_cublas        214.02 us  1.00x
+grouped_gemm       T=2048 E=16 K=2 random  triton_grouped      166.50 us  1.29x
+gate_up_swiglu     T=2048 E=16 K=2 random  torch_cublas        394.24 us  1.00x
+gate_up_swiglu     T=2048 E=16 K=2 random  triton_fused        119.81 us  3.29x
+routed_moe         T=2048 E=16 K=2 skewed  torch_loop         1345.56 us  1.00x
+routed_moe         T=2048 E=16 K=2 skewed  triton_fused        284.67 us  4.73x
+grouped_gemm       T=2048 E=16 K=2 skewed  torch_cublas        134.49 us  1.00x
+grouped_gemm       T=2048 E=16 K=2 skewed  triton_grouped      154.28 us  0.87x
+gate_up_swiglu     T=2048 E=16 K=2 skewed  torch_cublas        312.66 us  1.00x
+gate_up_swiglu     T=2048 E=16 K=2 skewed  triton_fused        108.89 us  2.87x
+end_to_end         T=   1 E=16 K=4 router  torch_loop         1304.52 us  1.00x
+end_to_end         T=   1 E=16 K=4 router  triton_unfused      273.40 us  4.77x
+end_to_end         T=   1 E=16 K=4 router  triton_fused        239.58 us  5.44x
+routed_moe         T=   1 E=16 K=4 uniform torch_loop         1274.88 us  1.00x
+routed_moe         T=   1 E=16 K=4 uniform triton_fused        193.19 us  6.60x
+grouped_gemm       T=   1 E=16 K=4 uniform torch_cublas         93.18 us  1.00x
+grouped_gemm       T=   1 E=16 K=4 uniform triton_grouped       23.21 us  4.01x
+gate_up_swiglu     T=   1 E=16 K=4 uniform torch_cublas        132.78 us  1.00x
+gate_up_swiglu     T=   1 E=16 K=4 uniform triton_fused         19.11 us  6.95x
+routed_moe         T=   1 E=16 K=4 random  torch_loop         1211.11 us  1.00x
+routed_moe         T=   1 E=16 K=4 random  triton_fused        183.69 us  6.59x
+grouped_gemm       T=   1 E=16 K=4 random  torch_cublas        101.78 us  1.00x
+grouped_gemm       T=   1 E=16 K=4 random  triton_grouped       25.28 us  4.03x
+gate_up_swiglu     T=   1 E=16 K=4 random  torch_cublas        148.76 us  1.00x
+gate_up_swiglu     T=   1 E=16 K=4 random  triton_fused         25.94 us  5.73x
+routed_moe         T=   1 E=16 K=4 skewed  torch_loop         1243.14 us  1.00x
+routed_moe         T=   1 E=16 K=4 skewed  triton_fused        185.63 us  6.70x
+grouped_gemm       T=   1 E=16 K=4 skewed  torch_cublas         94.89 us  1.00x
+grouped_gemm       T=   1 E=16 K=4 skewed  triton_grouped       23.21 us  4.09x
+gate_up_swiglu     T=   1 E=16 K=4 skewed  torch_cublas        134.47 us  1.00x
+gate_up_swiglu     T=   1 E=16 K=4 skewed  triton_fused         24.55 us  5.48x
+end_to_end         T=   8 E=16 K=4 router  torch_loop         1812.82 us  1.00x
+end_to_end         T=   8 E=16 K=4 router  triton_unfused      250.94 us  7.22x
+end_to_end         T=   8 E=16 K=4 router  triton_fused        246.78 us  7.35x
+routed_moe         T=   8 E=16 K=4 uniform torch_loop         1802.92 us  1.00x
+routed_moe         T=   8 E=16 K=4 uniform triton_fused        192.51 us  9.37x
+grouped_gemm       T=   8 E=16 K=4 uniform torch_cublas        130.71 us  1.00x
+grouped_gemm       T=   8 E=16 K=4 uniform triton_grouped       34.82 us  3.75x
+gate_up_swiglu     T=   8 E=16 K=4 uniform torch_cublas        164.86 us  1.00x
+gate_up_swiglu     T=   8 E=16 K=4 uniform triton_fused         24.96 us  6.61x
+routed_moe         T=   8 E=16 K=4 random  torch_loop         1836.63 us  1.00x
+routed_moe         T=   8 E=16 K=4 random  triton_fused        202.07 us  9.09x
+grouped_gemm       T=   8 E=16 K=4 random  torch_cublas        149.55 us  1.00x
+grouped_gemm       T=   8 E=16 K=4 random  triton_grouped       33.41 us  4.48x
+gate_up_swiglu     T=   8 E=16 K=4 random  torch_cublas        186.37 us  1.00x
+gate_up_swiglu     T=   8 E=16 K=4 random  triton_fused         26.94 us  6.92x
+routed_moe         T=   8 E=16 K=4 skewed  torch_loop         1241.77 us  1.00x
+routed_moe         T=   8 E=16 K=4 skewed  triton_fused        182.27 us  6.81x
+grouped_gemm       T=   8 E=16 K=4 skewed  torch_cublas         82.26 us  1.00x
+grouped_gemm       T=   8 E=16 K=4 skewed  triton_grouped       22.87 us  3.60x
+gate_up_swiglu     T=   8 E=16 K=4 skewed  torch_cublas        116.13 us  1.00x
+gate_up_swiglu     T=   8 E=16 K=4 skewed  triton_fused         24.23 us  4.79x
+end_to_end         T=  32 E=16 K=4 router  torch_loop         1824.75 us  1.00x
+end_to_end         T=  32 E=16 K=4 router  triton_unfused      254.29 us  7.18x
+end_to_end         T=  32 E=16 K=4 router  triton_fused        242.68 us  7.52x
+routed_moe         T=  32 E=16 K=4 uniform torch_loop         1800.53 us  1.00x
+routed_moe         T=  32 E=16 K=4 uniform triton_fused        200.36 us  8.99x
+grouped_gemm       T=  32 E=16 K=4 uniform torch_cublas        129.02 us  1.00x
+grouped_gemm       T=  32 E=16 K=4 uniform triton_grouped       33.72 us  3.83x
+gate_up_swiglu     T=  32 E=16 K=4 uniform torch_cublas        165.55 us  1.00x
+gate_up_swiglu     T=  32 E=16 K=4 uniform triton_fused         27.59 us  6.00x
+routed_moe         T=  32 E=16 K=4 random  torch_loop         1811.46 us  1.00x
+routed_moe         T=  32 E=16 K=4 random  triton_fused        202.36 us  8.95x
+grouped_gemm       T=  32 E=16 K=4 random  torch_cublas        133.80 us  1.00x
+grouped_gemm       T=  32 E=16 K=4 random  triton_grouped       35.45 us  3.77x
+gate_up_swiglu     T=  32 E=16 K=4 random  torch_cublas        172.06 us  1.00x
+gate_up_swiglu     T=  32 E=16 K=4 random  triton_fused         25.94 us  6.63x
+routed_moe         T=  32 E=16 K=4 skewed  torch_loop         1220.27 us  1.00x
+routed_moe         T=  32 E=16 K=4 skewed  triton_fused        197.97 us  6.16x
+grouped_gemm       T=  32 E=16 K=4 skewed  torch_cublas         83.97 us  1.00x
+grouped_gemm       T=  32 E=16 K=4 skewed  triton_grouped       20.85 us  4.03x
+gate_up_swiglu     T=  32 E=16 K=4 skewed  torch_cublas        116.06 us  1.00x
+gate_up_swiglu     T=  32 E=16 K=4 skewed  triton_fused         24.58 us  4.72x
+end_to_end         T= 128 E=16 K=4 router  torch_loop         1832.96 us  1.00x
+end_to_end         T= 128 E=16 K=4 router  triton_unfused      260.37 us  7.04x
+end_to_end         T= 128 E=16 K=4 router  triton_fused        247.13 us  7.42x
+routed_moe         T= 128 E=16 K=4 uniform torch_loop         1763.33 us  1.00x
+routed_moe         T= 128 E=16 K=4 uniform triton_fused        204.87 us  8.61x
+grouped_gemm       T= 128 E=16 K=4 uniform torch_cublas        137.14 us  1.00x
+grouped_gemm       T= 128 E=16 K=4 uniform triton_grouped       36.14 us  3.79x
+gate_up_swiglu     T= 128 E=16 K=4 uniform torch_cublas        164.86 us  1.00x
+gate_up_swiglu     T= 128 E=16 K=4 uniform triton_fused         28.33 us  5.82x
+routed_moe         T= 128 E=16 K=4 random  torch_loop         1779.03 us  1.00x
+routed_moe         T= 128 E=16 K=4 random  triton_fused        200.70 us  8.86x
+grouped_gemm       T= 128 E=16 K=4 random  torch_cublas        130.65 us  1.00x
+grouped_gemm       T= 128 E=16 K=4 random  triton_grouped       36.86 us  3.54x
+gate_up_swiglu     T= 128 E=16 K=4 random  torch_cublas        168.96 us  1.00x
+gate_up_swiglu     T= 128 E=16 K=4 random  triton_fused         29.64 us  5.70x
+routed_moe         T= 128 E=16 K=4 skewed  torch_loop         1188.93 us  1.00x
+routed_moe         T= 128 E=16 K=4 skewed  triton_fused        194.20 us  6.12x
+grouped_gemm       T= 128 E=16 K=4 skewed  torch_cublas         84.99 us  1.00x
+grouped_gemm       T= 128 E=16 K=4 skewed  triton_grouped       35.50 us  2.39x
+gate_up_swiglu     T= 128 E=16 K=4 skewed  torch_cublas        118.10 us  1.00x
+gate_up_swiglu     T= 128 E=16 K=4 skewed  triton_fused         30.29 us  3.90x
+end_to_end         T= 512 E=16 K=4 router  torch_loop         1891.33 us  1.00x
+end_to_end         T= 512 E=16 K=4 router  triton_unfused      309.25 us  6.12x
+end_to_end         T= 512 E=16 K=4 router  triton_fused        271.36 us  6.97x
+routed_moe         T= 512 E=16 K=4 uniform torch_loop         1778.69 us  1.00x
+routed_moe         T= 512 E=16 K=4 uniform triton_fused        219.14 us  8.12x
+grouped_gemm       T= 512 E=16 K=4 uniform torch_cublas        139.26 us  1.00x
+grouped_gemm       T= 512 E=16 K=4 uniform triton_grouped       84.31 us  1.65x
+gate_up_swiglu     T= 512 E=16 K=4 uniform torch_cublas        190.38 us  1.00x
+gate_up_swiglu     T= 512 E=16 K=4 uniform triton_fused         64.17 us  2.97x
+routed_moe         T= 512 E=16 K=4 random  torch_loop         1781.81 us  1.00x
+routed_moe         T= 512 E=16 K=4 random  triton_fused        218.79 us  8.14x
+grouped_gemm       T= 512 E=16 K=4 random  torch_cublas        140.63 us  1.00x
+grouped_gemm       T= 512 E=16 K=4 random  triton_grouped       90.09 us  1.56x
+gate_up_swiglu     T= 512 E=16 K=4 random  torch_cublas        191.49 us  1.00x
+gate_up_swiglu     T= 512 E=16 K=4 random  triton_fused         66.56 us  2.88x
+routed_moe         T= 512 E=16 K=4 skewed  torch_loop         1198.17 us  1.00x
+routed_moe         T= 512 E=16 K=4 skewed  triton_fused        207.87 us  5.76x
+grouped_gemm       T= 512 E=16 K=4 skewed  torch_cublas         93.18 us  1.00x
+grouped_gemm       T= 512 E=16 K=4 skewed  triton_grouped       85.33 us  1.09x
+gate_up_swiglu     T= 512 E=16 K=4 skewed  torch_cublas        148.76 us  1.00x
+gate_up_swiglu     T= 512 E=16 K=4 skewed  triton_fused         61.38 us  2.42x
+end_to_end         T=2048 E=16 K=4 router  torch_loop         1877.33 us  1.00x
+end_to_end         T=2048 E=16 K=4 router  triton_unfused      741.38 us  2.53x
+end_to_end         T=2048 E=16 K=4 router  triton_fused        584.36 us  3.21x
+routed_moe         T=2048 E=16 K=4 uniform torch_loop         1918.29 us  1.00x
+routed_moe         T=2048 E=16 K=4 uniform triton_fused        517.46 us  3.71x
+grouped_gemm       T=2048 E=16 K=4 uniform torch_cublas        482.99 us  1.00x
+grouped_gemm       T=2048 E=16 K=4 uniform triton_grouped      281.94 us  1.71x
+gate_up_swiglu     T=2048 E=16 K=4 uniform torch_cublas        912.64 us  1.00x
+gate_up_swiglu     T=2048 E=16 K=4 uniform triton_fused        201.05 us  4.54x
+routed_moe         T=2048 E=16 K=4 random  torch_loop         1913.79 us  1.00x
+routed_moe         T=2048 E=16 K=4 random  triton_fused        489.81 us  3.91x
+grouped_gemm       T=2048 E=16 K=4 random  torch_cublas        467.29 us  1.00x
+grouped_gemm       T=2048 E=16 K=4 random  triton_grouped      292.47 us  1.60x
+gate_up_swiglu     T=2048 E=16 K=4 random  torch_cublas        910.34 us  1.00x
+gate_up_swiglu     T=2048 E=16 K=4 random  triton_fused        206.51 us  4.41x
+routed_moe         T=2048 E=16 K=4 skewed  torch_loop         1625.39 us  1.00x
+routed_moe         T=2048 E=16 K=4 skewed  triton_fused        479.25 us  3.39x
+grouped_gemm       T=2048 E=16 K=4 skewed  torch_cublas        358.06 us  1.00x
+grouped_gemm       T=2048 E=16 K=4 skewed  triton_grouped      280.58 us  1.28x
+gate_up_swiglu     T=2048 E=16 K=4 skewed  torch_cublas        808.28 us  1.00x
+gate_up_swiglu     T=2048 E=16 K=4 skewed  triton_fused        194.82 us  4.15x
+Saved 1144 measurements to results/benchmark.json

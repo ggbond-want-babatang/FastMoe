@@ -1,0 +1,1 @@
+[('T1-baseline.trace.json', 355), ('T1-triton.trace.json', 95), ('T128-baseline.trace.json', 720), ('T128-triton.trace.json', 100), ('T2048-baseline.trace.json', 715), ('T2048-triton.trace.json', 95)]

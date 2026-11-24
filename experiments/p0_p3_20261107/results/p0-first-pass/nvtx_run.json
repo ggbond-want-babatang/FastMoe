@@ -1,0 +1,10 @@
+{
+  "mode": "nvtx",
+  "iterations": 5,
+  "tokens": [
+    1,
+    128,
+    2048
+  ],
+  "captured_regions": 285
+}

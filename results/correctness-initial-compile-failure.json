@@ -1,0 +1,104 @@
+{
+  "tests_run": 6,
+  "failures": 0,
+  "errors": 133,
+  "skipped": 0,
+  "comparisons": [
+    {
+      "case": "e2e/0/fused=False",
+      "dtype": "torch.float16",
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": "e2e/0/fused=True",
+      "dtype": "torch.float16",
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": "e2e/0/fused=False",
+      "dtype": "torch.bfloat16",
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": "e2e/0/fused=True",
+      "dtype": "torch.bfloat16",
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": "gemm/64/128/[0, 0, 0, 0]",
+      "dtype": "torch.float16",
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": "gemm/64/128/[0, 0, 0, 0]/fused",
+      "dtype": "torch.float16",
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": "gemm/64/128/[0, 0, 0, 0]/activation",
+      "dtype": "torch.float16",
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": "gemm/70/94/[0, 0, 0, 0]",
+      "dtype": "torch.float16",
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": "gemm/70/94/[0, 0, 0, 0]/fused",
+      "dtype": "torch.float16",
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": "gemm/70/94/[0, 0, 0, 0]/activation",
+      "dtype": "torch.float16",
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": "gemm/64/128/[0, 0, 0, 0]",
+      "dtype": "torch.bfloat16",
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": "gemm/64/128/[0, 0, 0, 0]/fused",
+      "dtype": "torch.bfloat16",
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": "gemm/64/128/[0, 0, 0, 0]/activation",
+      "dtype": "torch.bfloat16",
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": "gemm/70/94/[0, 0, 0, 0]",
+      "dtype": "torch.bfloat16",
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": "gemm/70/94/[0, 0, 0, 0]/fused",
+      "dtype": "torch.bfloat16",
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    {
+      "case": "gemm/70/94/[0, 0, 0, 0]/activation",
+      "dtype": "torch.bfloat16",
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    }
+  ]
+}

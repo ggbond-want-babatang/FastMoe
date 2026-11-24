@@ -1,0 +1,61 @@
+# Python bytecode, environments, and tooling caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
+
+# GPU compilation and model download caches (at any depth)
+.triton-cache/
+.cuda-cache/
+.hf-cache/
+.cache/
+
+# Model weights and incomplete downloads; retain config/tokenizer/manifest files
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.onnx
+*.part
+*.partial
+*.incomplete
+
+# Generated project archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# Local credentials and agent settings
+.env
+.env.*
+!.env.example
+!.env.sample
+.aws/
+.codex/
+.agents/
+
+# Editor and OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Keep results/, including measured JSON/CSV, traces, logs, and figures,
+# along with reports and model source manifests for reproducibility.

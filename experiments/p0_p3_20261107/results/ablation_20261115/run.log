@@ -1,0 +1,41 @@
+START {'source': 'synthetic', 'dtype': 'torch.float16', 'tokens': 1, 'hidden': 256, 'ffn': 512, 'experts': 8, 'top_k': 2, 'distribution': 'router'}
+DONE synthetic fp16 1 router
+START {'source': 'synthetic', 'dtype': 'torch.float16', 'tokens': 128, 'hidden': 256, 'ffn': 512, 'experts': 8, 'top_k': 2, 'distribution': 'router'}
+DONE synthetic fp16 128 router
+START {'source': 'synthetic', 'dtype': 'torch.float16', 'tokens': 128, 'hidden': 256, 'ffn': 512, 'experts': 8, 'top_k': 2, 'distribution': 'uniform'}
+DONE synthetic fp16 128 uniform
+START {'source': 'synthetic', 'dtype': 'torch.float16', 'tokens': 128, 'hidden': 256, 'ffn': 512, 'experts': 8, 'top_k': 2, 'distribution': 'random'}
+DONE synthetic fp16 128 random
+START {'source': 'synthetic', 'dtype': 'torch.float16', 'tokens': 128, 'hidden': 256, 'ffn': 512, 'experts': 8, 'top_k': 2, 'distribution': 'skewed'}
+DONE synthetic fp16 128 skewed
+START {'source': 'synthetic', 'dtype': 'torch.float16', 'tokens': 2048, 'hidden': 256, 'ffn': 512, 'experts': 8, 'top_k': 2, 'distribution': 'router'}
+DONE synthetic fp16 2048 router
+START {'source': 'synthetic', 'dtype': 'torch.bfloat16', 'tokens': 1, 'hidden': 256, 'ffn': 512, 'experts': 8, 'top_k': 2, 'distribution': 'router'}
+DONE synthetic bf16 1 router
+START {'source': 'synthetic', 'dtype': 'torch.bfloat16', 'tokens': 128, 'hidden': 256, 'ffn': 512, 'experts': 8, 'top_k': 2, 'distribution': 'router'}
+DONE synthetic bf16 128 router
+START {'source': 'synthetic', 'dtype': 'torch.bfloat16', 'tokens': 128, 'hidden': 256, 'ffn': 512, 'experts': 8, 'top_k': 2, 'distribution': 'uniform'}
+DONE synthetic bf16 128 uniform
+START {'source': 'synthetic', 'dtype': 'torch.bfloat16', 'tokens': 128, 'hidden': 256, 'ffn': 512, 'experts': 8, 'top_k': 2, 'distribution': 'random'}
+DONE synthetic bf16 128 random
+START {'source': 'synthetic', 'dtype': 'torch.bfloat16', 'tokens': 128, 'hidden': 256, 'ffn': 512, 'experts': 8, 'top_k': 2, 'distribution': 'skewed'}
+DONE synthetic bf16 128 skewed
+START {'source': 'synthetic', 'dtype': 'torch.bfloat16', 'tokens': 2048, 'hidden': 256, 'ffn': 512, 'experts': 8, 'top_k': 2, 'distribution': 'router'}
+DONE synthetic bf16 2048 router
+START {'source': 'pretrained_layer0', 'dtype': 'torch.float16', 'tokens': 1, 'hidden': 2048, 'ffn': 1024, 'experts': 64, 'top_k': 8, 'distribution': 'pretrained_router', 'text_index': 0}
+DONE real fp16 1 pretrained_router
+START {'source': 'pretrained_layer0', 'dtype': 'torch.float16', 'tokens': 32, 'hidden': 2048, 'ffn': 1024, 'experts': 64, 'top_k': 8, 'distribution': 'pretrained_router', 'text_index': 1}
+DONE real fp16 32 pretrained_router
+START {'source': 'pretrained_layer0', 'dtype': 'torch.float16', 'tokens': 128, 'hidden': 2048, 'ffn': 1024, 'experts': 64, 'top_k': 8, 'distribution': 'pretrained_router', 'text_index': 2}
+DONE real fp16 128 pretrained_router
+START {'source': 'pretrained_layer0', 'dtype': 'torch.float16', 'tokens': 512, 'hidden': 2048, 'ffn': 1024, 'experts': 64, 'top_k': 8, 'distribution': 'pretrained_router', 'text_index': 0}
+DONE real fp16 512 pretrained_router
+START {'source': 'pretrained_layer0', 'dtype': 'torch.bfloat16', 'tokens': 1, 'hidden': 2048, 'ffn': 1024, 'experts': 64, 'top_k': 8, 'distribution': 'pretrained_router', 'text_index': 0}
+DONE real bf16 1 pretrained_router
+START {'source': 'pretrained_layer0', 'dtype': 'torch.bfloat16', 'tokens': 32, 'hidden': 2048, 'ffn': 1024, 'experts': 64, 'top_k': 8, 'distribution': 'pretrained_router', 'text_index': 1}
+DONE real bf16 32 pretrained_router
+START {'source': 'pretrained_layer0', 'dtype': 'torch.bfloat16', 'tokens': 128, 'hidden': 2048, 'ffn': 1024, 'experts': 64, 'top_k': 8, 'distribution': 'pretrained_router', 'text_index': 2}
+DONE real bf16 128 pretrained_router
+START {'source': 'pretrained_layer0', 'dtype': 'torch.bfloat16', 'tokens': 512, 'hidden': 2048, 'ffn': 1024, 'experts': 64, 'top_k': 8, 'distribution': 'pretrained_router', 'text_index': 0}
+DONE real bf16 512 pretrained_router
+Saved results/ablation_20261115/results.json
